@@ -251,20 +251,20 @@ const ParadoxSection = () => {
     {
       icon: <BookOpen className="w-6 h-6" />,
       title: 'The Tooling Fallacy',
-      problem: 'Treating AI as a plug-and-play software tool for existing two-week sprints. This ignores the new physics of software engineering and results in low adoption.',
-      solution: 'Treat AI as a fundamental architectural shift. Build a tight, deterministic feedback loop where AI agents handle the boilerplate, and humans handle the architecture.',
+      problem: 'Institutions bolt AI copilots onto Bloomberg, add chatbots to their CRM, embed LLMs into existing compliance workflows. They treat AI as a feature upgrade for existing software. The result: marginal efficiency gains that never justify the investment.',
+      solution: 'The operating system replaces the patchwork. Agents don\'t assist your tools — they execute the workflows those tools were built for. Research production, client reporting, regulatory filing: end-to-end, not feature-by-feature.',
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: 'Unstructured Workflows',
-      problem: 'Layering AI onto legacy processes creates a \'jet engine on a bicycle\' scenario. If your engineering team is still doing quarterly roadmapping, you are competing against companies operating on daily, compounding autonomous cycles.',
-      solution: 'Redesign workflows around agent capabilities. Move from quarterly planning to continuous, autonomous execution cycles where humans set direction and agents compound results.',
+      problem: 'Layering AI onto legacy processes creates a \'jet engine on a bicycle\' scenario. If your research team still produces reports on a monthly cycle, your compliance team still files quarterly, and your client team still assembles RFPs manually — you\'re competing against firms running daily, compounding autonomous cycles.',
+      solution: 'Redesign workflows around agent capabilities. Move from monthly reporting to continuous production. From quarterly compliance to real-time monitoring. From manual RFPs to autonomous assembly. Humans set direction, agents compound results.',
     },
     {
       icon: <Lock className="w-6 h-6" />,
       title: 'The Scale Trap',
-      problem: 'Believing that brute-force compute is the moat. Scale isn\'t the moat; architecture is. Committing to a single provider sacrifices sovereign control and exposes you to geopolitical risk.',
-      solution: 'Build sovereign, model-agnostic architecture. Route between providers without code changes. Your competitive advantage is architectural — not a vendor relationship.',
+      problem: 'Committing your institutional infrastructure to a single AI provider — whether OpenAI, Google, or Anthropic — sacrifices sovereign control. When regulation shifts, when a provider changes pricing, when geopolitics restricts data flows: you are locked in.',
+      solution: 'Build sovereign, model-agnostic architecture. Route between providers without code changes. Your data stays in your jurisdiction. Your competitive advantage is architectural — not a vendor relationship.',
     },
   ];
 
@@ -332,17 +332,17 @@ const ThreePillarSection = () => {
           {
             icon: <Users className="w-6 h-6" />,
             title: 'Agents Handle Boilerplate, Humans Handle Architecture',
-            body: 'Establish a tight, deterministic feedback loop. AI agents handle data extraction, synthesis, and formatting, freeing your team to focus purely on alpha generation and review.',
+            body: 'Your analysts stop pulling data from terminals and formatting decks. Your compliance officers stop cross-referencing trades manually. Agents execute the process; your team architects the judgment calls.',
           },
           {
             icon: <TrendingUp className="w-6 h-6" />,
             title: 'Compounding Autonomous Cycles',
-            body: 'Quarterly roadmaps and two-week sprints are obsolete. Set a strategic mandate and let the AI Operating System run continuous, autonomous cycles. Review the results, not the process.',
+            body: 'Monthly research production becomes continuous. Quarterly compliance becomes real-time monitoring. Annual client reviews become living, always-current intelligence. Set the mandate, review the outcomes.',
           },
           {
             icon: <Layers className="w-6 h-6" />,
             title: 'Architecture is the New Moat',
-            body: 'Scale and brute-force compute are no longer competitive advantages. True velocity comes from a sovereign, agent-driven architecture that compounds institutional knowledge daily.',
+            body: 'The firms that win will not be the ones with the most compute. They will be the ones whose institutional knowledge compounds daily through sovereign, agent-driven architecture.',
           },
           {
             icon: <Shield className="w-6 h-6" />,
