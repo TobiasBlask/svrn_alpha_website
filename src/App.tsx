@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { ArrowRight, Shield, Database, Cpu, Menu, X, CheckCircle, Lock, Server, FileText, ChevronRight, BarChart3, Users, BookOpen, Download, Building, LineChart, Scale, ArrowUp } from 'lucide-react';
+import { ArrowRight, Shield, Database, Cpu, Menu, X, CheckCircle, Lock, Server, FileText, ChevronRight, ChevronDown, BarChart3, Users, BookOpen, Download, Building, LineChart, Scale, ArrowUp } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 const performanceData = [
@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md border-b border-slate-200 py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <button 
             onClick={() => {
@@ -49,7 +49,8 @@ const Navbar = () => {
           <a href="#education" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Education</a>
           <a href="#process" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Process</a>
           <a href="#technology" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Technology</a>
-          <a href="#case-studies" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Case Studies</a>
+          <a href="#architecture" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Architecture</a>
+          <a href="#references" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">References</a>
           <a href="#academic" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Academic Foundation</a>
         </div>
 
@@ -77,7 +78,8 @@ const Navbar = () => {
             <a href="#education" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-slate-600 hover:text-slate-900">Education</a>
             <a href="#process" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-slate-600 hover:text-slate-900">Process</a>
             <a href="#technology" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-slate-600 hover:text-slate-900">Technology</a>
-            <a href="#case-studies" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-slate-600 hover:text-slate-900">Case Studies</a>
+            <a href="#architecture" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-slate-600 hover:text-slate-900">Architecture</a>
+            <a href="#references" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-slate-600 hover:text-slate-900">References</a>
             <a href="#academic" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-slate-600 hover:text-slate-900">Academic Foundation</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="bg-slate-900 text-white px-5 py-3 text-sm font-medium text-center mt-4 flex items-center justify-center gap-2">
               Schedule Consultation <ArrowRight className="w-4 h-4" />
@@ -98,7 +100,7 @@ const HeroSection = () => {
   return (
     <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto relative overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <motion.div style={{ y: yText, opacity: opacityText }}>
+        <motion.div style={{ y: yText, opacity: opacityText }} className="w-full">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,7 +108,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 border border-slate-200 text-xs font-mono text-slate-600 mb-8"
           >
             <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
-            Academic Rigour. Institutional Impact.
+            svrnAlphaOS
           </motion.div>
           
           <motion.h1 
@@ -115,32 +117,40 @@ const HeroSection = () => {
             transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.1 }}
             className="text-5xl md:text-7xl font-serif leading-[1.1] text-slate-900 mb-8 tracking-tight"
           >
-            We ship the AI<br />
-            <span className="italic text-slate-600">Operating System for</span><br />
-            Institutional Finance.
+            We ship the sovereign <span className="italic text-slate-600">AI Operating System</span> for Institutional Finance.
           </motion.h1>
           
-          <motion.p 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.2 }}
-            className="text-lg text-slate-600 mb-10 max-w-xl leading-relaxed"
           >
-            Stop building chatbots. We develop, deploy, and ship the sovereign technological foundation for the Age of AI — across your entire value chain. Built for alpha generation. Engineered to ship.
-          </motion.p>
+            <p className="text-lg text-slate-600 mb-4 max-w-xl leading-relaxed">
+              The agentic operating system for institutional finance. Highly autonomous AI agents that execute real work — monitoring, analyzing, building, reporting — across your entire investment workflow. Not a chatbot. Not a copilot. An operating system.
+            </p>
+            <p className="text-base text-slate-800 mb-8 max-w-xl leading-relaxed">
+              Your agents run 24/7. They discover and use skills autonomously. They connect to any system via pluggable connectors. They get better the longer they work with your team. And when a decision requires human judgment, the governance engine escalates — automatically, not because autonomy was never the plan.
+            </p>
+          </motion.div>
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.3 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-col gap-6"
           >
-            <a href="#contact" className="bg-slate-900 text-white px-6 py-3.5 text-sm font-medium hover:bg-slate-800 transition-colors flex items-center gap-2">
-              Schedule Consultation <ArrowRight className="w-4 h-4" />
-            </a>
-            <a href="#paper" className="bg-white text-slate-900 border border-slate-300 px-6 py-3.5 text-sm font-medium hover:bg-slate-50 transition-colors flex items-center gap-2">
-              Download Founding Paper
-            </a>
+            <div className="flex gap-2.5 flex-wrap max-w-xl">
+              {['Highly autonomous', 'Skills as plugins', 'Sovereign by architecture', 'Zero vendor lock-in', 'MCP-native', 'EU AI Act ready'].map(tag => (
+                <span key={tag} className="font-mono text-[11px] px-3 py-1.5 border border-slate-200 rounded-[3px] text-slate-600 tracking-[0.04em] bg-white">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <a href="#contact" className="bg-slate-900 text-white px-6 py-3.5 text-sm font-medium hover:bg-slate-800 transition-colors flex items-center gap-2 w-fit">
+                Schedule Consultation <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </motion.div>
         </motion.div>
 
@@ -155,45 +165,31 @@ const HeroSection = () => {
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-slate-100 to-slate-50 transform translate-x-4 translate-y-4 -z-10 border border-slate-200"></div>
-            <div className="bg-white border border-slate-200 p-8 shadow-xl">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-              <span className="font-mono text-xs text-slate-500 uppercase tracking-wider">System Architecture</span>
-              <span className="font-mono text-xs text-green-600 bg-green-50 px-2 py-1">DEPLOYMENT READY</span>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
-                  <BarChart3 className="w-5 h-5 text-slate-700" />
+            <div className="absolute inset-0 bg-slate-900 transform translate-x-3 translate-y-3 -z-10"></div>
+            <div className="bg-white border border-slate-200 p-8 sm:p-10 shadow-2xl relative overflow-hidden">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-5 mb-8 relative z-10">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></div>
+                  <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest">Validated Results</span>
                 </div>
-                <div>
-                  <h3 className="font-mono text-sm font-semibold text-slate-900 mb-1">70% → 30%</h3>
-                  <p className="text-sm text-slate-600">Capacity Flip (Routine vs. Strategic)</p>
-                </div>
+                <span className="font-mono text-[10px] font-bold text-slate-700 bg-slate-100 border border-slate-300 px-2 py-1 uppercase tracking-wider">Production Ready</span>
               </div>
               
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
-                  <Shield className="w-5 h-5 text-slate-700" />
-                </div>
-                <div>
-                  <h3 className="font-mono text-sm font-semibold text-slate-900 mb-1">100%</h3>
-                  <p className="text-sm text-slate-600">EU AI Act Compliant Architecture</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
-                  <Lock className="w-5 h-5 text-slate-700" />
-                </div>
-                <div>
-                  <h3 className="font-mono text-sm font-semibold text-slate-900 mb-1">Zero</h3>
-                  <p className="text-sm text-slate-600">Vendor Lock-in (Model-Agnostic)</p>
-                </div>
+              <div className="space-y-0 relative z-10">
+                {[
+                  { value: '78%', label: 'Reduction in Boilerplate Execution' },
+                  { value: '100%', label: 'Sovereign Architecture' },
+                  { value: 'Measurable', label: 'Alpha Generation' },
+                  { value: 'Zero', label: 'Vendor Lock-in' },
+                  { value: 'Full', label: 'EU Compliance (AI Act, GDPR)' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 py-4 border-b border-slate-100 last:border-0 last:pb-0 first:pt-0">
+                    <div className="w-32 shrink-0 font-serif text-xl sm:text-2xl text-slate-900 tracking-tight">{item.value}</div>
+                    <div className="text-sm font-medium text-slate-600 leading-snug">{item.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
           </motion.div>
         </motion.div>
       </div>
@@ -208,9 +204,10 @@ const ParadoxSection = () => {
     <section className="py-24 bg-slate-50 border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-16">
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE PARADOX</span>
           <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">The AI Transformation Paradox.</h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Every major investment bank has an AI initiative, yet the industry-wide failure rate hovers around 70%. The problem isn't the technology—it's the sequence of implementation.
+            Every major investment bank has an AI initiative, yet the industry-wide failure rate hovers around 70%. Why? Because institutions are asking the wrong question. They ask "How do we integrate AI into our product?" instead of "How do we integrate AI agents into our org chart?"
           </p>
         </div>
 
@@ -219,7 +216,7 @@ const ParadoxSection = () => {
             <div className="w-12 h-12 bg-slate-100 flex items-center justify-center mb-6">
               <BookOpen className="w-6 h-6 text-slate-700" />
             </div>
-            <h3 className="text-xl font-serif text-slate-900 mb-4">The Technology-First Fallacy</h3>
+            <h3 className="text-xl font-serif text-slate-900 mb-4">The Tooling Fallacy</h3>
             
             <div className="flex items-center w-full sm:w-auto gap-1 mb-4 bg-slate-100 p-1 rounded-md self-start">
               <button 
@@ -245,7 +242,7 @@ const ParadoxSection = () => {
                   transition={{ duration: 0.2 }}
                   className="text-sm text-slate-600 leading-relaxed"
                 >
-                  Deploying institutional LLM subscriptions before establishing the 'Creator-to-Curator' mindset inevitably results in low adoption rates. Education must precede technology.
+                  Treating AI as a plug-and-play software tool for existing two-week sprints. This ignores the new physics of software engineering and results in low adoption.
                 </motion.p>
               ) : (
                 <motion.p 
@@ -255,7 +252,7 @@ const ParadoxSection = () => {
                   transition={{ duration: 0.2 }}
                   className="text-sm text-slate-600 leading-relaxed"
                 >
-                  Establish a comprehensive 'Creator-to-Curator' education program first. Build strategic fluency across the organization before investing heavily in technology infrastructure.
+                  Treat AI as a fundamental architectural shift. Build a tight, deterministic feedback loop where AI agents handle the boilerplate, and humans handle the architecture.
                 </motion.p>
               )}
             </div>
@@ -267,7 +264,7 @@ const ParadoxSection = () => {
             </div>
             <h3 className="text-xl font-serif text-slate-900 mb-4">Unrestructured Workflows</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Layering AI onto legacy processes creates a 'jet engine on a bicycle' scenario. Without deep workflow redesign, the structural Capacity Flip cannot be achieved.
+              Layering AI onto legacy processes creates a 'jet engine on a bicycle' scenario. If your engineering team is still doing quarterly roadmapping, you are competing against companies operating on daily, compounding autonomous cycles.
             </p>
           </div>
           
@@ -275,9 +272,9 @@ const ParadoxSection = () => {
             <div className="w-12 h-12 bg-slate-100 flex items-center justify-center mb-6">
               <Lock className="w-6 h-6 text-slate-700" />
             </div>
-            <h3 className="text-xl font-serif text-slate-900 mb-4">The Vendor Lock-in Trap</h3>
+            <h3 className="text-xl font-serif text-slate-900 mb-4">The Scale Trap</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Committing your architecture to a single US provider sacrifices sovereign control and exposes the institution to geopolitical risk and shifting AI Act compliance gaps.
+              Believing that brute-force compute is the moat. Scale isn't the moat; architecture is. Committing to a single provider sacrifices sovereign control and exposes you to geopolitical risk.
             </p>
           </div>
         </div>
@@ -291,7 +288,7 @@ const PillarEducation = () => {
     <section id="education" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">PILLAR I : EDUCATION</span>
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">PILLAR I : ARCHITECTURAL THINKING</span>
           <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">The Budget Inversion</h2>
           <p className="text-lg text-slate-600 leading-relaxed mb-8">
             Banks typically allocate 90% of their AI transformation budget to technology and 10% to change management. This allocation is precisely backwards. The Three-Pillar Model corrects this inversion to an optimal 25/30/50 split (first year).
@@ -299,11 +296,11 @@ const PillarEducation = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <CheckCircle className="w-5 h-5 text-slate-900" />
-              <span className="text-slate-700">Build strategic fluency before deploying technology.</span>
+              <span className="text-slate-700">Build strategic fluency: from execution to architecture.</span>
             </div>
             <div className="flex items-center gap-3">
               <CheckCircle className="w-5 h-5 text-slate-900" />
-              <span className="text-slate-700">Transform professionals from content creators to insight curators.</span>
+              <span className="text-slate-700">Transform professionals: humans stop executing boilerplate and start designing deterministic feedback loops.</span>
             </div>
           </div>
         </div>
@@ -333,47 +330,47 @@ const PillarProcess = () => {
     <section id="process" className="py-24 bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-16">
-          <span className="font-mono text-xs text-slate-400 uppercase tracking-wider mb-4 block">PILLAR II : PROCESS</span>
+          <span className="font-mono text-xs text-slate-400 uppercase tracking-wider mb-4 block">PILLAR II : AUTONOMOUS CYCLES</span>
           <h2 className="text-4xl md:text-5xl font-serif mb-6">The Capacity Flip</h2>
           <p className="text-lg text-slate-300 leading-relaxed">
-            Layering AI onto legacy processes creates a 'jet engine on a bicycle' effect. True transformation requires redesigning workflows from first principles to invert professional time allocation.
+            Layering AI onto legacy processes creates a 'jet engine on a bicycle' effect. True transformation requires redesigning workflows from first principles to invert professional time allocation and enable daily, compounding autonomous cycles.
           </p>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto border border-slate-800 bg-slate-900/50">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-slate-700">
-                <th className="py-4 px-4 font-mono text-xs text-slate-400 uppercase tracking-wider">TASK CATEGORY</th>
-                <th className="py-4 px-4 font-mono text-xs text-slate-400 uppercase tracking-wider">BEFORE (TYPICAL)</th>
-                <th className="py-4 px-4 font-mono text-xs text-slate-400 uppercase tracking-wider">AFTER (TARGET)</th>
-                <th className="py-4 px-4 font-mono text-xs text-slate-400 uppercase tracking-wider">AI ROLE</th>
+              <tr className="border-b border-slate-800 bg-slate-900">
+                <th className="py-5 px-6 font-mono text-[10px] text-slate-500 uppercase tracking-widest w-1/4">Task Category</th>
+                <th className="py-5 px-6 font-mono text-[10px] text-slate-500 uppercase tracking-widest w-1/6">Before (Typical)</th>
+                <th className="py-5 px-6 font-mono text-[10px] text-slate-300 uppercase tracking-widest w-1/6 bg-slate-800/30">After (Target)</th>
+                <th className="py-5 px-6 font-mono text-[10px] text-slate-500 uppercase tracking-widest">AI Role</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800">
-              <tr>
-                <td className="py-6 px-4 font-medium">Data extraction & Formatting</td>
-                <td className="py-6 px-4 text-slate-400">~40% of time</td>
-                <td className="py-6 px-4 font-mono text-green-400">~10% of time</td>
-                <td className="py-6 px-4 text-sm text-slate-300">Autonomously handled by SVRN ALPHA service</td>
+            <tbody className="divide-y divide-slate-800/50">
+              <tr className="hover:bg-slate-800/20 transition-colors">
+                <td className="py-5 px-6 font-medium text-sm text-slate-300">Data extraction & Formatting</td>
+                <td className="py-5 px-6 font-mono text-sm text-slate-500">~40%</td>
+                <td className="py-5 px-6 font-mono text-sm text-white bg-slate-800/30">~10%</td>
+                <td className="py-5 px-6 text-sm text-slate-400">Autonomously handled by SVRN ALPHA service</td>
               </tr>
-              <tr>
-                <td className="py-6 px-4 font-medium">Model population</td>
-                <td className="py-6 px-4 text-slate-400">~15% of time</td>
-                <td className="py-6 px-4 font-mono text-green-400">~5% of time</td>
-                <td className="py-6 px-4 text-sm text-slate-300">Autonomously mapped by SVRN ALPHA service</td>
+              <tr className="hover:bg-slate-800/20 transition-colors">
+                <td className="py-5 px-6 font-medium text-sm text-slate-300">Model population</td>
+                <td className="py-5 px-6 font-mono text-sm text-slate-500">~15%</td>
+                <td className="py-5 px-6 font-mono text-sm text-white bg-slate-800/30">~5%</td>
+                <td className="py-5 px-6 text-sm text-slate-400">Autonomously mapped by SVRN ALPHA service</td>
               </tr>
-              <tr>
-                <td className="py-6 px-4 font-medium">Cross-referencing</td>
-                <td className="py-6 px-4 text-slate-400">~10% of time</td>
-                <td className="py-6 px-4 font-mono text-green-400">~5% of time</td>
-                <td className="py-6 px-4 text-sm text-slate-300">Autonomously cross-referenced with human validation</td>
+              <tr className="hover:bg-slate-800/20 transition-colors">
+                <td className="py-5 px-6 font-medium text-sm text-slate-300">Cross-referencing</td>
+                <td className="py-5 px-6 font-mono text-sm text-slate-500">~10%</td>
+                <td className="py-5 px-6 font-mono text-sm text-white bg-slate-800/30">~5%</td>
+                <td className="py-5 px-6 text-sm text-slate-400">Autonomously cross-referenced with human validation</td>
               </tr>
-              <tr>
-                <td className="py-6 px-4 font-medium">Strategic analysis & Advisory</td>
-                <td className="py-6 px-4 text-slate-400">~30% of time</td>
-                <td className="py-6 px-4 font-mono text-blue-400 text-lg">~75% of time</td>
-                <td className="py-6 px-4 text-sm text-slate-300">Human-led, applying proprietary institutional judgment</td>
+              <tr className="hover:bg-slate-800/20 transition-colors border-t-2 border-slate-700">
+                <td className="py-5 px-6 font-medium text-sm text-white">Strategic analysis & Advisory</td>
+                <td className="py-5 px-6 font-mono text-sm text-slate-500">~30%</td>
+                <td className="py-5 px-6 font-mono text-lg text-white bg-slate-800/30">~75%</td>
+                <td className="py-5 px-6 text-sm text-slate-300">Human-led, applying proprietary institutional judgment</td>
               </tr>
             </tbody>
           </table>
@@ -387,10 +384,10 @@ const PillarTechnology = () => {
   return (
     <section id="technology" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="max-w-3xl mb-16">
-        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">PILLAR III : TECHNOLOGY</span>
+        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">PILLAR III : SOVEREIGN ARCHITECTURE</span>
         <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">The Sovereign Data Fortress</h2>
         <p className="text-lg text-slate-600 leading-relaxed">
-          Models are interchangeable commodities. Your proprietary knowledge—protected by a model-agnostic architecture—is your only defensible moat.
+          Models are interchangeable commodities. Scale isn't the moat; architecture is. Your proprietary knowledge—protected by an agent-driven, model-agnostic architecture—is your only defensible moat.
         </p>
       </div>
 
@@ -436,21 +433,32 @@ const FeaturesSection = () => {
   return (
     <section className="py-24 bg-slate-50 border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Built for Shipping.</h2>
+        <div className="max-w-3xl mb-16">
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE SOLUTION</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">The New Physics of Velocity.</h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Everything your institution needs to go from strategic brief to executed alpha — autonomously, securely, and at scale.
+            The bottleneck is no longer execution—it's strategic velocity. Integrate agentic workflows into your org chart to achieve daily, compounding autonomous cycles.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="flex gap-6">
             <div className="w-12 h-12 shrink-0 bg-white border border-slate-200 flex items-center justify-center">
-              <BarChart3 className="w-6 h-6 text-slate-700" />
+              <Users className="w-6 h-6 text-slate-700" />
             </div>
             <div>
-              <h3 className="text-xl font-serif text-slate-900 mb-3">Watch the OS work in real time</h3>
-              <p className="text-slate-600 leading-relaxed">Live dashboard tracking data ingestion, model processing, and compliance review.</p>
+              <h3 className="text-xl font-serif text-slate-900 mb-3">Agents Handle Boilerplate, Humans Handle Architecture</h3>
+              <p className="text-slate-600 leading-relaxed">Establish a tight, deterministic feedback loop. AI agents handle data extraction, synthesis, and formatting, freeing your team to focus purely on alpha generation and review.</p>
+            </div>
+          </div>
+          
+          <div className="flex gap-6">
+            <div className="w-12 h-12 shrink-0 bg-white border border-slate-200 flex items-center justify-center">
+              <LineChart className="w-6 h-6 text-slate-700" />
+            </div>
+            <div>
+              <h3 className="text-xl font-serif text-slate-900 mb-3">Compounding Autonomous Cycles</h3>
+              <p className="text-slate-600 leading-relaxed">Quarterly roadmaps and two-week sprints are obsolete. Set a strategic mandate and let the AI Operating System run continuous, autonomous cycles. Review the results, not the process.</p>
             </div>
           </div>
           
@@ -459,18 +467,8 @@ const FeaturesSection = () => {
               <Server className="w-6 h-6 text-slate-700" />
             </div>
             <div>
-              <h3 className="text-xl font-serif text-slate-900 mb-3">Ship while you sleep</h3>
-              <p className="text-slate-600 leading-relaxed">Set a mandate on Friday. The AI Operating System runs the financials over the weekend. Review the draft on Monday.</p>
-            </div>
-          </div>
-          
-          <div className="flex gap-6">
-            <div className="w-12 h-12 shrink-0 bg-white border border-slate-200 flex items-center justify-center">
-              <Cpu className="w-6 h-6 text-slate-700" />
-            </div>
-            <div>
-              <h3 className="text-xl font-serif text-slate-900 mb-3">Ship in half the time</h3>
-              <p className="text-slate-600 leading-relaxed">Parallel processing. The fast local model extracts data while the frontier model synthesizes the narrative. Zero bottlenecks.</p>
+              <h3 className="text-xl font-serif text-slate-900 mb-3">Architecture is the New Moat</h3>
+              <p className="text-slate-600 leading-relaxed">Scale and brute-force compute are no longer competitive advantages. True velocity comes from a sovereign, agent-driven architecture designed specifically for institutional workflows.</p>
             </div>
           </div>
           
@@ -479,8 +477,8 @@ const FeaturesSection = () => {
               <Shield className="w-6 h-6 text-slate-700" />
             </div>
             <div>
-              <h3 className="text-xl font-serif text-slate-900 mb-3">Your infrastructure. Your data.</h3>
-              <p className="text-slate-600 leading-relaxed">The OS lives securely inside your sovereign firewall. No vendor lock-in. Your alpha stays yours.</p>
+              <h3 className="text-xl font-serif text-slate-900 mb-3">Ship Your 2027 Roadmap Next Tuesday</h3>
+              <p className="text-slate-600 leading-relaxed">Deployed securely inside your sovereign firewall. No vendor lock-in. Transform your organizational velocity without compromising institutional data control or compliance.</p>
             </div>
           </div>
         </div>
@@ -489,124 +487,213 @@ const FeaturesSection = () => {
   );
 };
 
-const CaseStudiesSection = () => {
+const ArchitectureSection = () => {
   return (
-    <section id="case-studies" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">What We Are Building.</h2>
-        <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
-          We do not build theoretical AI. We engineer sovereign infrastructure that drives measurable outcomes. Here are the core applications we are currently deploying with our institutional partners.
+    <section id="architecture" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="max-w-3xl mb-16">
+        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">ARCHITECTURE</span>
+        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Platform stack</h2>
+        <p className="text-lg text-slate-600 leading-relaxed">
+          Your existing systems at the base. Our platform core in the center. Your agents, skills, and connectors on top. Every action passes through governance. Every dependency is replaceable.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <div className="bg-slate-900 text-white p-8 rounded-sm shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
-          <div className="flex items-center justify-between mb-8 border-b border-slate-800 pb-4">
-            <span className="font-mono text-xs text-slate-400 flex items-center gap-2"><Lock className="w-3 h-3" /> SaaS IR Dashboard · Protected Session</span>
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+      <div className="flex flex-col gap-2 max-w-5xl">
+        {/* Layer 1: Interfaces */}
+        <div className="rounded-xl p-6 border-l-[3px] transition-transform hover:translate-x-1 bg-[#E6F1FB] border-[#185FA5]">
+          <div className="text-[11px] font-medium tracking-widest uppercase text-[#185FA5] mb-1">Interfaces</div>
+          <div className="text-[15px] font-medium text-slate-900 mb-0.5">Role-based access — you choose the channels</div>
+          <div className="text-xs text-slate-600 mb-3">Each persona sees the agents and outputs relevant to their function</div>
+          <div className="flex flex-wrap gap-1.5">
+            {['Desktop agent', 'Mobile dispatch', 'Terminal embed', 'Teams / Slack', 'API / headless'].map(t => (
+              <span key={t} className="text-[11px] px-2.5 py-1 rounded border bg-[#E6F1FB] border-[#B5D4F4] text-[#0C447C]">{t}</span>
+            ))}
           </div>
+        </div>
+
+        {/* Layer 2: Agents */}
+        <div className="rounded-xl p-6 border-l-[3px] transition-transform hover:translate-x-1 bg-[#E1F5EE] border-[#0F6E56]">
+          <div className="text-[11px] font-medium tracking-widest uppercase text-[#0F6E56] mb-1">Agents · Skills · Connectors</div>
+          <div className="text-[15px] font-medium text-slate-900 mb-0.5">As many as your business needs. Not more, not less.</div>
+          <div className="text-xs text-slate-600 mb-3.5">svrnAlphaOS is not a fixed module catalog. It is a platform on which you build, configure, and deploy the agents, skills, and connectors that your specific business model requires.</div>
           
-          <div className="space-y-6">
-            <div className="bg-slate-800/50 p-4 border border-slate-700">
-              <h4 className="font-mono text-xs text-slate-400 uppercase mb-3">Aura Assistant (Sovereign Core)</h4>
-              <div className="space-y-3">
-                <div className="bg-slate-700/50 p-3 text-sm text-slate-200 rounded-sm">
-                  Summarize the Q3 attribution for European Equities.
-                </div>
-                <div className="bg-blue-900/30 border border-blue-800/50 p-3 text-sm text-slate-300 rounded-sm">
-                  The +4.2% outperformance was primarily driven by overweight positioning in Industrials (Siemens, Schneider) and strong stock selection in Financials.
-                  <div className="mt-2 pt-2 border-t border-blue-800/30 font-mono text-xs text-blue-400">
-                    Source: Q3_Attribution_Internal.pdf
-                  </div>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+            <div className="rounded-lg p-3 border bg-[#E1F5EE] border-[#9FE1CB]">
+              <div className="text-[11px] font-medium mb-1 text-[#0F6E56]">Agents</div>
+              <div className="text-[11px] leading-relaxed opacity-80 text-[#085041]">Autonomous units that execute multi-step workflows end-to-end. Own tools, memory, permissions scope.</div>
             </div>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-slate-800/50 p-4 border border-slate-700">
-                <span className="block font-mono text-xs text-slate-400 mb-1">AUM (EUR)</span>
-                <span className="block text-2xl font-serif">€2.4B</span>
-              </div>
-              <div className="bg-slate-800/50 p-4 border border-slate-700">
-                <span className="block font-mono text-xs text-slate-400 mb-1">YTD Return</span>
-                <span className="block text-2xl font-serif text-green-400">+4.2%</span>
-              </div>
+            <div className="rounded-lg p-3 border bg-[#E1F5EE] border-[#9FE1CB]">
+              <div className="text-[11px] font-medium mb-1 text-[#0F6E56]">Skills</div>
+              <div className="text-[11px] leading-relaxed opacity-80 text-[#085041]">Reusable capabilities agents draw on. Templates, validation, output formats, domain knowledge. Composable.</div>
             </div>
-            
-            <div className="bg-slate-800/50 p-4 border border-slate-700">
-              <div className="flex items-center justify-between mb-4">
-                <span className="font-mono text-xs text-slate-400 uppercase">Performance Trajectory vs Benchmark</span>
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span className="text-[10px] font-mono text-slate-400 uppercase">Portfolio</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 bg-slate-500 rounded-full"></div>
-                    <span className="text-[10px] font-mono text-slate-400 uppercase">Benchmark</span>
-                  </div>
-                </div>
-              </div>
-              <div className="h-48 w-full">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={performanceData} margin={{ top: 5, right: 0, left: 0, bottom: 0 }}>
-                    <defs>
-                      <linearGradient id="colorPortfolio" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#4ade80" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#4ade80" stopOpacity={0}/>
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
-                    <XAxis dataKey="month" stroke="#94a3b8" fontSize={10} tickLine={false} axisLine={false} />
-                    <YAxis hide domain={['dataMin - 2', 'dataMax + 2']} />
-                    <Tooltip
-                      contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', fontSize: '12px', color: '#f8fafc' }}
-                      itemStyle={{ color: '#f8fafc' }}
-                    />
-                    <Area type="monotone" dataKey="portfolio" stroke="#4ade80" strokeWidth={2} fillOpacity={1} fill="url(#colorPortfolio)" name="Portfolio" />
-                    <Line type="monotone" dataKey="benchmark" stroke="#94a3b8" strokeWidth={2} strokeDasharray="4 4" dot={false} name="Benchmark" />
-                  </AreaChart>
-                </ResponsiveContainer>
-              </div>
+            <div className="rounded-lg p-3 border bg-[#E1F5EE] border-[#9FE1CB]">
+              <div className="text-[11px] font-medium mb-1 text-[#0F6E56]">Connectors</div>
+              <div className="text-[11px] leading-relaxed opacity-80 text-[#085041]">MCP adapters to any system. New data source? New connector. Not a platform rewrite.</div>
+            </div>
+          </div>
+
+          <div className="text-[11px] text-slate-500 mt-4 mb-1.5">Examples — what clients have built</div>
+          <div className="flex flex-wrap gap-1.5">
+            {['Financial modeling', 'Research production', 'Due diligence', 'Screening & signals', 'Portfolio construction', 'Risk monitoring', 'Client reporting', 'RFP & sales', 'CRM intelligence', 'MAR & insider', 'AML screening', 'ESG & SFDR', 'Performance attribution', 'Reg. reporting', '…'].map(t => (
+              <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-slate-200 text-slate-500 bg-white opacity-75">{t}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* Layer 3: Platform core */}
+        <div className="rounded-xl p-6 border-l-[3px] transition-transform hover:translate-x-1 bg-[#FAECE7] border-[#D85A30]">
+          <div className="text-[11px] font-medium tracking-widest uppercase text-[#993C1D] mb-1">Platform core</div>
+          <div className="text-[15px] font-medium text-slate-900 mb-0.5">Orchestration, governance, audit</div>
+          <div className="text-xs text-slate-600 mb-3">The non-negotiable layer — same for every client, every agent, every skill</div>
+          <div className="flex flex-wrap gap-1.5">
+            {['Multi-agent routing', 'Compliance gate', 'Human-in-the-loop', 'Full-provenance audit', 'Scoped memory', 'Role-based permissions'].map(t => (
+              <span key={t} className="text-[11px] px-2.5 py-1 rounded border bg-[#FAECE7] border-[#F5C4B3] text-[#712B13]">{t}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* Layer 4: Sovereignty layer */}
+        <div className="rounded-xl p-6 border-l-[3px] transition-transform hover:translate-x-1 bg-[#FAEEDA] border-[#BA7517]">
+          <div className="text-[11px] font-medium tracking-widest uppercase text-[#854F0B] mb-1">Sovereignty layer</div>
+          <div className="text-[15px] font-medium text-slate-900 mb-0.5">You decide. About everything. At any time. Reversibly.</div>
+          <div className="text-xs text-slate-600 mb-3.5">No single-vendor lock-in. No single-jurisdiction dependency. No single point of failure.</div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+            <div className="rounded-lg p-3 border bg-[#FAEEDA] border-[#FAC775]">
+              <div className="text-[11px] font-medium mb-1 text-[#854F0B]">Model routing</div>
+              <div className="text-[11px] leading-relaxed opacity-80 text-[#633806]">Run any model. Switch providers without code changes. Automatic fallback if one goes down.</div>
+            </div>
+            <div className="rounded-lg p-3 border bg-[#FAEEDA] border-[#FAC775]">
+              <div className="text-[11px] font-medium mb-1 text-[#854F0B]">Deployment choice</div>
+              <div className="text-[11px] leading-relaxed opacity-80 text-[#633806]">Your data center. Any cloud. Hybrid. Move between them. Your call, your timeline.</div>
+            </div>
+            <div className="rounded-lg p-3 border bg-[#FAEEDA] border-[#FAC775]">
+              <div className="text-[11px] font-medium mb-1 text-[#854F0B]">Data residency</div>
+              <div className="text-[11px] leading-relaxed opacity-80 text-[#633806]">Choose where every byte lives. Change it when circumstances change. A config change, not a migration.</div>
             </div>
           </div>
         </div>
 
-        <div className="space-y-12">
-          <div>
-            <h3 className="text-2xl font-serif text-slate-900 mb-3">AI-Native IR Service</h3>
-            <p className="text-slate-600 leading-relaxed mb-3">
-              Currently deploying a system that autonomously generates quarterly earnings narratives, competitive peer tear-downs, and LP updates.
-            </p>
-            <p className="text-sm font-medium text-slate-900 bg-slate-50 p-3 border-l-2 border-slate-900">
-              <span className="font-mono text-xs uppercase text-slate-500 block mb-1">Impact</span>
-              Drastically reduces routine drafting time, enabling teams to focus entirely on judgment and strategic alignment.
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="text-2xl font-serif text-slate-900 mb-3">Specialized Dispute Resolution</h3>
-            <p className="text-slate-600 leading-relaxed mb-3">
-              Developing autonomous mapping of claims against complex credit agreements, covering M&A earn-outs and covenant breaches.
-            </p>
-            <p className="text-sm font-medium text-slate-900 bg-slate-50 p-3 border-l-2 border-slate-900">
-              <span className="font-mono text-xs uppercase text-slate-500 block mb-1">Impact</span>
-              Provides immediate first-pass dispute analysis, giving banking teams a decisive informational advantage entering negotiations.
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="text-2xl font-serif text-slate-900 mb-3">Sovereign Institutional Memory</h3>
-            <p className="text-slate-600 leading-relaxed mb-3">
-              Engineering the structural encoding of proprietary firm knowledge into the core AI layer with model-agnostic deployment.
-            </p>
-            <p className="text-sm font-medium text-slate-900 bg-slate-50 p-3 border-l-2 border-slate-900">
-              <span className="font-mono text-xs uppercase text-slate-500 block mb-1">Impact</span>
-              Secures institutional DNA against vendor lock-in and compounds proprietary knowledge into a permanent competitive moat.
-            </p>
+        {/* Layer 5: Client ecosystem */}
+        <div className="rounded-xl p-6 border-l-[3px] border-dashed transition-transform hover:translate-x-1 bg-[#F5F4F0] border-[#D4D3CD]">
+          <div className="text-[11px] font-medium tracking-widest uppercase text-slate-500 mb-1">Client ecosystem — we connect, not replace</div>
+          <div className="text-xs text-slate-600 mb-3">Your existing infrastructure remains exactly where it is</div>
+          <div className="flex flex-wrap gap-1.5">
+            {['Market data', 'PMS / OMS', 'CRM', 'DMS', 'ERP', 'Regulatory feeds', '…'].map(t => (
+              <span key={t} className="text-[11px] px-2.5 py-1 rounded border bg-[#F5F4F0] border-slate-200 text-slate-500">{t}</span>
+            ))}
           </div>
         </div>
+      </div>
+
+      <div className="mt-32 mb-16 max-w-3xl">
+        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">IN PRACTICE</span>
+        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Same platform. Your business model.</h2>
+        <p className="text-lg text-slate-600 leading-relaxed">
+          Every deployment looks different because every business is different. The platform core and sovereignty layer are identical. Everything above them is configured to your workflow.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Config 1 */}
+        <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-300 transition-colors">
+          <div className="text-sm font-medium mb-1 text-slate-900">Sell-side boutique</div>
+          <div className="text-[11px] text-slate-500 mb-4 font-mono">Research + origination</div>
+          <ul className="space-y-0">
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0F6E56] shrink-0"></span> Research production
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0F6E56] shrink-0"></span> Financial modeling
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0F6E56] shrink-0"></span> Screening & signals
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#993C1D] shrink-0"></span> MAR & insider
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span> Doc production
+            </li>
+          </ul>
+          <div className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">+ custom skills for their workflow</div>
+        </div>
+
+        {/* Config 2 */}
+        <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-300 transition-colors">
+          <div className="text-sm font-medium mb-1 text-slate-900">Asset manager</div>
+          <div className="text-[11px] text-slate-500 mb-4 font-mono">Portfolio + distribution</div>
+          <ul className="space-y-0">
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> Portfolio construction
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> Risk monitoring
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> Client reporting
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> RFP & sales
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#993C1D] shrink-0"></span> ESG & SFDR
+            </li>
+          </ul>
+          <div className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">+ custom skills for their workflow</div>
+        </div>
+
+        {/* Config 3 */}
+        <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-300 transition-colors">
+          <div className="text-sm font-medium mb-1 text-slate-900">Family office</div>
+          <div className="text-[11px] text-slate-500 mb-4 font-mono">Lean team, broad scope</div>
+          <ul className="space-y-0">
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> Portfolio construction
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> Risk monitoring
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> Client reporting
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> CRM intelligence
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span> Data extraction
+            </li>
+          </ul>
+          <div className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">+ custom skills for their workflow</div>
+        </div>
+
+        {/* Config 4 */}
+        <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-300 transition-colors">
+          <div className="text-sm font-medium mb-1 text-slate-900">Full-service bank</div>
+          <div className="text-[11px] text-slate-500 mb-4 font-mono">Full stack + custom</div>
+          <ul className="space-y-0">
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0F6E56] shrink-0"></span> All research agents
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> All portfolio agents
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> All client agents
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#993C1D] shrink-0"></span> All compliance agents
+            </li>
+            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#185FA5] shrink-0"></span> Custom agent development
+            </li>
+          </ul>
+          <div className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">+ dedicated engineering support</div>
+        </div>
+      </div>
+
+      <div className="bg-white border border-slate-200 rounded-xl p-8 mt-10 text-center shadow-sm">
+        <p className="text-slate-700">These are examples, not a product list. Your deployment will look different — <em className="text-[#0F6E56] not-italic font-medium">because your business is different.</em></p>
       </div>
     </section>
   );
@@ -614,50 +701,68 @@ const CaseStudiesSection = () => {
 
 const ReferenceCaseSection = () => {
   return (
-    <section className="py-24 bg-slate-50 border-y border-slate-200">
+    <section className="py-24 bg-slate-50 border-y border-slate-200" id="references">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
-            <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">REFERENCE CASE</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">MP Capital Markets:<br/>Sovereign AI Enablement Validated</h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              The SVRN ALPHA framework was developed and validated in close collaboration with MP Capital Markets — our founding investor. The results prove the Three-Pillar Model in practice.
-            </p>
-            
-            <div className="bg-white border border-slate-200 p-6 mb-8">
-              <h3 className="font-mono text-sm font-semibold text-slate-900 mb-4 uppercase">Validated Results</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Capacity Flip Achieved</li>
-                <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Zero Data Leakage</li>
-                <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Measurable Alpha Generation</li>
-                <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Zero Vendor Lock-in</li>
-                <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Full EU Compliance (AI Act, GDPR)</li>
-              </ul>
+        <div className="max-w-3xl mb-16">
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">REFERENCES</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Proven in Production</h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            We don't just build theory. Our agentic operating systems are deployed in highly regulated institutional environments, driving measurable velocity.
+          </p>
+        </div>
+
+        <div className="bg-white border border-slate-200 p-8 md:p-12 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+              <span className="font-mono text-xs text-blue-600 font-semibold uppercase tracking-wider mb-6 block">CLIENT & BACKED BY</span>
+              <img 
+                src="https://www.mp-capitalmarkets.com/fileadmin/resourcen/mpcm/MPCM_Logo.svg" 
+                alt="MP Capital Markets" 
+                className="h-12 w-auto mb-8"
+                referrerPolicy="no-referrer"
+              />
+              <p className="text-lg text-slate-600 leading-relaxed mb-4">
+                The SVRN ALPHA framework was developed and validated in close collaboration with <a href="https://www.mp-capitalmarkets.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline decoration-blue-200 hover:decoration-blue-600 underline-offset-4 transition-colors font-medium">MP Capital Markets</a> — our central first client and founding investor.
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                By implementing our proprietary 3-stage model, they have successfully transitioned from manual execution to autonomous cycles. The results prove the power of this architecture in practice—it works extremely well.
+              </p>
+              
+              <div className="bg-slate-50 border border-slate-100 p-6">
+                <h4 className="font-mono text-sm font-semibold text-slate-900 mb-4 uppercase">Validated Results</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> 78% Reduction in Boilerplate Execution</li>
+                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> 100% Sovereign Architecture</li>
+                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Measurable Alpha Generation</li>
+                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Zero Vendor Lock-in</li>
+                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Full EU Compliance (AI Act, GDPR)</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          
-          <div>
-            <h3 className="font-mono text-sm font-semibold text-slate-900 mb-6 uppercase">The Deployment Approach</h3>
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="w-8 h-8 shrink-0 bg-slate-900 text-white flex items-center justify-center font-mono text-xs">1</div>
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-1">PHASE 1 : EDUCATION</h4>
-                  <p className="text-sm text-slate-600">Structured AI fluency workshops driving the Creator-to-Curator mindset shift across the entire analyst team.</p>
+            
+            <div>
+              <h4 className="font-mono text-sm font-semibold text-slate-900 mb-6 uppercase">The 3-Stage Deployment Model</h4>
+              <div className="space-y-8">
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 shrink-0 bg-slate-900 text-white flex items-center justify-center font-mono text-xs">1</div>
+                  <div>
+                    <h5 className="font-semibold text-slate-900 mb-1">PHASE 1 : ARCHITECTURAL THINKING</h5>
+                    <p className="text-sm text-slate-600">Structured workshops driving the mindset shift from manual execution to designing deterministic feedback loops.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-8 h-8 shrink-0 bg-slate-900 text-white flex items-center justify-center font-mono text-xs">2</div>
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-1">PHASE 2 : PROCESS</h4>
-                  <p className="text-sm text-slate-600">Granular workflow redesign routing routine extractions to AI, embedding Human-in-the-Loop checkpoints by default.</p>
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 shrink-0 bg-slate-900 text-white flex items-center justify-center font-mono text-xs">2</div>
+                  <div>
+                    <h5 className="font-semibold text-slate-900 mb-1">PHASE 2 : AUTONOMOUS CYCLES</h5>
+                    <p className="text-sm text-slate-600">Granular workflow redesign routing routine extractions to AI agents, embedding humans solely for architectural review.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-8 h-8 shrink-0 bg-slate-900 text-white flex items-center justify-center font-mono text-xs">3</div>
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-1">PHASE 3 : TECHNOLOGY</h4>
-                  <p className="text-sm text-slate-600">Sovereign, model-agnostic infrastructure deployed locally, ensuring zero data leakage and full AI Act compliance.</p>
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 shrink-0 bg-slate-900 text-white flex items-center justify-center font-mono text-xs">3</div>
+                  <div>
+                    <h5 className="font-semibold text-slate-900 mb-1">PHASE 3 : SOVEREIGN ARCHITECTURE</h5>
+                    <p className="text-sm text-slate-600">Agentic, model-agnostic infrastructure deployed locally, ensuring zero data leakage and full AI Act compliance.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -669,9 +774,39 @@ const ReferenceCaseSection = () => {
 };
 
 const AcademicSection = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+
+  const principles = [
+    {
+      id: "01",
+      title: "Education Before Technology",
+      description: "No technology deployment until organizational readiness is established."
+    },
+    {
+      id: "02",
+      title: "Sovereign Means You Decide",
+      description: "Model-agnostic per use case. Evaluate US, Chinese, or European. Never locked in."
+    },
+    {
+      id: "03",
+      title: "Human-in-the-Loop Always",
+      description: "AI assists. Humans decide. Architectural, not a feature toggle."
+    },
+    {
+      id: "04",
+      title: "Evidence Over Claims",
+      description: "Capacity flip. Measurable alpha. If we can't measure it, we don't claim it."
+    },
+    {
+      id: "05",
+      title: "Compliance by Design",
+      description: "EU AI Act, MiFID II, MAR built directly into the architecture."
+    }
+  ];
+
   return (
     <section id="academic" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="text-center max-w-3xl mx-auto mb-16">
+      <div className="max-w-3xl mb-16">
         <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">ACADEMIC FOUNDATION</span>
         <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Founded on Academic Rigour.<br/>Engineered for Reality.</h2>
         <p className="text-lg text-slate-600 leading-relaxed">
@@ -679,32 +814,53 @@ const AcademicSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="border border-slate-200 p-8">
-          <span className="font-mono text-2xl text-slate-300 block mb-4">01</span>
-          <h3 className="text-xl font-serif text-slate-900 mb-3">Education Before Technology</h3>
-          <p className="text-sm text-slate-600">No technology deployment until organizational readiness is established.</p>
-        </div>
-        <div className="border border-slate-200 p-8">
-          <span className="font-mono text-2xl text-slate-300 block mb-4">02</span>
-          <h3 className="text-xl font-serif text-slate-900 mb-3">Sovereign Means You Decide</h3>
-          <p className="text-sm text-slate-600">Model-agnostic per use case. Evaluate US, Chinese, or European. Never locked in.</p>
-        </div>
-        <div className="border border-slate-200 p-8">
-          <span className="font-mono text-2xl text-slate-300 block mb-4">03</span>
-          <h3 className="text-xl font-serif text-slate-900 mb-3">Human-in-the-Loop Always</h3>
-          <p className="text-sm text-slate-600">AI assists. Humans decide. Architectural, not a feature toggle.</p>
-        </div>
-        <div className="border border-slate-200 p-8">
-          <span className="font-mono text-2xl text-slate-300 block mb-4">04</span>
-          <h3 className="text-xl font-serif text-slate-900 mb-3">Evidence Over Claims</h3>
-          <p className="text-sm text-slate-600">Capacity flip. Measurable alpha. If we can't measure it, we don't claim it.</p>
-        </div>
-        <div className="border border-slate-200 p-8">
-          <span className="font-mono text-2xl text-slate-300 block mb-4">05</span>
-          <h3 className="text-xl font-serif text-slate-900 mb-3">Compliance by Design</h3>
-          <p className="text-sm text-slate-600">EU AI Act, MiFID II, MAR built directly into the architecture.</p>
-        </div>
+      <div className="max-w-3xl border-t border-slate-200">
+        {principles.map((principle, index) => {
+          const isExpanded = expandedIndex === index;
+          return (
+            <div key={principle.id} className="border-b border-slate-200">
+              <button
+                onClick={() => setExpandedIndex(isExpanded ? null : index)}
+                className="w-full py-6 flex items-center justify-between text-left focus:outline-none group"
+              >
+                <div className="flex items-center gap-6">
+                  <span className={`font-mono text-xl transition-colors ${isExpanded ? 'text-blue-600' : 'text-slate-300 group-hover:text-slate-400'}`}>
+                    {principle.id}
+                  </span>
+                  <h3 className={`text-xl font-serif transition-colors ${isExpanded ? 'text-blue-600' : 'text-slate-900 group-hover:text-slate-600'}`}>
+                    {principle.title}
+                  </h3>
+                </div>
+                <div className="ml-4 flex-shrink-0">
+                  <motion.div
+                    animate={{ rotate: isExpanded ? 180 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="w-8 h-8 flex items-center justify-center rounded-full border border-slate-200 text-slate-400 group-hover:border-slate-300 group-hover:text-slate-600 transition-colors"
+                  >
+                    <ChevronDown className="w-4 h-4" />
+                  </motion.div>
+                </div>
+              </button>
+              <AnimatePresence initial={false}>
+                {isExpanded && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pb-6 pl-[3.25rem] pr-4">
+                      <p className="text-slate-600 leading-relaxed">
+                        {principle.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
@@ -716,9 +872,8 @@ const FounderSection = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5 relative">
           <div className="aspect-[4/5] bg-slate-100 relative overflow-hidden">
-            {/* TODO: Replace this placeholder with the actual uploaded image of Prof. Dr. Tobias Blask */}
             <img 
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800&h=1000" 
+              src="https://raw.githubusercontent.com/TobiasBlask/svrn_alpha_website/main/2026-01-28_10-18-59.jpg" 
               alt="Prof. Dr. Tobias Blask" 
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               referrerPolicy="no-referrer"
@@ -729,12 +884,12 @@ const FounderSection = () => {
         </div>
         
         <div className="lg:col-span-7 lg:pl-12">
-          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">FOUNDER & CEO</span>
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">LEADERSHIP</span>
           <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Prof. Dr. Tobias Blask</h2>
           
           <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
             <p>
-              With over a decade of published research on digital transformation and AI integration in the financial sector, Prof. Dr. Tobias Blask bridges the critical gap between academic theory and institutional execution.
+              With over a decade of research on digital transformation and AI integration, Prof. Dr. Tobias Blask bridges the critical gap between academic theory and institutional execution.
             </p>
             <p>
               As the founder of SVRN ALPHA, he developed the proprietary Three-Pillar Model (Education, Process, Technology) to ensure that AI deployments in highly regulated environments are not just technologically advanced, but structurally sound, compliant, and sovereign.
@@ -744,15 +899,13 @@ const FounderSection = () => {
             </p>
           </div>
           
-          <div className="mt-10 flex items-center gap-6">
-            <div className="flex flex-col">
-              <span className="text-3xl font-serif text-slate-900">10+</span>
-              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider mt-1">Years Research</span>
-            </div>
-            <div className="w-px h-12 bg-slate-200"></div>
-            <div className="flex flex-col">
-              <span className="text-3xl font-serif text-slate-900">3</span>
-              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider mt-1">Pillar Framework</span>
+          <div className="mt-12 pt-8 border-t border-slate-200">
+            <blockquote className="font-serif text-2xl text-slate-900 italic leading-snug mb-6">
+              "Intelligence can be outsourced. Judgement cannot. Sovereign AI is the architecture that protects and amplifies institutional judgement."
+            </blockquote>
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-px bg-slate-900"></div>
+              <span className="font-mono text-xs text-slate-900 uppercase tracking-wider font-semibold">The SVRN Mandate</span>
             </div>
           </div>
         </div>
@@ -761,41 +914,183 @@ const FounderSection = () => {
   );
 };
 
-const FoundingPaperSection = () => {
+const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
+    }
+  };
+
   return (
-    <section id="paper" className="py-24 bg-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-        <span className="font-mono text-xs text-slate-400 uppercase tracking-wider mb-4 block">FOUNDING PAPER</span>
-        <h2 className="text-4xl md:text-5xl font-serif mb-6">The Three-Pillar Model:<br/>A Framework for Sovereign AI</h2>
-        <p className="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto mb-10">
-          44 pages of research, methodology, and evidence. Discover why 70% of banking AI initiatives fail, and the architectural shift required to succeed.
-        </p>
-        <button className="bg-white text-slate-900 px-8 py-4 text-sm font-medium hover:bg-slate-100 transition-colors inline-flex items-center gap-2">
-          <Download className="w-4 h-4" /> Download the Founding Paper
-        </button>
-        <div className="mt-6 flex items-center justify-center gap-4 text-xs font-mono text-slate-400">
-          <span>PDF Format</span>
-          <span>•</span>
-          <span>44 pages</span>
-          <span>•</span>
-          <span>No Reg. Required</span>
+    <section id="contact" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">GET IN TOUCH</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Your institution.<br/><span className="italic text-slate-600">Reborn for the AI Age.</span></h2>
+          <p className="text-lg text-slate-600 leading-relaxed max-w-xl mb-10">
+            Discover our AI-native Investor Relations and Dispute Resolution services. We execute the intelligence loop, so you can execute the trade.
+          </p>
+          <div className="space-y-4">
+            <div className="flex items-center gap-4 text-slate-700">
+              <div className="w-12 h-12 bg-slate-100 flex items-center justify-center rounded-full">
+                <Shield className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-medium text-slate-900">Secure & Confidential</h4>
+                <p className="text-sm text-slate-500">All engagements are strictly confidential.</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 text-slate-700">
+              <div className="w-12 h-12 bg-slate-100 flex items-center justify-center rounded-full">
+                <Building className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-medium text-slate-900">Institutional Grade</h4>
+                <p className="text-sm text-slate-500">Built for regulated financial environments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-slate-900 p-8 md:p-12 rounded-2xl shadow-2xl relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-slate-800 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-slate-800 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
+          
+          <div className="relative z-10">
+            <h3 className="text-2xl font-serif text-white mb-2">Schedule a Consultation</h3>
+            <p className="text-slate-400 mb-8 text-sm">Fill out the form below and our team will get back to you promptly.</p>
+            
+            {status === 'success' ? (
+              <div className="bg-emerald-900/30 border border-emerald-800 text-emerald-300 p-6 rounded-lg flex flex-col items-center justify-center text-center space-y-3 animate-in fade-in zoom-in duration-300">
+                <CheckCircle className="w-12 h-12 text-emerald-400" />
+                <div>
+                  <h4 className="font-medium text-lg text-emerald-100">Message Sent Successfully</h4>
+                  <p className="text-sm mt-1">Thank you for reaching out. We will get back to you shortly.</p>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {status === 'error' && (
+                  <div className="bg-red-900/30 border border-red-800 text-red-300 p-4 rounded-none text-sm">
+                    {errorMessage}
+                  </div>
+                )}
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-xs font-mono text-slate-400 uppercase tracking-wider">Name</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name"
+                      required
+                      disabled={status === 'loading'}
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-slate-800/50 border border-slate-700 rounded-none px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors disabled:opacity-50"
+                      placeholder="Jane Doe"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-xs font-mono text-slate-400 uppercase tracking-wider">Email</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email"
+                      required
+                      disabled={status === 'loading'}
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-slate-800/50 border border-slate-700 rounded-none px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors disabled:opacity-50"
+                      placeholder="jane@institution.com"
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="text-xs font-mono text-slate-400 uppercase tracking-wider">Subject</label>
+                  <input 
+                    type="text" 
+                    id="subject" 
+                    name="subject"
+                    required
+                    disabled={status === 'loading'}
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full bg-slate-800/50 border border-slate-700 rounded-none px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors disabled:opacity-50"
+                    placeholder="Inquiry regarding AI Integration"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-xs font-mono text-slate-400 uppercase tracking-wider">Message</label>
+                  <textarea 
+                    id="message" 
+                    name="message"
+                    required
+                    disabled={status === 'loading'}
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full bg-slate-800/50 border border-slate-700 rounded-none px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors resize-none disabled:opacity-50"
+                    placeholder="How can we help you?"
+                  ></textarea>
+                </div>
+                
+                <button 
+                  type="submit" 
+                  disabled={status === 'loading'}
+                  className="w-full bg-white text-slate-900 px-8 py-4 text-sm font-medium hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 mt-4 disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {status === 'loading' ? 'Sending...' : (
+                    <>Send Message <ArrowRight className="w-4 h-4" /></>
+                  )}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
-    </section>
-  );
-};
-
-const CTASection = () => {
-  return (
-    <section id="contact" className="py-32 px-6 md:px-12 max-w-7xl mx-auto text-center">
-      <h2 className="text-5xl md:text-7xl font-serif text-slate-900 mb-6">Your institution.<br/><span className="italic text-slate-600">Reborn for the AI Age.</span></h2>
-      <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
-        Discover our AI-native Investor Relations and Dispute Resolution services. We execute the intelligence loop, so you can execute the trade.
-      </p>
-      <button className="bg-slate-900 text-white px-8 py-4 text-sm font-medium hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
-        Schedule Consultation <ArrowRight className="w-4 h-4" />
-      </button>
-      <p className="mt-6 text-sm text-slate-500">Engagements are bespoke, confidential, and scoped to your institution's priorities.</p>
     </section>
   );
 };
@@ -815,8 +1110,7 @@ const Footer = () => {
           <h4 className="font-mono text-xs font-semibold text-slate-900 uppercase tracking-wider mb-4">COMPANY</h4>
           <ul className="space-y-2">
             <li><a href="#" className="text-sm text-slate-600 hover:text-slate-900">About</a></li>
-            <li><a href="#case-studies" className="text-sm text-slate-600 hover:text-slate-900">Case Studies</a></li>
-            <li><a href="#paper" className="text-sm text-slate-600 hover:text-slate-900">Founding Paper</a></li>
+            <li><a href="#architecture" className="text-sm text-slate-600 hover:text-slate-900">Architecture</a></li>
           </ul>
         </div>
         
@@ -895,12 +1189,11 @@ function App() {
         <PillarProcess />
         <PillarTechnology />
         <FeaturesSection />
-        <CaseStudiesSection />
+        <ArchitectureSection />
         <ReferenceCaseSection />
         <AcademicSection />
         <FounderSection />
-        <FoundingPaperSection />
-        <CTASection />
+        <ContactSection />
       </main>
       <Footer />
       <ScrollToTop />
