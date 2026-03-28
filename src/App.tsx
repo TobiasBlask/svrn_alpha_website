@@ -742,7 +742,7 @@ const FounderSection = () => {
         <div className="lg:col-span-5 relative">
           <div className="aspect-[4/5] bg-slate-100 relative overflow-hidden">
             <img
-              src="https://raw.githubusercontent.com/TobiasBlask/svrn_alpha_website/main/2026-01-28_10-18-59.jpg"
+              src="/images/tobias-blask.jpg"
               alt="Prof. Dr. Tobias Blask"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               referrerPolicy="no-referrer"
