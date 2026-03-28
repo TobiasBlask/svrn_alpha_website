@@ -363,55 +363,85 @@ const ThreePillarSection = () => {
       </div>
 
       {/* Three-Pillar Budget Model */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start pt-16 border-t border-slate-200">
-        <div>
-          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">PILLAR I : ARCHITECTURAL THINKING</span>
-          <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">The Budget Inversion</h3>
-          <p className="text-lg text-slate-600 leading-relaxed mb-8">
-            Banks typically allocate 90% of their AI transformation budget to technology and 10% to change management. This allocation is precisely backwards. The Three-Pillar Model corrects this inversion to an optimal 25/30/45 split (first year).
-          </p>
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-slate-400 mt-0.5 shrink-0" />
-              <p className="text-slate-600">Build strategic fluency: from execution to architecture.</p>
+      <div className="pt-16 border-t border-slate-200">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+          <div>
+            <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE THREE-PILLAR MODEL</span>
+            <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">The Budget Inversion</h3>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Banks typically allocate 90% of their AI transformation budget to technology and 10% to change management. This allocation is precisely backwards. The Three-Pillar Model corrects this inversion to an optimal 25/30/45 split (first year).
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {/* Industry Standard Bar */}
+            <div>
+              <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">Industry Standard (70% Failure Rate)</span>
+              <div className="flex h-14 overflow-hidden border border-slate-300">
+                <div className="bg-slate-400 text-white text-xs font-mono flex items-center justify-center" style={{ width: '10%' }}>
+                  10%
+                </div>
+                <div className="bg-slate-700 text-white text-sm font-mono flex items-center justify-center flex-1">
+                  Technology (90%)
+                </div>
+              </div>
             </div>
-            <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-slate-400 mt-0.5 shrink-0" />
-              <p className="text-slate-600">Transform professionals: humans stop executing boilerplate and start designing deterministic feedback loops.</p>
+
+            {/* Three-Pillar Optimal Bar */}
+            <div>
+              <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">The Three-Pillar Model (Optimal)</span>
+              <div className="flex h-14 overflow-hidden border border-slate-300">
+                <div className="bg-slate-300 text-slate-800 text-xs font-mono flex items-center justify-center" style={{ width: '25%' }}>
+                  Edu (25%)
+                </div>
+                <div className="bg-slate-500 text-white text-xs font-mono flex items-center justify-center" style={{ width: '30%' }}>
+                  Process (30%)
+                </div>
+                <div className="bg-slate-800 text-white text-xs font-mono flex items-center justify-center" style={{ width: '45%' }}>
+                  Tech (45%)
+                </div>
+              </div>
+              <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest block mt-2 text-right">* First Year Allocation</span>
             </div>
           </div>
         </div>
 
-        <div className="space-y-8">
-          {/* Industry Standard Bar */}
-          <div>
-            <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">Industry Standard (70% Failure Rate)</span>
-            <div className="flex h-14 overflow-hidden border border-slate-300">
-              <div className="bg-slate-400 text-white text-xs font-mono flex items-center justify-center" style={{ width: '10%' }}>
-                10%
-              </div>
-              <div className="bg-slate-700 text-white text-sm font-mono flex items-center justify-center flex-1">
-                Technology (90%)
+        {/* Three Pillar Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              number: 'I',
+              title: 'Education',
+              subtitle: 'Strategic Fluency',
+              body: 'Your team learns to think in feedback loops, not feature requests. From executing boilerplate to architecting autonomous workflows. The shift from operator to architect is the highest-leverage investment you can make.',
+              allocation: '25%',
+            },
+            {
+              number: 'II',
+              title: 'Process',
+              subtitle: 'Roles & Workflows',
+              body: 'Redesign the org chart around agent capabilities. Define which decisions require human judgment, which processes run autonomously, and where governance gates sit. The workflow is the product.',
+              allocation: '30%',
+            },
+            {
+              number: 'III',
+              title: 'Technology',
+              subtitle: 'Sovereign Infrastructure',
+              body: 'Model-agnostic, deployment-flexible, compliance-native. The platform layer that makes Education and Process compound. Technology is the enabler — not the starting point.',
+              allocation: '45%',
+            },
+          ].map((pillar, i) => (
+            <div key={i} className="border border-slate-200 p-8">
+              <span className="font-mono text-xs text-slate-400 uppercase tracking-wider block mb-3">Pillar {pillar.number}</span>
+              <h4 className="text-xl font-serif text-slate-900 mb-1">{pillar.title}</h4>
+              <span className="text-sm font-mono text-slate-500 block mb-4">{pillar.subtitle}</span>
+              <p className="text-sm text-slate-600 leading-relaxed mb-4">{pillar.body}</p>
+              <div className="pt-4 border-t border-slate-100">
+                <span className="font-mono text-2xl font-semibold text-slate-900">{pillar.allocation}</span>
+                <span className="text-xs text-slate-400 ml-2">first-year allocation</span>
               </div>
             </div>
-          </div>
-
-          {/* Three-Pillar Optimal Bar */}
-          <div>
-            <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">The Three-Pillar Model (Optimal)</span>
-            <div className="flex h-14 overflow-hidden border border-slate-300">
-              <div className="bg-slate-300 text-slate-800 text-xs font-mono flex items-center justify-center" style={{ width: '25%' }}>
-                Edu (25%)
-              </div>
-              <div className="bg-slate-500 text-white text-xs font-mono flex items-center justify-center" style={{ width: '30%' }}>
-                Process (30%)
-              </div>
-              <div className="bg-slate-800 text-white text-xs font-mono flex items-center justify-center" style={{ width: '45%' }}>
-                Tech (45%)
-              </div>
-            </div>
-            <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest block mt-2 text-right">* First Year Allocation</span>
-          </div>
+          ))}
         </div>
       </div>
     </section>
