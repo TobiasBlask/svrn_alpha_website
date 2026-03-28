@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, Shield, Cpu, Menu, X, CheckCircle, Lock, Server, ChevronDown, Users, BookOpen, Building, ArrowUp } from 'lucide-react';
+import { ArrowRight, Shield, Cpu, Menu, X, CheckCircle, Lock, Server, ChevronDown, Users, BookOpen, Building, ArrowUp, TrendingUp, Layers } from 'lucide-react';
 
 // ─────────────────────────────────────────────
 // NAVBAR
@@ -235,6 +235,183 @@ const InversionSection = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─────────────────────────────────────────────
+// THE AI TRANSFORMATION PARADOX
+// ─────────────────────────────────────────────
+const ParadoxSection = () => {
+  const [activeTab, setActiveTab] = useState<Record<number, 'problem' | 'solution'>>({ 0: 'problem', 1: 'problem', 2: 'problem' });
+
+  const cards = [
+    {
+      icon: <BookOpen className="w-6 h-6" />,
+      title: 'The Tooling Fallacy',
+      problem: 'Treating AI as a plug-and-play software tool for existing two-week sprints. This ignores the new physics of software engineering and results in low adoption.',
+      solution: 'Treat AI as a fundamental architectural shift. Build a tight, deterministic feedback loop where AI agents handle the boilerplate, and humans handle the architecture.',
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: 'Unstructured Workflows',
+      problem: 'Layering AI onto legacy processes creates a \'jet engine on a bicycle\' scenario. If your engineering team is still doing quarterly roadmapping, you are competing against companies operating on daily, compounding autonomous cycles.',
+      solution: 'Redesign workflows around agent capabilities. Move from quarterly planning to continuous, autonomous execution cycles where humans set direction and agents compound results.',
+    },
+    {
+      icon: <Lock className="w-6 h-6" />,
+      title: 'The Scale Trap',
+      problem: 'Believing that brute-force compute is the moat. Scale isn\'t the moat; architecture is. Committing to a single provider sacrifices sovereign control and exposes you to geopolitical risk.',
+      solution: 'Build sovereign, model-agnostic architecture. Route between providers without code changes. Your competitive advantage is architectural — not a vendor relationship.',
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="max-w-3xl mb-16">
+        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-6 block">THE PARADOX</span>
+        <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] text-slate-900 mb-8">
+          The AI Transformation Paradox.
+        </h2>
+        <p className="text-lg text-slate-600 leading-relaxed">
+          Every major investment bank has an AI initiative, yet the industry-wide failure rate hovers around 70%. Why? Because institutions are asking the wrong question. They ask "How do we integrate AI into our product?" instead of "How do we integrate AI agents into our org chart?"
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {cards.map((card, i) => (
+          <div key={i} className="border border-slate-200 p-8 flex flex-col">
+            <div className="w-12 h-12 bg-slate-100 flex items-center justify-center text-slate-600 mb-6">
+              {card.icon}
+            </div>
+            <h3 className="text-xl font-serif text-slate-900 mb-4">{card.title}</h3>
+            <div className="flex gap-0 mb-6">
+              <button
+                onClick={() => setActiveTab(prev => ({ ...prev, [i]: 'problem' }))}
+                className={`px-4 py-2 text-xs font-mono uppercase tracking-wider border transition-colors ${activeTab[i] === 'problem' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300'}`}
+              >
+                Problem
+              </button>
+              <button
+                onClick={() => setActiveTab(prev => ({ ...prev, [i]: 'solution' }))}
+                className={`px-4 py-2 text-xs font-mono uppercase tracking-wider border border-l-0 transition-colors ${activeTab[i] === 'solution' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300'}`}
+              >
+                Solution
+              </button>
+            </div>
+            <p className="text-sm text-slate-600 leading-relaxed flex-1">
+              {activeTab[i] === 'problem' ? card.problem : card.solution}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+// ─────────────────────────────────────────────
+// THREE-PILLAR MODEL
+// ─────────────────────────────────────────────
+const ThreePillarSection = () => {
+  return (
+    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-200">
+      <div className="max-w-3xl mb-16">
+        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-6 block">THE SOLUTION</span>
+        <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] text-slate-900 mb-8">
+          The New Physics of Velocity.
+        </h2>
+        <p className="text-lg text-slate-600 leading-relaxed">
+          The bottleneck is no longer execution — it's strategic velocity. Integrate agentic workflows into your org chart to achieve daily, compounding autonomous cycles.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+        {[
+          {
+            icon: <Users className="w-6 h-6" />,
+            title: 'Agents Handle Boilerplate, Humans Handle Architecture',
+            body: 'Establish a tight, deterministic feedback loop. AI agents handle data extraction, synthesis, and formatting, freeing your team to focus purely on alpha generation and review.',
+          },
+          {
+            icon: <TrendingUp className="w-6 h-6" />,
+            title: 'Compounding Autonomous Cycles',
+            body: 'Quarterly roadmaps and two-week sprints are obsolete. Set a strategic mandate and let the AI Operating System run continuous, autonomous cycles. Review the results, not the process.',
+          },
+          {
+            icon: <Layers className="w-6 h-6" />,
+            title: 'Architecture is the New Moat',
+            body: 'Scale and brute-force compute are no longer competitive advantages. True velocity comes from a sovereign, agent-driven architecture that compounds institutional knowledge daily.',
+          },
+          {
+            icon: <Shield className="w-6 h-6" />,
+            title: 'Ship Your 2027 Roadmap Next Tuesday',
+            body: 'Deployed securely inside your sovereign firewall. No vendor lock-in. Transform your organizational velocity without compromising institutional sovereignty or regulatory compliance.',
+          },
+        ].map((item, i) => (
+          <div key={i} className="flex gap-5">
+            <div className="w-12 h-12 bg-slate-100 flex items-center justify-center text-slate-600 shrink-0">
+              {item.icon}
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Three-Pillar Budget Model */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start pt-16 border-t border-slate-200">
+        <div>
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">PILLAR I : ARCHITECTURAL THINKING</span>
+          <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">The Budget Inversion</h3>
+          <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            Banks typically allocate 90% of their AI transformation budget to technology and 10% to change management. This allocation is precisely backwards. The Three-Pillar Model corrects this inversion to an optimal 25/30/45 split (first year).
+          </p>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-slate-400 mt-0.5 shrink-0" />
+              <p className="text-slate-600">Build strategic fluency: from execution to architecture.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-slate-400 mt-0.5 shrink-0" />
+              <p className="text-slate-600">Transform professionals: humans stop executing boilerplate and start designing deterministic feedback loops.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-8">
+          {/* Industry Standard Bar */}
+          <div>
+            <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">Industry Standard (70% Failure Rate)</span>
+            <div className="flex h-14 overflow-hidden border border-slate-300">
+              <div className="bg-slate-400 text-white text-xs font-mono flex items-center justify-center" style={{ width: '10%' }}>
+                10%
+              </div>
+              <div className="bg-slate-700 text-white text-sm font-mono flex items-center justify-center flex-1">
+                Technology (90%)
+              </div>
+            </div>
+          </div>
+
+          {/* Three-Pillar Optimal Bar */}
+          <div>
+            <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">The Three-Pillar Model (Optimal)</span>
+            <div className="flex h-14 overflow-hidden border border-slate-300">
+              <div className="bg-slate-300 text-slate-800 text-xs font-mono flex items-center justify-center" style={{ width: '25%' }}>
+                Edu (25%)
+              </div>
+              <div className="bg-slate-500 text-white text-xs font-mono flex items-center justify-center" style={{ width: '30%' }}>
+                Process (30%)
+              </div>
+              <div className="bg-slate-800 text-white text-xs font-mono flex items-center justify-center" style={{ width: '45%' }}>
+                Tech (45%)
+              </div>
+            </div>
+            <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest block mt-2 text-right">* First Year Allocation</span>
+          </div>
         </div>
       </div>
     </section>
@@ -991,6 +1168,8 @@ function App() {
       <main>
         <HeroSection />
         <InversionSection />
+        <ParadoxSection />
+        <ThreePillarSection />
         <FrameworkSection />
         <ArchitectureSection />
         <ReferenceCaseSection />
