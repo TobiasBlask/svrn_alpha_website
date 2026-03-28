@@ -92,15 +92,10 @@ const Navbar = () => {
 };
 
 const HeroSection = () => {
-  const { scrollY } = useScroll();
-  const yText = useTransform(scrollY, [0, 500], [0, 100]);
-  const opacityText = useTransform(scrollY, [0, 400], [1, 0]);
-  const yCard = useTransform(scrollY, [0, 500], [0, -50]);
-
   return (
     <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto relative overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <motion.div style={{ y: yText, opacity: opacityText }} className="w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:items-start">
+        <motion.div className="w-full">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -155,11 +150,10 @@ const HeroSection = () => {
         </motion.div>
 
         <motion.div 
-          style={{ y: yCard }}
           initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 1, type: "spring", bounce: 0.3, delay: 0.4 }}
-          className="relative"
+          className="relative lg:mt-[60px]"
         >
           <motion.div
             animate={{ y: [0, -10, 0] }}
@@ -498,89 +492,89 @@ const ArchitectureSection = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 max-w-5xl">
+      <div className="flex flex-col gap-3 max-w-5xl">
         {/* Layer 1: Interfaces */}
-        <div className="rounded-xl p-6 border-l-[3px] transition-transform hover:translate-x-1 bg-[#E6F1FB] border-[#185FA5]">
-          <div className="text-[11px] font-medium tracking-widest uppercase text-[#185FA5] mb-1">Interfaces</div>
-          <div className="text-[15px] font-medium text-slate-900 mb-0.5">Role-based access — you choose the channels</div>
-          <div className="text-xs text-slate-600 mb-3">Each persona sees the agents and outputs relevant to their function</div>
-          <div className="flex flex-wrap gap-1.5">
+        <div className="rounded-xl p-6 md:p-8 border-l-[4px] transition-transform hover:translate-x-1 bg-[#E6F1FB] border-[#185FA5]">
+          <div className="text-xs font-bold tracking-widest uppercase text-[#185FA5] mb-2">Interfaces</div>
+          <div className="text-lg md:text-xl font-semibold text-slate-900 mb-2">Role-based access — you choose the channels</div>
+          <div className="text-sm md:text-base text-slate-700 mb-5">Each persona sees the agents and outputs relevant to their function</div>
+          <div className="flex flex-wrap gap-2">
             {['Desktop agent', 'Mobile dispatch', 'Terminal embed', 'Teams / Slack', 'API / headless'].map(t => (
-              <span key={t} className="text-[11px] px-2.5 py-1 rounded border bg-[#E6F1FB] border-[#B5D4F4] text-[#0C447C]">{t}</span>
+              <span key={t} className="text-xs md:text-sm px-3 py-1.5 rounded border bg-[#E6F1FB] border-[#B5D4F4] text-[#0C447C] font-medium">{t}</span>
             ))}
           </div>
         </div>
 
         {/* Layer 2: Agents */}
-        <div className="rounded-xl p-6 border-l-[3px] transition-transform hover:translate-x-1 bg-[#E1F5EE] border-[#0F6E56]">
-          <div className="text-[11px] font-medium tracking-widest uppercase text-[#0F6E56] mb-1">Agents · Skills · Connectors</div>
-          <div className="text-[15px] font-medium text-slate-900 mb-0.5">As many as your business needs. Not more, not less.</div>
-          <div className="text-xs text-slate-600 mb-3.5">svrnAlphaOS is not a fixed module catalog. It is a platform on which you build, configure, and deploy the agents, skills, and connectors that your specific business model requires.</div>
+        <div className="rounded-xl p-6 md:p-8 border-l-[4px] transition-transform hover:translate-x-1 bg-[#E1F5EE] border-[#0F6E56]">
+          <div className="text-xs font-bold tracking-widest uppercase text-[#0F6E56] mb-2">Agents · Skills · Connectors</div>
+          <div className="text-lg md:text-xl font-semibold text-slate-900 mb-2">As many as your business needs. Not more, not less.</div>
+          <div className="text-sm md:text-base text-slate-700 mb-6">svrnAlphaOS is not a fixed module catalog. It is a platform on which you build, configure, and deploy the agents, skills, and connectors that your specific business model requires.</div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-            <div className="rounded-lg p-3 border bg-[#E1F5EE] border-[#9FE1CB]">
-              <div className="text-[11px] font-medium mb-1 text-[#0F6E56]">Agents</div>
-              <div className="text-[11px] leading-relaxed opacity-80 text-[#085041]">Autonomous units that execute multi-step workflows end-to-end. Own tools, memory, permissions scope.</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="rounded-lg p-4 md:p-5 border bg-[#E1F5EE] border-[#9FE1CB]">
+              <div className="text-sm md:text-base font-bold mb-2 text-[#0F6E56]">Agents</div>
+              <div className="text-sm leading-relaxed opacity-90 text-[#085041]">Autonomous units that execute multi-step workflows end-to-end. Own tools, memory, permissions scope.</div>
             </div>
-            <div className="rounded-lg p-3 border bg-[#E1F5EE] border-[#9FE1CB]">
-              <div className="text-[11px] font-medium mb-1 text-[#0F6E56]">Skills</div>
-              <div className="text-[11px] leading-relaxed opacity-80 text-[#085041]">Reusable capabilities agents draw on. Templates, validation, output formats, domain knowledge. Composable.</div>
+            <div className="rounded-lg p-4 md:p-5 border bg-[#E1F5EE] border-[#9FE1CB]">
+              <div className="text-sm md:text-base font-bold mb-2 text-[#0F6E56]">Skills</div>
+              <div className="text-sm leading-relaxed opacity-90 text-[#085041]">Reusable capabilities agents draw on. Templates, validation, output formats, domain knowledge. Composable.</div>
             </div>
-            <div className="rounded-lg p-3 border bg-[#E1F5EE] border-[#9FE1CB]">
-              <div className="text-[11px] font-medium mb-1 text-[#0F6E56]">Connectors</div>
-              <div className="text-[11px] leading-relaxed opacity-80 text-[#085041]">MCP adapters to any system. New data source? New connector. Not a platform rewrite.</div>
+            <div className="rounded-lg p-4 md:p-5 border bg-[#E1F5EE] border-[#9FE1CB]">
+              <div className="text-sm md:text-base font-bold mb-2 text-[#0F6E56]">Connectors</div>
+              <div className="text-sm leading-relaxed opacity-90 text-[#085041]">MCP adapters to any system. New data source? New connector. Not a platform rewrite.</div>
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 mt-4 mb-1.5">Examples — what clients have built</div>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="text-xs font-bold tracking-wider uppercase text-[#0F6E56] mt-8 mb-3 opacity-80">Examples — what clients have built</div>
+          <div className="flex flex-wrap gap-2">
             {['Financial modeling', 'Research production', 'Due diligence', 'Screening & signals', 'Portfolio construction', 'Risk monitoring', 'Client reporting', 'RFP & sales', 'CRM intelligence', 'MAR & insider', 'AML screening', 'ESG & SFDR', 'Performance attribution', 'Reg. reporting', '…'].map(t => (
-              <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-slate-200 text-slate-500 bg-white opacity-75">{t}</span>
+              <span key={t} className="text-xs px-2.5 py-1 rounded border border-[#9FE1CB] text-[#085041] bg-white/50 font-medium">{t}</span>
             ))}
           </div>
         </div>
 
         {/* Layer 3: Platform core */}
-        <div className="rounded-xl p-6 border-l-[3px] transition-transform hover:translate-x-1 bg-[#FAECE7] border-[#D85A30]">
-          <div className="text-[11px] font-medium tracking-widest uppercase text-[#993C1D] mb-1">Platform core</div>
-          <div className="text-[15px] font-medium text-slate-900 mb-0.5">Orchestration, governance, audit</div>
-          <div className="text-xs text-slate-600 mb-3">The non-negotiable layer — same for every client, every agent, every skill</div>
-          <div className="flex flex-wrap gap-1.5">
+        <div className="rounded-xl p-6 md:p-8 border-l-[4px] transition-transform hover:translate-x-1 bg-[#FAECE7] border-[#D85A30]">
+          <div className="text-xs font-bold tracking-widest uppercase text-[#993C1D] mb-2">Platform core</div>
+          <div className="text-lg md:text-xl font-semibold text-slate-900 mb-2">Orchestration, governance, audit</div>
+          <div className="text-sm md:text-base text-slate-700 mb-5">The non-negotiable layer — same for every client, every agent, every skill</div>
+          <div className="flex flex-wrap gap-2">
             {['Multi-agent routing', 'Compliance gate', 'Human-in-the-loop', 'Full-provenance audit', 'Scoped memory', 'Role-based permissions'].map(t => (
-              <span key={t} className="text-[11px] px-2.5 py-1 rounded border bg-[#FAECE7] border-[#F5C4B3] text-[#712B13]">{t}</span>
+              <span key={t} className="text-xs md:text-sm px-3 py-1.5 rounded border bg-[#FAECE7] border-[#F5C4B3] text-[#712B13] font-medium">{t}</span>
             ))}
           </div>
         </div>
 
         {/* Layer 4: Sovereignty layer */}
-        <div className="rounded-xl p-6 border-l-[3px] transition-transform hover:translate-x-1 bg-[#FAEEDA] border-[#BA7517]">
-          <div className="text-[11px] font-medium tracking-widest uppercase text-[#854F0B] mb-1">Sovereignty layer</div>
-          <div className="text-[15px] font-medium text-slate-900 mb-0.5">You decide. About everything. At any time. Reversibly.</div>
-          <div className="text-xs text-slate-600 mb-3.5">No single-vendor lock-in. No single-jurisdiction dependency. No single point of failure.</div>
+        <div className="rounded-xl p-6 md:p-8 border-l-[4px] transition-transform hover:translate-x-1 bg-[#FAEEDA] border-[#BA7517]">
+          <div className="text-xs font-bold tracking-widest uppercase text-[#854F0B] mb-2">Sovereignty layer</div>
+          <div className="text-lg md:text-xl font-semibold text-slate-900 mb-2">You decide. About everything. At any time. Reversibly.</div>
+          <div className="text-sm md:text-base text-slate-700 mb-6">No single-vendor lock-in. No single-jurisdiction dependency. No single point of failure.</div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-            <div className="rounded-lg p-3 border bg-[#FAEEDA] border-[#FAC775]">
-              <div className="text-[11px] font-medium mb-1 text-[#854F0B]">Model routing</div>
-              <div className="text-[11px] leading-relaxed opacity-80 text-[#633806]">Run any model. Switch providers without code changes. Automatic fallback if one goes down.</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="rounded-lg p-4 md:p-5 border bg-[#FAEEDA] border-[#FAC775]">
+              <div className="text-sm md:text-base font-bold mb-2 text-[#854F0B]">Model routing</div>
+              <div className="text-sm leading-relaxed opacity-90 text-[#633806]">Run any model. Switch providers without code changes. Automatic fallback if one goes down.</div>
             </div>
-            <div className="rounded-lg p-3 border bg-[#FAEEDA] border-[#FAC775]">
-              <div className="text-[11px] font-medium mb-1 text-[#854F0B]">Deployment choice</div>
-              <div className="text-[11px] leading-relaxed opacity-80 text-[#633806]">Your data center. Any cloud. Hybrid. Move between them. Your call, your timeline.</div>
+            <div className="rounded-lg p-4 md:p-5 border bg-[#FAEEDA] border-[#FAC775]">
+              <div className="text-sm md:text-base font-bold mb-2 text-[#854F0B]">Deployment choice</div>
+              <div className="text-sm leading-relaxed opacity-90 text-[#633806]">Your data center. Any cloud. Hybrid. Move between them. Your call, your timeline.</div>
             </div>
-            <div className="rounded-lg p-3 border bg-[#FAEEDA] border-[#FAC775]">
-              <div className="text-[11px] font-medium mb-1 text-[#854F0B]">Data residency</div>
-              <div className="text-[11px] leading-relaxed opacity-80 text-[#633806]">Choose where every byte lives. Change it when circumstances change. A config change, not a migration.</div>
+            <div className="rounded-lg p-4 md:p-5 border bg-[#FAEEDA] border-[#FAC775]">
+              <div className="text-sm md:text-base font-bold mb-2 text-[#854F0B]">Data residency</div>
+              <div className="text-sm leading-relaxed opacity-90 text-[#633806]">Choose where every byte lives. Change it when circumstances change. A config change, not a migration.</div>
             </div>
           </div>
         </div>
 
         {/* Layer 5: Client ecosystem */}
-        <div className="rounded-xl p-6 border-l-[3px] border-dashed transition-transform hover:translate-x-1 bg-[#F5F4F0] border-[#D4D3CD]">
-          <div className="text-[11px] font-medium tracking-widest uppercase text-slate-500 mb-1">Client ecosystem — we connect, not replace</div>
-          <div className="text-xs text-slate-600 mb-3">Your existing infrastructure remains exactly where it is</div>
-          <div className="flex flex-wrap gap-1.5">
+        <div className="rounded-xl p-6 md:p-8 border-l-[4px] border-dashed transition-transform hover:translate-x-1 bg-[#F5F4F0] border-[#D4D3CD]">
+          <div className="text-xs font-bold tracking-widest uppercase text-slate-500 mb-2">Client ecosystem — we connect, not replace</div>
+          <div className="text-sm md:text-base text-slate-700 mb-5">Your existing infrastructure remains exactly where it is</div>
+          <div className="flex flex-wrap gap-2">
             {['Market data', 'PMS / OMS', 'CRM', 'DMS', 'ERP', 'Regulatory feeds', '…'].map(t => (
-              <span key={t} className="text-[11px] px-2.5 py-1 rounded border bg-[#F5F4F0] border-slate-200 text-slate-500">{t}</span>
+              <span key={t} className="text-xs md:text-sm px-3 py-1.5 rounded border bg-[#F5F4F0] border-slate-300 text-slate-600 font-medium">{t}</span>
             ))}
           </div>
         </div>
@@ -594,101 +588,101 @@ const ArchitectureSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Config 1 */}
-        <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-300 transition-colors">
-          <div className="text-sm font-medium mb-1 text-slate-900">Sell-side boutique</div>
-          <div className="text-[11px] text-slate-500 mb-4 font-mono">Research + origination</div>
+        <div className="bg-white border border-slate-200 rounded-xl p-6 md:p-8 hover:border-slate-300 transition-colors">
+          <div className="text-base md:text-lg font-semibold mb-1 text-slate-900">Sell-side boutique</div>
+          <div className="text-xs md:text-sm text-slate-500 mb-6 font-mono">Research + origination</div>
           <ul className="space-y-0">
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0F6E56] shrink-0"></span> Research production
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#0F6E56] shrink-0"></span> Research production
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0F6E56] shrink-0"></span> Financial modeling
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#0F6E56] shrink-0"></span> Financial modeling
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0F6E56] shrink-0"></span> Screening & signals
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#0F6E56] shrink-0"></span> Screening & signals
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#993C1D] shrink-0"></span> MAR & insider
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#993C1D] shrink-0"></span> MAR & insider
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span> Doc production
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-slate-400 shrink-0"></span> Doc production
             </li>
           </ul>
-          <div className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">+ custom skills for their workflow</div>
+          <div className="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-100">+ custom skills for their workflow</div>
         </div>
 
         {/* Config 2 */}
-        <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-300 transition-colors">
-          <div className="text-sm font-medium mb-1 text-slate-900">Asset manager</div>
-          <div className="text-[11px] text-slate-500 mb-4 font-mono">Portfolio + distribution</div>
+        <div className="bg-white border border-slate-200 rounded-xl p-6 md:p-8 hover:border-slate-300 transition-colors">
+          <div className="text-base md:text-lg font-semibold mb-1 text-slate-900">Asset manager</div>
+          <div className="text-xs md:text-sm text-slate-500 mb-6 font-mono">Portfolio + distribution</div>
           <ul className="space-y-0">
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> Portfolio construction
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#534AB7] shrink-0"></span> Portfolio construction
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> Risk monitoring
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#534AB7] shrink-0"></span> Risk monitoring
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> Client reporting
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#993556] shrink-0"></span> Client reporting
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> RFP & sales
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#993556] shrink-0"></span> RFP & sales
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#993C1D] shrink-0"></span> ESG & SFDR
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#993C1D] shrink-0"></span> ESG & SFDR
             </li>
           </ul>
-          <div className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">+ custom skills for their workflow</div>
+          <div className="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-100">+ custom skills for their workflow</div>
         </div>
 
         {/* Config 3 */}
-        <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-300 transition-colors">
-          <div className="text-sm font-medium mb-1 text-slate-900">Family office</div>
-          <div className="text-[11px] text-slate-500 mb-4 font-mono">Lean team, broad scope</div>
+        <div className="bg-white border border-slate-200 rounded-xl p-6 md:p-8 hover:border-slate-300 transition-colors">
+          <div className="text-base md:text-lg font-semibold mb-1 text-slate-900">Family office</div>
+          <div className="text-xs md:text-sm text-slate-500 mb-6 font-mono">Lean team, broad scope</div>
           <ul className="space-y-0">
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> Portfolio construction
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#534AB7] shrink-0"></span> Portfolio construction
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> Risk monitoring
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#534AB7] shrink-0"></span> Risk monitoring
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> Client reporting
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#993556] shrink-0"></span> Client reporting
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> CRM intelligence
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#993556] shrink-0"></span> CRM intelligence
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span> Data extraction
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-slate-400 shrink-0"></span> Data extraction
             </li>
           </ul>
-          <div className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">+ custom skills for their workflow</div>
+          <div className="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-100">+ custom skills for their workflow</div>
         </div>
 
         {/* Config 4 */}
-        <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-300 transition-colors">
-          <div className="text-sm font-medium mb-1 text-slate-900">Full-service bank</div>
-          <div className="text-[11px] text-slate-500 mb-4 font-mono">Full stack + custom</div>
+        <div className="bg-white border border-slate-200 rounded-xl p-6 md:p-8 hover:border-slate-300 transition-colors">
+          <div className="text-base md:text-lg font-semibold mb-1 text-slate-900">Full-service bank</div>
+          <div className="text-xs md:text-sm text-slate-500 mb-6 font-mono">Full stack + custom</div>
           <ul className="space-y-0">
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0F6E56] shrink-0"></span> All research agents
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#0F6E56] shrink-0"></span> All research agents
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#534AB7] shrink-0"></span> All portfolio agents
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#534AB7] shrink-0"></span> All portfolio agents
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#993556] shrink-0"></span> All client agents
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#993556] shrink-0"></span> All client agents
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#993C1D] shrink-0"></span> All compliance agents
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#993C1D] shrink-0"></span> All compliance agents
             </li>
-            <li className="text-xs py-1.5 border-t border-slate-100 text-slate-600 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#185FA5] shrink-0"></span> Custom agent development
+            <li className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#185FA5] shrink-0"></span> Custom agent development
             </li>
           </ul>
-          <div className="text-[11px] text-slate-500 mt-2 pt-2 border-t border-slate-100">+ dedicated engineering support</div>
+          <div className="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-100">+ dedicated engineering support</div>
         </div>
       </div>
 
@@ -728,15 +722,22 @@ const ReferenceCaseSection = () => {
                 By implementing our proprietary 3-stage model, they have successfully transitioned from manual execution to autonomous cycles. The results prove the power of this architecture in practice—it works extremely well.
               </p>
               
-              <div className="bg-slate-50 border border-slate-100 p-6">
-                <h4 className="font-mono text-sm font-semibold text-slate-900 mb-4 uppercase">Validated Results</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> 78% Reduction in Boilerplate Execution</li>
-                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> 100% Sovereign Architecture</li>
-                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Measurable Alpha Generation</li>
-                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Zero Vendor Lock-in</li>
-                  <li className="flex items-center gap-3 text-sm text-slate-700"><CheckCircle className="w-4 h-4 text-green-600" /> Full EU Compliance (AI Act, GDPR)</li>
-                </ul>
+              <div className="bg-white border border-slate-200 p-6 shadow-sm">
+                <h4 className="font-mono text-[10px] font-bold text-slate-500 mb-4 uppercase tracking-widest border-b border-slate-100 pb-3">Validated Results</h4>
+                <div className="space-y-0">
+                  {[
+                    { value: '78%', label: 'Reduction in Boilerplate Execution' },
+                    { value: '100%', label: 'Sovereign Architecture' },
+                    { value: 'Measurable', label: 'Alpha Generation' },
+                    { value: 'Zero', label: 'Vendor Lock-in' },
+                    { value: 'Full', label: 'EU Compliance (AI Act, GDPR)' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-4 py-3 border-b border-slate-50 last:border-0 last:pb-0 first:pt-0">
+                      <div className="w-24 shrink-0 font-serif text-lg text-slate-900 tracking-tight">{item.value}</div>
+                      <div className="text-xs font-medium text-slate-600 leading-snug">{item.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             
@@ -873,7 +874,7 @@ const FounderSection = () => {
         <div className="lg:col-span-5 relative">
           <div className="aspect-[4/5] bg-slate-100 relative overflow-hidden">
             <img 
-              src="https://raw.githubusercontent.com/TobiasBlask/svrn_alpha_website/main/2026-01-28_10-18-59.jpg" 
+              src="https://github.com/TobiasBlask/svrn_alpha_website/blob/main/2026-01-28_10-18-59.jpg?raw=true" 
               alt="Prof. Dr. Tobias Blask" 
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               referrerPolicy="no-referrer"
