@@ -141,25 +141,61 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-slate-900 transform translate-x-3 translate-y-3 -z-10"></div>
             <div className="bg-white border border-slate-200 p-8 sm:p-10 shadow-2xl relative overflow-hidden">
               <div className="flex items-center justify-between border-b border-slate-200 pb-5 mb-8 relative z-10">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></div>
-                  <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest">Validated Results</span>
-                </div>
-                <span className="font-mono text-[10px] font-bold text-slate-700 bg-slate-100 border border-slate-300 px-2 py-1 uppercase tracking-wider">Production Ready</span>
+                <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest">The Inversion</span>
+                <span className="font-mono text-[10px] font-bold text-slate-700 bg-slate-100 border border-slate-300 px-2 py-1 tracking-wider">svrnAlphaOS</span>
               </div>
-              <div className="space-y-0 relative z-10">
-                {[
-                  { value: '78%', label: 'Reduction in Boilerplate Execution' },
-                  { value: '100%', label: 'Sovereign Architecture' },
-                  { value: 'Measurable', label: 'Outcome Improvement' },
-                  { value: 'Zero', label: 'Vendor Lock-in' },
-                  { value: 'Full', label: 'EU Compliance (AI Act, GDPR)' },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 py-4 border-b border-slate-100 last:border-0 last:pb-0 first:pt-0">
-                    <div className="w-32 shrink-0 font-serif text-xl sm:text-2xl text-slate-900 tracking-tight">{item.value}</div>
-                    <div className="text-sm font-medium text-slate-600 leading-snug">{item.label}</div>
+
+              <div className="space-y-8 relative z-10">
+                {/* Legacy Model */}
+                <div>
+                  <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest block mb-3">Legacy</span>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 bg-slate-100 border border-slate-200 px-4 py-3 text-center">
+                      <span className="font-mono text-xs text-slate-500 block mb-0.5">Human</span>
+                      <span className="text-sm font-semibold text-slate-700">executes</span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-slate-300 shrink-0" />
+                    <div className="flex-1 bg-slate-100 border border-slate-200 px-4 py-3 text-center">
+                      <span className="font-mono text-xs text-slate-500 block mb-0.5">Software</span>
+                      <span className="text-sm font-semibold text-slate-700">captures</span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-slate-300 shrink-0" />
+                    <div className="flex-1 bg-slate-100 border border-slate-200 px-4 py-3 text-center">
+                      <span className="font-mono text-xs text-slate-400 block mb-0.5">Output</span>
+                      <span className="text-sm text-slate-500">recorded</span>
+                    </div>
                   </div>
-                ))}
+                </div>
+
+                {/* Inversion Arrow */}
+                <div className="flex items-center justify-center gap-3">
+                  <div className="flex-1 h-px bg-slate-200"></div>
+                  <div className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center">
+                    <ChevronDown className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1 h-px bg-slate-200"></div>
+                </div>
+
+                {/* svrnAlphaOS Model */}
+                <div>
+                  <span className="font-mono text-[10px] text-slate-900 tracking-widest block mb-3 font-bold">svrnAlphaOS</span>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 bg-slate-900 border border-slate-900 px-4 py-3 text-center">
+                      <span className="font-mono text-xs text-slate-400 block mb-0.5">Agent</span>
+                      <span className="text-sm font-semibold text-white">executes</span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-slate-900 shrink-0" />
+                    <div className="flex-1 bg-white border-2 border-slate-900 px-4 py-3 text-center">
+                      <span className="font-mono text-xs text-slate-500 block mb-0.5">Human</span>
+                      <span className="text-sm font-semibold text-slate-900">judges</span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-slate-900 shrink-0" />
+                    <div className="flex-1 bg-slate-900 border border-slate-900 px-4 py-3 text-center">
+                      <span className="font-mono text-xs text-slate-400 block mb-0.5">Outcome</span>
+                      <span className="text-sm font-semibold text-white">delivered</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -170,14 +206,38 @@ const HeroSection = () => {
 };
 
 // ─────────────────────────────────────────────
-// INVERSION — THE THESIS
+// WHY — THE PROBLEM (merged Thesis + Paradox)
 // ─────────────────────────────────────────────
-const InversionSection = () => {
+const ProblemSection = () => {
+  const [activeTab, setActiveTab] = useState<Record<number, 'problem' | 'solution'>>({ 0: 'problem', 1: 'problem', 2: 'problem' });
+
+  const cards = [
+    {
+      icon: <BookOpen className="w-6 h-6" />,
+      title: 'The Tooling Fallacy',
+      problem: 'Institutions bolt AI copilots onto Bloomberg, add chatbots to their CRM, embed LLMs into existing compliance workflows. They treat AI as a feature upgrade for existing software. The result: marginal efficiency gains that never justify the investment.',
+      solution: 'The operating system replaces the patchwork. Agents don\'t assist your tools — they execute the workflows those tools were built for. Research production, client reporting, regulatory filing: end-to-end, not feature-by-feature.',
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: 'Unstructured Workflows',
+      problem: 'Layering AI onto legacy processes creates a \'jet engine on a bicycle\' scenario. If your research team still produces reports on a monthly cycle, your compliance team still files quarterly, and your client team still assembles RFPs manually — you\'re competing against firms running daily, compounding autonomous cycles.',
+      solution: 'Redesign workflows around agent capabilities. Move from monthly reporting to continuous production. From quarterly compliance to real-time monitoring. From manual RFPs to autonomous assembly. Humans set direction, agents compound results.',
+    },
+    {
+      icon: <Lock className="w-6 h-6" />,
+      title: 'The Scale Trap',
+      problem: 'Committing your institutional infrastructure to a single AI provider — whether OpenAI, Google, or Anthropic — sacrifices sovereign control. When regulation shifts, when a provider changes pricing, when geopolitics restricts data flows: you are locked in.',
+      solution: 'Build sovereign, model-agnostic architecture. Route between providers without code changes. Your data stays in your jurisdiction. Your competitive advantage is architectural — not a vendor relationship.',
+    },
+  ];
+
   return (
     <section className="py-24 bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="max-w-4xl mb-20">
-          <span className="font-mono text-xs text-slate-400 uppercase tracking-wider mb-6 block">THE THESIS</span>
+        {/* Thesis */}
+        <div className="max-w-4xl mb-16">
+          <span className="font-mono text-xs text-slate-400 uppercase tracking-wider mb-6 block">WHY</span>
           <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] mb-8">
             Institutional finance software is dead.
           </h2>
@@ -189,13 +249,18 @@ const InversionSection = () => {
           </p>
         </div>
 
-        <div className="border-t border-slate-700 pt-16 mb-16">
-          <p className="text-2xl md:text-3xl font-serif text-slate-200 leading-snug max-w-3xl italic">
-            "Your team's expertise is your edge — not the hours they spend formatting reports and cross-referencing data. svrnAlphaOS gives that time back."
-          </p>
+        {/* The Paradox — integrated as evidence */}
+        <div className="border-t border-slate-700 pt-12 mb-16">
+          <div className="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 mb-4">
+            <span className="font-serif text-5xl md:text-6xl text-white font-bold">70%</span>
+            <p className="text-lg text-slate-300 leading-relaxed max-w-2xl">
+              of institutional AI initiatives fail. Not because of the technology — because institutions ask the wrong question. They ask "How do we integrate AI into our product?" instead of "How do we integrate AI agents into our org chart?"
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-700">
+        {/* Before / After cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-700 mb-16">
           {[
             {
               icon: <Users className="w-5 h-5" />,
@@ -236,76 +301,35 @@ const InversionSection = () => {
             </div>
           ))}
         </div>
-      </div>
-    </section>
-  );
-};
 
-// ─────────────────────────────────────────────
-// THE AI TRANSFORMATION PARADOX
-// ─────────────────────────────────────────────
-const ParadoxSection = () => {
-  const [activeTab, setActiveTab] = useState<Record<number, 'problem' | 'solution'>>({ 0: 'problem', 1: 'problem', 2: 'problem' });
-
-  const cards = [
-    {
-      icon: <BookOpen className="w-6 h-6" />,
-      title: 'The Tooling Fallacy',
-      problem: 'Institutions bolt AI copilots onto Bloomberg, add chatbots to their CRM, embed LLMs into existing compliance workflows. They treat AI as a feature upgrade for existing software. The result: marginal efficiency gains that never justify the investment.',
-      solution: 'The operating system replaces the patchwork. Agents don\'t assist your tools — they execute the workflows those tools were built for. Research production, client reporting, regulatory filing: end-to-end, not feature-by-feature.',
-    },
-    {
-      icon: <TrendingUp className="w-6 h-6" />,
-      title: 'Unstructured Workflows',
-      problem: 'Layering AI onto legacy processes creates a \'jet engine on a bicycle\' scenario. If your research team still produces reports on a monthly cycle, your compliance team still files quarterly, and your client team still assembles RFPs manually — you\'re competing against firms running daily, compounding autonomous cycles.',
-      solution: 'Redesign workflows around agent capabilities. Move from monthly reporting to continuous production. From quarterly compliance to real-time monitoring. From manual RFPs to autonomous assembly. Humans set direction, agents compound results.',
-    },
-    {
-      icon: <Lock className="w-6 h-6" />,
-      title: 'The Scale Trap',
-      problem: 'Committing your institutional infrastructure to a single AI provider — whether OpenAI, Google, or Anthropic — sacrifices sovereign control. When regulation shifts, when a provider changes pricing, when geopolitics restricts data flows: you are locked in.',
-      solution: 'Build sovereign, model-agnostic architecture. Route between providers without code changes. Your data stays in your jurisdiction. Your competitive advantage is architectural — not a vendor relationship.',
-    },
-  ];
-
-  return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="max-w-3xl mb-16">
-        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-6 block">THE PARADOX</span>
-        <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] text-slate-900 mb-8">
-          The AI Transformation Paradox.
-        </h2>
-        <p className="text-lg text-slate-600 leading-relaxed">
-          Every major investment bank has an AI initiative, yet the industry-wide failure rate hovers around 70%. Why? Because institutions are asking the wrong question. They ask "How do we integrate AI into our product?" instead of "How do we integrate AI agents into our org chart?"
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {cards.map((card, i) => (
-          <div key={i} className="border border-slate-200 p-8 flex flex-col">
-            <div className="w-12 h-12 bg-slate-100 flex items-center justify-center text-slate-600 mb-6">
-              {card.icon}
+        {/* Three problem cards — on dark background */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {cards.map((card, i) => (
+            <div key={i} className="border border-slate-700 bg-slate-800/50 p-8 flex flex-col">
+              <div className="w-12 h-12 bg-slate-800 flex items-center justify-center text-slate-400 mb-6">
+                {card.icon}
+              </div>
+              <h3 className="text-xl font-serif text-white mb-4">{card.title}</h3>
+              <div className="flex gap-0 mb-6">
+                <button
+                  onClick={() => setActiveTab(prev => ({ ...prev, [i]: 'problem' }))}
+                  className={`px-4 py-2 text-xs font-mono uppercase tracking-wider border transition-colors ${activeTab[i] === 'problem' ? 'bg-white text-slate-900 border-white' : 'bg-transparent text-slate-400 border-slate-600 hover:border-slate-500'}`}
+                >
+                  Problem
+                </button>
+                <button
+                  onClick={() => setActiveTab(prev => ({ ...prev, [i]: 'solution' }))}
+                  className={`px-4 py-2 text-xs font-mono uppercase tracking-wider border border-l-0 transition-colors ${activeTab[i] === 'solution' ? 'bg-white text-slate-900 border-white' : 'bg-transparent text-slate-400 border-slate-600 hover:border-slate-500'}`}
+                >
+                  Solution
+                </button>
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed flex-1">
+                {activeTab[i] === 'problem' ? card.problem : card.solution}
+              </p>
             </div>
-            <h3 className="text-xl font-serif text-slate-900 mb-4">{card.title}</h3>
-            <div className="flex gap-0 mb-6">
-              <button
-                onClick={() => setActiveTab(prev => ({ ...prev, [i]: 'problem' }))}
-                className={`px-4 py-2 text-xs font-mono uppercase tracking-wider border transition-colors ${activeTab[i] === 'problem' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300'}`}
-              >
-                Problem
-              </button>
-              <button
-                onClick={() => setActiveTab(prev => ({ ...prev, [i]: 'solution' }))}
-                className={`px-4 py-2 text-xs font-mono uppercase tracking-wider border border-l-0 transition-colors ${activeTab[i] === 'solution' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300'}`}
-              >
-                Solution
-              </button>
-            </div>
-            <p className="text-sm text-slate-600 leading-relaxed flex-1">
-              {activeTab[i] === 'problem' ? card.problem : card.solution}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -318,7 +342,7 @@ const ThreePillarSection = () => {
   return (
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-200">
       <div className="max-w-3xl mb-16">
-        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-6 block">THE SOLUTION</span>
+        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-6 block">OUR APPROACH</span>
         <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] text-slate-900 mb-8">
           The New Physics of Velocity.
         </h2>
@@ -506,7 +530,7 @@ const FrameworkSection = () => {
   return (
     <section id="framework" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="max-w-3xl mb-16">
-        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE FRAMEWORK</span>
+        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE PRODUCT</span>
         <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Context. Rules. Agents. Outcomes.</h2>
         <p className="text-lg text-slate-600 leading-relaxed">
           Four layers. Every deployment across every client type runs on this architecture. The platform core and sovereignty layer are identical for all. Everything else is configured to your institution.
@@ -790,20 +814,26 @@ const ReferenceCaseSection = () => {
               </p>
 
               <div className="bg-white border border-slate-200 p-6 shadow-sm">
-                <h4 className="font-mono text-[10px] font-bold text-slate-500 mb-4 uppercase tracking-widest border-b border-slate-100 pb-3">Validated Results</h4>
+                <h4 className="font-mono text-[10px] font-bold text-slate-500 mb-4 uppercase tracking-widest border-b border-slate-100 pb-3">Measured</h4>
                 <div className="space-y-0">
                   {[
                     { value: '78%', label: 'Reduction in Boilerplate Execution' },
-                    { value: '100%', label: 'Sovereign Architecture' },
-                    { value: 'Measurable', label: 'Outcome Improvement' },
-                    { value: 'Zero', label: 'Vendor Lock-in' },
-                    { value: 'Full', label: 'EU Compliance (AI Act, GDPR)' },
+                    { value: '24/7', label: 'Autonomous Agent Cycles' },
+                    { value: '<4 wks', label: 'To First Productive Agent' },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 py-3 border-b border-slate-50 last:border-0 last:pb-0 first:pt-0">
                       <div className="w-24 shrink-0 font-serif text-lg text-slate-900 tracking-tight">{item.value}</div>
                       <div className="text-xs font-medium text-slate-600 leading-snug">{item.label}</div>
                     </div>
                   ))}
+                </div>
+                <div className="mt-4 pt-4 border-t border-slate-100">
+                  <h4 className="font-mono text-[10px] font-bold text-slate-500 mb-3 uppercase tracking-widest">By Design</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['Sovereign architecture', 'Zero vendor lock-in', 'EU AI Act compliant'].map(tag => (
+                      <span key={tag} className="text-xs px-2.5 py-1 border border-slate-200 text-slate-600 font-medium">{tag}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -1197,8 +1227,7 @@ function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <InversionSection />
-        <ParadoxSection />
+        <ProblemSection />
         <ThreePillarSection />
         <FrameworkSection />
         <ArchitectureSection />
