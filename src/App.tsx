@@ -817,9 +817,9 @@ const ReferenceCaseSection = () => {
                 <h4 className="font-mono text-[10px] font-bold text-slate-500 mb-4 uppercase tracking-widest border-b border-slate-100 pb-3">Measured</h4>
                 <div className="space-y-0">
                   {[
-                    { value: '78%', label: 'Reduction in Boilerplate Execution' },
+                    { value: '~80%', label: 'Reduction in Boilerplate Execution' },
                     { value: '24/7', label: 'Autonomous Agent Cycles' },
-                    { value: '<4 wks', label: 'To First Productive Agent' },
+                    { value: 'Days', label: 'From First Idea to Productive Agent' },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 py-3 border-b border-slate-50 last:border-0 last:pb-0 first:pt-0">
                       <div className="w-24 shrink-0 font-serif text-lg text-slate-900 tracking-tight">{item.value}</div>
