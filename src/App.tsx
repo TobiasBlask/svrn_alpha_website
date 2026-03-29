@@ -618,7 +618,7 @@ const ArchitectureSection = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-3 max-w-5xl">
+      <div className="flex flex-col gap-3">
         {/* Layer 1: Interfaces */}
         <div className="rounded-xl p-6 md:p-8 border-l-[4px] transition-transform hover:translate-x-1 bg-[#E6F1FB] border-[#185FA5]">
           <div className="text-xs font-bold tracking-widest uppercase text-[#185FA5] mb-2">Channels</div>
