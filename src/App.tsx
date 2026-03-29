@@ -807,7 +807,7 @@ const ReferenceCaseSection = () => {
                 referrerPolicy="no-referrer"
               />
               <p className="text-lg text-slate-600 leading-relaxed mb-4">
-                The svrnAlphaOS framework was developed and validated in close collaboration with <a href="https://www.mp-capitalmarkets.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline decoration-blue-200 hover:decoration-blue-600 underline-offset-4 transition-colors font-medium">MP Capital Markets</a> — our central first client and founding investor.
+                The svrnAlphaOS framework was developed and validated in close collaboration with <a href="https://www.mp-capitalmarkets.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline decoration-blue-200 hover:decoration-blue-600 underline-offset-4 transition-colors font-medium">MP Capital Markets</a>.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
                 By deploying the Context → Rules → Agents → Outcomes framework across their research and client workflows, they have successfully transitioned from manual execution to autonomous cycles — with measurable results.
