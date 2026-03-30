@@ -16,8 +16,7 @@ const Navbar = () => {
   }, []);
 
   const links = [
-    { href: '#framework', label: 'Platform' },
-    { href: '#architecture', label: 'Architecture' },
+    { href: '#architecture', label: 'The Kernel' },
     { href: '#in-practice', label: 'In Practice' },
     { href: '#references', label: 'References' },
     { href: '#academic', label: 'Foundation' },
@@ -473,309 +472,256 @@ const ThreePillarSection = () => {
 };
 
 // ─────────────────────────────────────────────
-// FRAMEWORK — CONTEXT → RULES → AGENTS → OUTCOMES
+// THE KERNEL — Architecture + Product + In Practice (merged)
 // ─────────────────────────────────────────────
-const FrameworkSection = () => {
-  const steps = [
-    {
-      id: '01',
-      label: 'Context',
-      title: 'The system holds everything your institution knows.',
-      body: 'Investment theses. Portfolio positions. Client relationships. Compliance frameworks. Historical decisions. Styleguides. Approval chains. Every piece of institutional knowledge the agents need to act — without asking.',
-      callout: 'When a senior analyst leaves, their judgment used to leave with them. With svrnAlphaOS, their knowledge becomes a skill. It stays. It compounds.',
-      color: '#185FA5',
-      bg: '#E6F1FB',
-      border: '#B5D4F4',
-      textDark: '#0C447C',
-      examples: ['Investment theses', 'Portfolio data', 'Client history', 'Compliance rules', 'Templates & styleguides', 'Approval chains'],
-    },
-    {
-      id: '02',
-      label: 'Rules',
-      title: 'Governance that enables autonomy. Not restricts it.',
-      body: 'Compliance requirements, risk limits, MAR obligations, SFDR rules, HITL triggers — all encoded into the platform core. Agents know what they can do, what requires escalation, and what is never permitted. Rules are architecture, not a feature toggle.',
-      callout: 'The governance engine decides when your team needs to be in the loop. Not you. Not the agent. The rules.',
-      color: '#D85A30',
-      bg: '#FAECE7',
-      border: '#F5C4B3',
-      textDark: '#712B13',
-      examples: ['EU AI Act (High-Risk)', 'MiFID II', 'MAR & insider', 'SFDR / ESG mandates', 'Risk limits', 'Custom approval chains'],
-    },
-    {
-      id: '03',
-      label: 'Agents',
-      title: 'Autonomous execution. Proactive. Self-extending.',
-      body: 'Agents run 24/7 — not when prompted. They monitor, prepare, produce, and escalate. They discover and use skills autonomously. When they need a capability they don\'t have, they build it. They get better the longer they work with your institution.',
-      callout: 'If a human must review every step, you have built a very expensive autocomplete. Autonomy is the default. Escalation is the exception.',
-      color: '#0F6E56',
-      bg: '#E1F5EE',
-      border: '#9FE1CB',
-      textDark: '#085041',
-      examples: ['Run 24/7 & proactively', 'Discover skills', 'Write new skills', 'Persistent memory', 'Multi-agent routing', 'Escalate when required'],
-    },
-    {
-      id: '04',
-      label: 'Outcomes',
-      title: 'Finished work. Not tool access.',
-      body: 'The client report doesn\'t get produced because someone writes a prompt. It gets produced because the system knows it\'s end of month, knows which funds the client holds, knows their preferred attribution format, and produces the report autonomously. The portfolio manager reviews and releases.',
-      callout: 'Revenue model: outcome-based. Not seats. Not platform licenses. Your ESG reporting runs. Your client reports are produced. Your RFPs are answered.',
-      color: '#534AB7',
-      bg: '#EEEDFB',
-      border: '#C5C2F0',
-      textDark: '#3C3489',
-      examples: ['Research reports', 'Client reports', 'Compliance filings', 'RFP responses', 'Risk alerts', 'Reg. filings'],
-    },
-  ];
-
-  return (
-    <section id="framework" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="max-w-3xl mb-16">
-        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE PRODUCT</span>
-        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Context. Rules. Agents. Outcomes.</h2>
-        <p className="text-lg text-slate-600 leading-relaxed">
-          Four layers. Every deployment across every client type runs on this architecture. The platform core and sovereignty layer are identical for all. Everything else is configured to your institution.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-        {steps.map((step) => (
-          <div
-            key={step.id}
-            className="p-8 border rounded-xl"
-            style={{ backgroundColor: step.bg, borderColor: step.border }}
-          >
-            <div className="flex items-center gap-3 mb-5">
-              <span className="font-mono text-xs font-bold tracking-widest uppercase" style={{ color: step.color }}>{step.id}</span>
-              <span className="font-mono text-xs font-bold tracking-widest uppercase" style={{ color: step.color }}>{step.label}</span>
-            </div>
-            <h3 className="text-xl font-serif text-slate-900 mb-4">{step.title}</h3>
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">{step.body}</p>
-            <div className="p-4 bg-white/60 rounded-lg mb-6">
-              <p className="text-sm leading-relaxed italic" style={{ color: step.textDark }}>{step.callout}</p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {step.examples.map(e => (
-                <span key={e} className="text-xs px-2.5 py-1 rounded border font-medium bg-white/50" style={{ borderColor: step.border, color: step.textDark }}>{e}</span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Capacity Flip Table */}
-      <div className="border-t border-slate-200 pt-20">
-        <div className="max-w-3xl mb-12">
-          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">IN NUMBERS</span>
-          <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-4">The Capacity Flip</h3>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Layering AI onto legacy processes creates a 'jet engine on a bicycle' effect. svrnAlphaOS redesigns the workflow from first principles — inverting where institutional talent spends its time.
-          </p>
-        </div>
-
-        <div className="overflow-x-auto border border-slate-200 bg-white">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="border-b border-slate-200 bg-slate-50">
-                <th className="py-5 px-6 font-mono text-[10px] text-slate-500 uppercase tracking-widest w-1/4">Task Category</th>
-                <th className="py-5 px-6 font-mono text-[10px] text-slate-500 uppercase tracking-widest w-1/6">Before</th>
-                <th className="py-5 px-6 font-mono text-[10px] text-slate-900 uppercase tracking-widest w-1/6 bg-slate-100">After</th>
-                <th className="py-5 px-6 font-mono text-[10px] text-slate-500 uppercase tracking-widest">Agent Role</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-100">
-              {[
-                { task: 'Data extraction & formatting', before: '~40%', after: '~5%', agent: 'Fully autonomous' },
-                { task: 'Model population & cross-referencing', before: '~25%', after: '~5%', agent: 'Fully autonomous with validation gate' },
-                { task: 'Report production & filing', before: '~20%', after: '~5%', agent: 'Autonomous, human releases' },
-                { task: 'Strategic analysis & judgment', before: '~15%', after: '~85%', agent: 'Human-led', highlight: true },
-              ].map((row, i) => (
-                <tr key={i} className={`hover:bg-slate-50 transition-colors ${row.highlight ? 'border-t-2 border-slate-300' : ''}`}>
-                  <td className={`py-5 px-6 text-sm ${row.highlight ? 'font-semibold text-slate-900' : 'text-slate-700'}`}>{row.task}</td>
-                  <td className="py-5 px-6 font-mono text-sm text-slate-400">{row.before}</td>
-                  <td className={`py-5 px-6 font-mono text-sm bg-slate-50 ${row.highlight ? 'text-lg text-slate-900 font-bold' : 'text-slate-900'}`}>{row.after}</td>
-                  <td className={`py-5 px-6 text-sm ${row.highlight ? 'text-slate-800 font-medium' : 'text-slate-500'}`}>{row.agent}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// ─────────────────────────────────────────────
-// ARCHITECTURE — PLATFORM STACK
-// ─────────────────────────────────────────────
-const ArchitectureSection = () => {
+const KernelSection = () => {
   return (
     <section id="architecture" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="max-w-3xl mb-16">
-        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">ARCHITECTURE</span>
-        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Platform stack</h2>
+        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE PRODUCT</span>
+        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">We don't deploy software.<br />We deploy a kernel.</h2>
         <p className="text-lg text-slate-600 leading-relaxed">
-          Your existing systems at the base. Our platform core in the center. Your agents, skills, and connectors on top. Every action passes through governance. Every dependency is replaceable.
+          svrnAlphaOS is three layers, deployed as Docker containers inside your sovereign infrastructure. Each layer has a distinct role. Together, they form an operating system that starts minimal and grows to fit your institution.
         </p>
       </div>
 
-      <div className="flex flex-col gap-3">
-        {/* Layer 1: Interfaces */}
-        <div className="rounded-xl p-6 md:p-8 border-l-[4px] transition-transform hover:translate-x-1 bg-[#E6F1FB] border-[#185FA5]">
-          <div className="text-xs font-bold tracking-widest uppercase text-[#185FA5] mb-2">Channels</div>
-          <div className="text-lg md:text-xl font-semibold text-slate-900 mb-2">Role-based access — you choose where agents surface</div>
-          <div className="text-sm md:text-base text-slate-700 mb-5">Each persona sees the agents and outputs relevant to their function. Including scheduled / cron — agents that run without being asked.</div>
-          <div className="flex flex-wrap gap-2">
-            {['Desktop agent', 'Mobile dispatch', 'Terminal embed', 'Teams / Slack', 'API / headless', 'Scheduled / cron'].map(t => (
-              <span key={t} className="text-xs md:text-sm px-3 py-1.5 rounded border bg-[#E6F1FB] border-[#B5D4F4] text-[#0C447C] font-medium">{t}</span>
-            ))}
-          </div>
-        </div>
+      {/* Architecture Diagram */}
+      <div className="relative mb-24">
+        {/* Customer Sovereign Infrastructure envelope */}
+        <div className="border-2 border-dashed border-slate-300 rounded-2xl p-4 md:p-8 relative">
+          <span className="absolute -top-3 left-6 bg-white px-3 font-mono text-[10px] text-slate-400 uppercase tracking-widest">Customer Sovereign Infrastructure</span>
 
-        {/* Layer 2: Agents */}
-        <div className="rounded-xl p-6 md:p-8 border-l-[4px] transition-transform hover:translate-x-1 bg-[#E1F5EE] border-[#0F6E56]">
-          <div className="text-xs font-bold tracking-widest uppercase text-[#0F6E56] mb-2">Agents · Skills · Connectors</div>
-          <div className="text-lg md:text-xl font-semibold text-slate-900 mb-2">As many as your business needs. Not more, not less.</div>
-          <div className="text-sm md:text-base text-slate-700 mb-6">svrnAlphaOS is not a fixed module catalog. It is a platform on which you build, configure, and deploy the agents, skills, and connectors that your specific business model requires.</div>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-6">
+            <div className="flex flex-col gap-3">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { title: 'Agents', desc: 'Autonomous units that execute multi-step workflows end-to-end. Own tools, memory, permissions scope. Run proactively.' },
-              { title: 'Skills', desc: 'Reusable capabilities agents draw on. Templates, validation, output formats, domain knowledge. Composable. Self-extending.' },
-              { title: 'Connectors', desc: 'MCP adapters to any system. Bloomberg. Simcorp. Salesforce. SAP. SharePoint. New data source? New connector — not a platform rewrite.' },
-            ].map(c => (
-              <div key={c.title} className="rounded-lg p-4 md:p-5 border bg-[#E1F5EE] border-[#9FE1CB]">
-                <div className="text-sm md:text-base font-bold mb-2 text-[#0F6E56]">{c.title}</div>
-                <div className="text-sm leading-relaxed opacity-90 text-[#085041]">{c.desc}</div>
+              {/* Layer 1: Collaboration Workspace */}
+              <div className="rounded-xl p-6 md:p-8 bg-[#F3EFFA] border border-[#D4CCE8]">
+                <div className="text-xs font-bold tracking-widest uppercase text-[#6B4FA0] mb-3">Collaboration workspace</div>
+                <p className="text-sm text-slate-600 mb-5">Where humans and agents work together — not through prompts, but through a structured feedback loop. You set the intention. Agents surface their work for review. When an agent encounters a decision it can't make, it escalates. The human decides.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {[
+                    { title: 'Intent setting', desc: 'Direction, scope' },
+                    { title: 'Review + release', desc: 'Approve, redirect' },
+                    { title: 'Escalations', desc: 'Agent asks human' },
+                  ].map(c => (
+                    <div key={c.title} className="rounded-lg p-4 border bg-white/70 border-[#D4CCE8]">
+                      <div className="text-sm font-bold mb-1 text-[#6B4FA0]">{c.title}</div>
+                      <div className="text-xs text-slate-500">{c.desc}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
 
-          <div className="text-xs font-bold tracking-wider uppercase text-[#0F6E56] mt-8 mb-3 opacity-80">Examples — what clients have built</div>
-          <div className="flex flex-wrap gap-2">
-            {['Financial modeling', 'Research production', 'Due diligence', 'Screening & signals', 'Portfolio construction', 'Risk monitoring', 'Client reporting', 'RFP & sales', 'CRM intelligence', 'MAR & insider', 'AML screening', 'ESG & SFDR', 'Performance attribution', 'Reg. reporting', '…'].map(t => (
-              <span key={t} className="text-xs px-2.5 py-1 rounded border border-[#9FE1CB] text-[#085041] bg-white/50 font-medium">{t}</span>
-            ))}
-          </div>
-        </div>
-
-        {/* Layer 3: Platform core */}
-        <div className="rounded-xl p-6 md:p-8 border-l-[4px] transition-transform hover:translate-x-1 bg-[#FAECE7] border-[#D85A30]">
-          <div className="text-xs font-bold tracking-widest uppercase text-[#993C1D] mb-2">Platform core</div>
-          <div className="text-lg md:text-xl font-semibold text-slate-900 mb-2">Orchestration, governance, audit</div>
-          <div className="text-sm md:text-base text-slate-700 mb-5">The non-negotiable layer — same for every client, every agent, every skill. Compliance is not a feature. It is how the system works.</div>
-          <div className="flex flex-wrap gap-2">
-            {['Multi-agent routing', 'Compliance gate', 'Human-in-the-loop', 'Full-provenance audit', 'Scoped memory', 'Role-based permissions'].map(t => (
-              <span key={t} className="text-xs md:text-sm px-3 py-1.5 rounded border bg-[#FAECE7] border-[#F5C4B3] text-[#712B13] font-medium">{t}</span>
-            ))}
-          </div>
-        </div>
-
-        {/* Layer 4: Sovereignty layer */}
-        <div className="rounded-xl p-6 md:p-8 border-l-[4px] transition-transform hover:translate-x-1 bg-[#FAEEDA] border-[#BA7517]">
-          <div className="text-xs font-bold tracking-widest uppercase text-[#854F0B] mb-2">Sovereignty layer</div>
-          <div className="text-lg md:text-xl font-semibold text-slate-900 mb-2">You decide. About everything. At any time. Reversibly.</div>
-          <div className="text-sm md:text-base text-slate-700 mb-6">Sovereign does not mean "hosted in the EU". It means you are in the driver's seat — over your models, your infrastructure, your data. Whatever geopolitics or regulation demands, you adapt. A configuration change, not a migration project.</div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { title: 'Model routing', desc: 'Run any model. Switch providers without code changes. Automatic fallback if one goes down. Claude today, Mistral tomorrow, local Llama if required.' },
-              { title: 'Deployment choice', desc: 'Your data center. Any cloud. Hybrid. Move between them whenever circumstances change. Your call, your timeline.' },
-              { title: 'Data residency', desc: 'Choose where every byte lives. Change it when regulation or geopolitics demands it. One config change — not a migration.' },
-            ].map(c => (
-              <div key={c.title} className="rounded-lg p-4 md:p-5 border bg-[#FAEEDA] border-[#FAC775]">
-                <div className="text-sm md:text-base font-bold mb-2 text-[#854F0B]">{c.title}</div>
-                <div className="text-sm leading-relaxed opacity-90 text-[#633806]">{c.desc}</div>
+              {/* Arrow */}
+              <div className="flex justify-center py-1 text-slate-300">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4v16m0 0l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </div>
-            ))}
+
+              {/* Layer 2: Platform Core */}
+              <div className="rounded-xl p-6 md:p-8 bg-[#E1F5EE] border border-[#9FE1CB]">
+                <div className="text-xs font-bold tracking-widest uppercase text-[#0F6E56] mb-3">Platform core</div>
+                <p className="text-sm text-slate-600 mb-5">The moat. Sits between every human decision and every agent action. Nothing bypasses it. Every action is either permitted, escalated, or blocked before it executes.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
+                  {[
+                    { title: 'Orchestration', desc: 'Agent routing' },
+                    { title: 'Compliance gate', desc: 'MAR, MiFID II' },
+                    { title: 'Audit trail', desc: 'Full provenance' },
+                  ].map(c => (
+                    <div key={c.title} className="rounded-lg p-4 border bg-white/70 border-[#9FE1CB]">
+                      <div className="text-sm font-bold mb-1 text-[#0F6E56]">{c.title}</div>
+                      <div className="text-xs text-slate-500">{c.desc}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="rounded-lg p-4 border bg-[#E1F5EE] border-[#9FE1CB]">
+                  <div className="text-xs font-bold mb-2 text-[#0F6E56]">Institutional context — theses, rules, templates, memory</div>
+                  <p className="text-xs text-slate-500">The layer that compounds. Every workflow adds to institutional memory. When a senior analyst leaves, their judgment stays. Encoded here.</p>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="flex justify-center py-1 text-slate-300">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4v16m0 0l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+
+              {/* Layer 3: Agent Execution */}
+              <div className="rounded-xl p-6 md:p-8 bg-[#FAECE7] border border-[#F5C4B3]">
+                <div className="text-xs font-bold tracking-widest uppercase text-[#993C1D] mb-3">Agent execution</div>
+                <p className="text-sm text-slate-600 mb-5">Each agent runs in an isolated environment inside your infrastructure. Agents execute autonomously within the boundaries set by the platform core. They can't exceed their compliance scope.</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {[
+                    { title: 'Research Agent' },
+                    { title: 'Compliance Agent' },
+                    { title: 'Client Report Agent' },
+                    { title: 'Agent N — Custom' },
+                  ].map(c => (
+                    <div key={c.title} className="rounded-lg p-3 border bg-white/70 border-[#F5C4B3] text-center">
+                      <div className="text-xs font-bold text-[#993C1D]">{c.title}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="flex justify-center py-1 text-slate-300">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4v16m0 0l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+
+              {/* Layer 4: MCP Connectors */}
+              <div className="rounded-xl p-5 md:p-6 bg-[#F5F4F0] border border-dashed border-slate-300">
+                <div className="text-xs font-bold tracking-widest uppercase text-slate-500 mb-3">MCP connectors</div>
+                <div className="flex flex-wrap gap-2">
+                  {['Bloomberg', 'SAP', 'Simcorp', 'Salesforce', '…'].map(t => (
+                    <span key={t} className="text-xs px-3 py-1.5 rounded border bg-white border-slate-200 text-slate-600 font-medium">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Side Annotations */}
+            <div className="hidden lg:flex flex-col justify-between py-4">
+              <div className="text-right">
+                <span className="font-mono text-[10px] font-bold text-[#6B4FA0] uppercase tracking-wider block">The Software</span>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">Self-developed. Where humans and agents meet.</p>
+              </div>
+              <div className="text-right">
+                <span className="font-mono text-[10px] font-bold text-[#0F6E56] uppercase tracking-wider block">The Moat</span>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">Orchestration, compliance, audit, institutional context. Compounds daily.</p>
+              </div>
+              <div className="text-right">
+                <span className="font-mono text-[10px] font-bold text-[#993C1D] uppercase tracking-wider block">The Sovereignty</span>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">Isolated execution. Your infra, your models, your data. You decide.</p>
+              </div>
+              <div className="text-right mt-4">
+                <div className="inline-block border border-[#BA7517] rounded-full px-4 py-2 bg-[#FAEEDA]">
+                  <span className="font-mono text-[10px] font-bold text-[#854F0B] block">LLM tokens</span>
+                  <span className="text-[10px] text-[#854F0B]">Pluggable</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-1">Any provider</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Layer 5: Client ecosystem */}
-        <div className="rounded-xl p-6 md:p-8 border-l-[4px] border-dashed transition-transform hover:translate-x-1 bg-[#F5F4F0] border-[#D4D3CD]">
-          <div className="text-xs font-bold tracking-widest uppercase text-slate-500 mb-2">Client ecosystem — we connect, not replace</div>
-          <div className="text-sm md:text-base text-slate-700 mb-5">Your existing infrastructure remains exactly where it is. svrnAlphaOS does not replace a single system. It makes them all intelligent.</div>
-          <div className="flex flex-wrap gap-2">
-            {['Market data', 'PMS / OMS', 'CRM', 'DMS', 'ERP', 'Regulatory feeds', '…'].map(t => (
-              <span key={t} className="text-xs md:text-sm px-3 py-1.5 rounded border bg-[#F5F4F0] border-slate-300 text-slate-600 font-medium">{t}</span>
-            ))}
-          </div>
+      {/* Organism Model — Deployment Timeline */}
+      <div id="in-practice" className="border-t border-slate-200 pt-20 mb-24">
+        <div className="max-w-3xl mb-12">
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE ORGANISM MODEL</span>
+          <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-4">The kernel deploys in days, not months.</h3>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            The system doesn't scale by adding seats. It scales by growing capabilities — new agents, new skills, new connectors — each one governed by the same platform core, each one compounding institutional knowledge.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              time: 'Week 1',
+              title: 'First deployment',
+              desc: 'One team, one workflow, producing real outcomes inside the compliance boundary.',
+            },
+            {
+              time: 'Month 1',
+              title: 'First expansion',
+              desc: 'Additional agents, connected to your first external systems via MCP.',
+            },
+            {
+              time: 'Month 6',
+              title: 'Continuous cycles',
+              desc: 'Autonomous cycles across research, reporting, and compliance. Daily compounding.',
+            },
+            {
+              time: 'Year 1',
+              title: 'Full adaptation',
+              desc: 'A fully adapted operating system shaped by your institution, not by a product roadmap.',
+            },
+          ].map(step => (
+            <div key={step.time} className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 transition-colors">
+              <span className="font-mono text-xs text-slate-400 uppercase tracking-wider block mb-3">{step.time}</span>
+              <h4 className="text-lg font-semibold text-slate-900 mb-2">{step.title}</h4>
+              <p className="text-sm text-slate-600 leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Configurations */}
-      <div id="in-practice" className="mt-32 mb-16 max-w-3xl">
-        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">IN PRACTICE</span>
-        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">Same platform. Your business model.</h2>
-        <p className="text-lg text-slate-600 leading-relaxed">
-          Every deployment looks different because every institution is different. The platform core and sovereignty layer are identical. Everything above them is configured to your workflow, your templates, your compliance rules.
-        </p>
-      </div>
+      <div className="border-t border-slate-200 pt-20">
+        <div className="max-w-3xl mb-12">
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">IN PRACTICE</span>
+          <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-4">Same platform. Your business model.</h3>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Every deployment looks different because every institution is different. The platform core and sovereignty layer are identical. Everything above them is configured to your workflow, your templates, your compliance rules.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[
-          {
-            title: 'Sell-side boutique',
-            sub: 'Research + origination',
-            items: [
-              { color: '#0F6E56', label: 'Research production' },
-              { color: '#0F6E56', label: 'Financial modeling' },
-              { color: '#0F6E56', label: 'Screening & signals' },
-              { color: '#993C1D', label: 'MAR & insider' },
-              { color: '#6B7280', label: 'Doc production' },
-            ],
-          },
-          {
-            title: 'Asset manager',
-            sub: 'Portfolio + distribution',
-            items: [
-              { color: '#534AB7', label: 'Portfolio construction' },
-              { color: '#534AB7', label: 'Risk monitoring' },
-              { color: '#993556', label: 'Client reporting' },
-              { color: '#993556', label: 'RFP & sales' },
-              { color: '#993C1D', label: 'ESG & SFDR' },
-            ],
-          },
-          {
-            title: 'Family office',
-            sub: 'Lean team, broad scope',
-            items: [
-              { color: '#534AB7', label: 'Portfolio construction' },
-              { color: '#534AB7', label: 'Risk monitoring' },
-              { color: '#993556', label: 'Client reporting' },
-              { color: '#993556', label: 'CRM intelligence' },
-              { color: '#6B7280', label: 'Data extraction' },
-            ],
-          },
-          {
-            title: 'Full-service bank',
-            sub: 'Full stack + custom',
-            items: [
-              { color: '#0F6E56', label: 'All research agents' },
-              { color: '#534AB7', label: 'All portfolio agents' },
-              { color: '#993556', label: 'All client agents' },
-              { color: '#993C1D', label: 'All compliance agents' },
-              { color: '#185FA5', label: 'Custom agent development' },
-            ],
-          },
-        ].map(cfg => (
-          <div key={cfg.title} className="bg-white border border-slate-200 rounded-xl p-6 md:p-8 hover:border-slate-300 transition-colors">
-            <div className="text-base md:text-lg font-semibold mb-1 text-slate-900">{cfg.title}</div>
-            <div className="text-xs md:text-sm text-slate-500 mb-6 font-mono">{cfg.sub}</div>
-            <ul className="space-y-0">
-              {cfg.items.map(item => (
-                <li key={item.label} className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
-                  <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: item.color }}></span>
-                  {item.label}
-                </li>
-              ))}
-            </ul>
-            <div className="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-100">+ custom skills for their workflow</div>
-          </div>
-        ))}
-      </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              title: 'Sell-side boutique',
+              sub: 'Research + origination',
+              items: [
+                { color: '#0F6E56', label: 'Research production' },
+                { color: '#0F6E56', label: 'Financial modeling' },
+                { color: '#0F6E56', label: 'Screening & signals' },
+                { color: '#993C1D', label: 'MAR & insider' },
+                { color: '#6B7280', label: 'Doc production' },
+              ],
+            },
+            {
+              title: 'Asset manager',
+              sub: 'Portfolio + distribution',
+              items: [
+                { color: '#534AB7', label: 'Portfolio construction' },
+                { color: '#534AB7', label: 'Risk monitoring' },
+                { color: '#993556', label: 'Client reporting' },
+                { color: '#993556', label: 'RFP & sales' },
+                { color: '#993C1D', label: 'ESG & SFDR' },
+              ],
+            },
+            {
+              title: 'Family office',
+              sub: 'Lean team, broad scope',
+              items: [
+                { color: '#534AB7', label: 'Portfolio construction' },
+                { color: '#534AB7', label: 'Risk monitoring' },
+                { color: '#993556', label: 'Client reporting' },
+                { color: '#993556', label: 'CRM intelligence' },
+                { color: '#6B7280', label: 'Data extraction' },
+              ],
+            },
+            {
+              title: 'Full-service bank',
+              sub: 'Full stack + custom',
+              items: [
+                { color: '#0F6E56', label: 'All research agents' },
+                { color: '#534AB7', label: 'All portfolio agents' },
+                { color: '#993556', label: 'All client agents' },
+                { color: '#993C1D', label: 'All compliance agents' },
+                { color: '#185FA5', label: 'Custom agent development' },
+              ],
+            },
+          ].map(cfg => (
+            <div key={cfg.title} className="bg-white border border-slate-200 rounded-xl p-6 md:p-8 hover:border-slate-300 transition-colors">
+              <div className="text-base md:text-lg font-semibold mb-1 text-slate-900">{cfg.title}</div>
+              <div className="text-xs md:text-sm text-slate-500 mb-6 font-mono">{cfg.sub}</div>
+              <ul className="space-y-0">
+                {cfg.items.map(item => (
+                  <li key={item.label} className="text-sm py-2.5 border-t border-slate-100 text-slate-600 flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: item.color }}></span>
+                    {item.label}
+                  </li>
+                ))}
+              </ul>
+              <div className="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-100">+ custom skills for their workflow</div>
+            </div>
+          ))}
+        </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl p-8 mt-10 text-center shadow-sm">
-        <p className="text-slate-700">These are examples, not a product list. Your deployment will look different — <em className="text-[#0F6E56] not-italic font-medium">because your institution is different.</em></p>
+        <div className="bg-white border border-slate-200 rounded-xl p-8 mt-10 text-center shadow-sm">
+          <p className="text-slate-700">These are examples, not a product list. Your deployment will look different — <em className="text-[#0F6E56] not-italic font-medium">because your institution is different.</em></p>
+        </div>
       </div>
     </section>
   );
@@ -1229,8 +1175,7 @@ function App() {
         <HeroSection />
         <ProblemSection />
         <ThreePillarSection />
-        <FrameworkSection />
-        <ArchitectureSection />
+        <KernelSection />
         <ReferenceCaseSection />
         <AcademicSection />
         <FounderSection />
