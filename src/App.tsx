@@ -16,7 +16,7 @@ const Navbar = () => {
   }, []);
 
   const links = [
-    { href: '#architecture', label: 'The Kernel' },
+    { href: '#architecture', label: 'The Product' },
     { href: '#in-practice', label: 'In Practice' },
     { href: '#references', label: 'References' },
     { href: '#academic', label: 'Foundation' },
@@ -479,9 +479,9 @@ const KernelSection = () => {
     <section id="architecture" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="max-w-3xl mb-16">
         <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE PRODUCT</span>
-        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">We don't deploy software.<br />We deploy a kernel.</h2>
+        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">You don't buy software.<br />We build your operating system.</h2>
         <p className="text-lg text-slate-600 leading-relaxed">
-          svrnAlphaOS is three layers, deployed as Docker containers inside your sovereign infrastructure. Each layer has a distinct role. Together, they form an operating system that starts minimal and grows to fit your institution.
+          svrnAlphaOS is three layers, deployed inside your sovereign infrastructure. Each layer has a distinct role. Together, they form your operating system — starting minimal and growing to fit your institution.
         </p>
       </div>
 
@@ -495,8 +495,11 @@ const KernelSection = () => {
             <div className="flex flex-col gap-3">
 
               {/* Layer 1: Collaboration Workspace */}
-              <div className="rounded-xl p-6 md:p-8 bg-[#F3EFFA] border border-[#D4CCE8]">
-                <div className="text-xs font-bold tracking-widest uppercase text-[#6B4FA0] mb-3">Collaboration workspace</div>
+              <div className="rounded-xl p-6 md:p-8 bg-[#F3EFFA] border border-[#D4CCE8] relative">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-xs font-bold tracking-widest uppercase text-[#6B4FA0]">Collaboration workspace</div>
+                  <span className="font-mono text-[9px] font-bold text-[#6B4FA0] uppercase tracking-wider bg-white/80 border border-[#D4CCE8] px-2.5 py-1 rounded-full">The Software</span>
+                </div>
                 <p className="text-sm text-slate-600 mb-5">Where humans and agents work together — not through prompts, but through a structured feedback loop. You set the intention. Agents surface their work for review. When an agent encounters a decision it can't make, it escalates. The human decides.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {[
@@ -512,14 +515,21 @@ const KernelSection = () => {
                 </div>
               </div>
 
-              {/* Arrow */}
+              {/* Bidirectional Arrow */}
               <div className="flex justify-center py-1 text-slate-300">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4v16m0 0l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg width="24" height="32" viewBox="0 0 24 32" fill="none">
+                  <path d="M12 2v28" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M8 6l4-4 4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 26l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
 
               {/* Layer 2: Platform Core */}
               <div className="rounded-xl p-6 md:p-8 bg-[#E1F5EE] border border-[#9FE1CB]">
-                <div className="text-xs font-bold tracking-widest uppercase text-[#0F6E56] mb-3">Platform core</div>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-xs font-bold tracking-widest uppercase text-[#0F6E56]">Platform core</div>
+                  <span className="font-mono text-[9px] font-bold text-[#0F6E56] uppercase tracking-wider bg-white/80 border border-[#9FE1CB] px-2.5 py-1 rounded-full">The Moat</span>
+                </div>
                 <p className="text-sm text-slate-600 mb-5">The moat. Sits between every human decision and every agent action. Nothing bypasses it. Every action is either permitted, escalated, or blocked before it executes.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
                   {[
@@ -546,7 +556,10 @@ const KernelSection = () => {
 
               {/* Layer 3: Agent Execution */}
               <div className="rounded-xl p-6 md:p-8 bg-[#FAECE7] border border-[#F5C4B3]">
-                <div className="text-xs font-bold tracking-widest uppercase text-[#993C1D] mb-3">Agent execution</div>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-xs font-bold tracking-widest uppercase text-[#993C1D]">Agent execution</div>
+                  <span className="font-mono text-[9px] font-bold text-[#993C1D] uppercase tracking-wider bg-white/80 border border-[#F5C4B3] px-2.5 py-1 rounded-full">The Sovereignty</span>
+                </div>
                 <p className="text-sm text-slate-600 mb-5">Each agent runs in an isolated environment inside your infrastructure. Agents execute autonomously within the boundaries set by the platform core. They can't exceed their compliance scope.</p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {[
@@ -560,6 +573,16 @@ const KernelSection = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* LLM Tokens Bubble + Arrow */}
+              <div className="flex items-center justify-center gap-4 py-2">
+                <div className="flex-1 h-px bg-slate-200"></div>
+                <div className="inline-flex items-center gap-2 border border-[#BA7517] rounded-full px-4 py-2 bg-[#FAEEDA]">
+                  <span className="font-mono text-[10px] font-bold text-[#854F0B]">LLM tokens</span>
+                  <span className="text-[10px] text-[#854F0B] opacity-70">Pluggable · Any provider</span>
+                </div>
+                <div className="flex-1 h-px bg-slate-200"></div>
               </div>
 
               {/* Arrow */}
@@ -608,7 +631,7 @@ const KernelSection = () => {
       <div id="in-practice" className="border-t border-slate-200 pt-20 mb-24">
         <div className="max-w-3xl mb-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE ORGANISM MODEL</span>
-          <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-4">The kernel deploys in days, not months.</h3>
+          <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-4">Deployed in days, not months.</h3>
           <p className="text-lg text-slate-600 leading-relaxed">
             The system doesn't scale by adding seats. It scales by growing capabilities — new agents, new skills, new connectors — each one governed by the same platform core, each one compounding institutional knowledge.
           </p>
