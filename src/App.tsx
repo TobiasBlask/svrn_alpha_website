@@ -335,148 +335,91 @@ const ProblemSection = () => {
 };
 
 // ─────────────────────────────────────────────
-// THREE-PILLAR MODEL
+// THE TRANSFORMATION — Three Pillars → Product (integrated)
 // ─────────────────────────────────────────────
-const ThreePillarSection = () => {
+const TransformationSection = () => {
   return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-200">
-      <div className="max-w-3xl mb-16">
-        <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-6 block">OUR APPROACH</span>
-        <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] text-slate-900 mb-8">
-          The New Physics of Velocity.
-        </h2>
-        <p className="text-lg text-slate-600 leading-relaxed">
-          The bottleneck is no longer execution — it's strategic velocity. Integrate agentic workflows into your org chart to achieve daily, compounding autonomous cycles.
-        </p>
-      </div>
+    <section id="architecture" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-200">
+      {/* Budget Inversion — the headline insight */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+        <div>
+          <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-6 block">OUR APPROACH</span>
+          <h2 className="text-4xl md:text-5xl font-serif leading-[1.1] text-slate-900 mb-8">
+            The Budget Inversion.
+          </h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Banks typically allocate 90% of their AI transformation budget to technology and 10% to change management. This allocation is precisely backwards. The Three-Pillar Model corrects this inversion to an optimal 25/30/45 split (first year).
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-        {[
-          {
-            icon: <Users className="w-6 h-6" />,
-            title: 'Agents Handle Boilerplate, Humans Handle Architecture',
-            body: 'Your analysts stop pulling data from terminals and formatting decks. Your compliance officers stop cross-referencing trades manually. Agents execute the process; your team architects the judgment calls.',
-          },
-          {
-            icon: <TrendingUp className="w-6 h-6" />,
-            title: 'Compounding Autonomous Cycles',
-            body: 'Monthly research production becomes continuous. Quarterly compliance becomes real-time monitoring. Annual client reviews become living, always-current intelligence. Set the mandate, review the outcomes.',
-          },
-          {
-            icon: <Layers className="w-6 h-6" />,
-            title: 'Architecture is the New Moat',
-            body: 'The firms that win will not be the ones with the most compute. They will be the ones whose institutional knowledge compounds daily through sovereign, agent-driven architecture.',
-          },
-          {
-            icon: <Shield className="w-6 h-6" />,
-            title: 'Ship Your 2027 Roadmap Next Tuesday',
-            body: 'Deployed securely inside your sovereign firewall. No vendor lock-in. Transform your organizational velocity without compromising institutional sovereignty or regulatory compliance.',
-          },
-        ].map((item, i) => (
-          <div key={i} className="flex gap-5">
-            <div className="w-12 h-12 bg-slate-100 flex items-center justify-center text-slate-600 shrink-0">
-              {item.icon}
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">{item.body}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Three-Pillar Budget Model */}
-      <div className="pt-16 border-t border-slate-200">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+        <div className="space-y-8">
           <div>
-            <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE THREE-PILLAR MODEL</span>
-            <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">The Budget Inversion</h3>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Banks typically allocate 90% of their AI transformation budget to technology and 10% to change management. This allocation is precisely backwards. The Three-Pillar Model corrects this inversion to an optimal 25/30/45 split (first year).
-            </p>
-          </div>
-
-          <div className="space-y-8">
-            {/* Industry Standard Bar */}
-            <div>
-              <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">Industry Standard (70% Failure Rate)</span>
-              <div className="flex h-14 overflow-hidden border border-slate-300">
-                <div className="bg-slate-400 text-white text-xs font-mono flex items-center justify-center" style={{ width: '10%' }}>
-                  10%
-                </div>
-                <div className="bg-slate-700 text-white text-sm font-mono flex items-center justify-center flex-1">
-                  Technology (90%)
-                </div>
+            <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">Industry Standard (70% Failure Rate)</span>
+            <div className="flex h-14 overflow-hidden border border-slate-300">
+              <div className="bg-slate-400 text-white text-xs font-mono flex items-center justify-center" style={{ width: '10%' }}>
+                10%
               </div>
-            </div>
-
-            {/* Three-Pillar Optimal Bar */}
-            <div>
-              <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">The Three-Pillar Model (Optimal)</span>
-              <div className="flex h-14 overflow-hidden border border-slate-300">
-                <div className="bg-slate-300 text-slate-800 text-xs font-mono flex items-center justify-center" style={{ width: '25%' }}>
-                  Edu (25%)
-                </div>
-                <div className="bg-slate-500 text-white text-xs font-mono flex items-center justify-center" style={{ width: '30%' }}>
-                  Process (30%)
-                </div>
-                <div className="bg-slate-800 text-white text-xs font-mono flex items-center justify-center" style={{ width: '45%' }}>
-                  Tech (45%)
-                </div>
+              <div className="bg-slate-700 text-white text-sm font-mono flex items-center justify-center flex-1">
+                Technology (90%)
               </div>
-              <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest block mt-2 text-right">* First Year Allocation</span>
             </div>
           </div>
-        </div>
-
-        {/* Three Pillar Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              number: 'I',
-              title: 'Education',
-              subtitle: 'Strategic Fluency',
-              body: 'Your team learns to think in feedback loops, not feature requests. From executing boilerplate to architecting autonomous workflows. The shift from operator to architect is the highest-leverage investment you can make.',
-              allocation: '25%',
-            },
-            {
-              number: 'II',
-              title: 'Process',
-              subtitle: 'Roles & Workflows',
-              body: 'Redesign the org chart around agent capabilities. Define which decisions require human judgment, which processes run autonomously, and where governance gates sit. The workflow is the product.',
-              allocation: '30%',
-            },
-            {
-              number: 'III',
-              title: 'Technology',
-              subtitle: 'Sovereign Infrastructure',
-              body: 'Model-agnostic, deployment-flexible, compliance-native. The platform layer that makes Education and Process compound. Technology is the enabler — not the starting point.',
-              allocation: '45%',
-            },
-          ].map((pillar, i) => (
-            <div key={i} className="border border-slate-200 p-8">
-              <span className="font-mono text-xs text-slate-400 uppercase tracking-wider block mb-3">Pillar {pillar.number}</span>
-              <h4 className="text-xl font-serif text-slate-900 mb-1">{pillar.title}</h4>
-              <span className="text-sm font-mono text-slate-500 block mb-4">{pillar.subtitle}</span>
-              <p className="text-sm text-slate-600 leading-relaxed mb-4">{pillar.body}</p>
-              <div className="pt-4 border-t border-slate-100">
-                <span className="font-mono text-2xl font-semibold text-slate-900">{pillar.allocation}</span>
-                <span className="text-xs text-slate-400 ml-2">first-year allocation</span>
+          <div>
+            <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block mb-3">The Three-Pillar Model (Optimal)</span>
+            <div className="flex h-14 overflow-hidden border border-slate-300">
+              <div className="bg-slate-300 text-slate-800 text-xs font-mono flex items-center justify-center" style={{ width: '25%' }}>
+                Edu (25%)
+              </div>
+              <div className="bg-slate-500 text-white text-xs font-mono flex items-center justify-center" style={{ width: '30%' }}>
+                Process (30%)
+              </div>
+              <div className="bg-slate-800 text-white text-xs font-mono flex items-center justify-center" style={{ width: '45%' }}>
+                Tech (45%)
               </div>
             </div>
-          ))}
+            <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest block mt-2 text-right">* First Year Allocation</span>
+          </div>
         </div>
       </div>
-    </section>
-  );
-};
 
-// ─────────────────────────────────────────────
-// THE KERNEL — Architecture + Product + In Practice (merged)
-// ─────────────────────────────────────────────
-const KernelSection = () => {
-  return (
-    <section id="architecture" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+      {/* Three Pillar Cards — Pillar III transitions into the product */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <div className="border border-slate-200 p-8">
+          <span className="font-mono text-xs text-slate-400 uppercase tracking-wider block mb-3">Pillar I</span>
+          <h4 className="text-xl font-serif text-slate-900 mb-1">Education</h4>
+          <span className="text-sm font-mono text-slate-500 block mb-4">Strategic Fluency</span>
+          <p className="text-sm text-slate-600 leading-relaxed mb-4">Your team learns to think in feedback loops, not feature requests. From executing boilerplate to architecting autonomous workflows. The shift from operator to architect is the highest-leverage investment you can make.</p>
+          <div className="pt-4 border-t border-slate-100">
+            <span className="font-mono text-2xl font-semibold text-slate-900">25%</span>
+            <span className="text-xs text-slate-400 ml-2">first-year allocation</span>
+          </div>
+        </div>
+        <div className="border border-slate-200 p-8">
+          <span className="font-mono text-xs text-slate-400 uppercase tracking-wider block mb-3">Pillar II</span>
+          <h4 className="text-xl font-serif text-slate-900 mb-1">Process</h4>
+          <span className="text-sm font-mono text-slate-500 block mb-4">Roles & Workflows</span>
+          <p className="text-sm text-slate-600 leading-relaxed mb-4">Redesign the org chart around agent capabilities. Define which decisions require human judgment, which processes run autonomously, and where governance gates sit. The workflow is the product.</p>
+          <div className="pt-4 border-t border-slate-100">
+            <span className="font-mono text-2xl font-semibold text-slate-900">30%</span>
+            <span className="text-xs text-slate-400 ml-2">first-year allocation</span>
+          </div>
+        </div>
+        <div className="border-2 border-slate-900 p-8 bg-slate-50">
+          <span className="font-mono text-xs text-slate-900 uppercase tracking-wider block mb-3">Pillar III</span>
+          <h4 className="text-xl font-serif text-slate-900 mb-1">Technology</h4>
+          <span className="text-sm font-mono text-slate-500 block mb-4">Sovereign Infrastructure</span>
+          <p className="text-sm text-slate-600 leading-relaxed mb-4">Model-agnostic, deployment-flexible, compliance-native. The platform layer that makes Education and Process compound. Technology is the enabler — not the starting point.</p>
+          <div className="pt-4 border-t border-slate-300">
+            <span className="font-mono text-2xl font-semibold text-slate-900">45%</span>
+            <span className="text-xs text-slate-400 ml-2">first-year allocation</span>
+          </div>
+          <div className="mt-4 pt-4 border-t border-slate-300">
+            <p className="text-sm text-slate-900 font-medium italic">Here's what it looks like ↓</p>
+          </div>
+        </div>
+      </div>
+
+      {/* THE PRODUCT — flows from Pillar III */}
       <div className="max-w-3xl mb-16">
         <span className="font-mono text-xs text-slate-500 uppercase tracking-wider mb-4 block">THE PRODUCT</span>
         <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">You don't buy software.<br />We build your operating system.</h2>
@@ -1197,8 +1140,7 @@ function App() {
       <main>
         <HeroSection />
         <ProblemSection />
-        <ThreePillarSection />
-        <KernelSection />
+        <TransformationSection />
         <ReferenceCaseSection />
         <AcademicSection />
         <FounderSection />
