@@ -7,9 +7,9 @@ const Link = (
 ) => <a {...props} />;
 
 export const metadata = {
-  title: "Premise: Das Haus für hoch­überzeugte Research",
+  title: "Premise. Research, dem Sie nachzählen können.",
   description:
-    "Achtundzwanzig Analysten. Ein tägliches Briefing. Jeder Call aktenkundig seit 2019.",
+    "28 Analysten, jeder Call mit Einstieg, Kursziel und Stopp. Briefing täglich um 07:30. Trefferquote offen seit 2019.",
 };
 
 const PRODUCT_ENTRY = "/app/screens/today.html";
