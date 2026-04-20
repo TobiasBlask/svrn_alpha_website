@@ -1,0 +1,21 @@
+/* Phase 1 design tokens are loaded from /public/styles/* via <link> tags in layout.tsx
+   so they remain identical to the design prototype byte-for-byte.
+   This file is reserved for app-only resets / overrides. */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink-900);
+  font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

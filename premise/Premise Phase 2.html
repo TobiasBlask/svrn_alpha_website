@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-direction="precision">
+<head>
+<meta charset="utf-8" />
+<title>Premise — Phase 2</title>
+<meta name="viewport" content="width=1440" />
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="base.css" />
+<link rel="stylesheet" href="premise.css?v=2" />
+<link rel="stylesheet" href="phase2.css?v=7" />
+
+<script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "light",
+  "direction": "precision"
+}/*EDITMODE-END*/;
+(function() {
+  try {
+    const s = localStorage.getItem('premise_tweaks');
+    const t = s ? { ...TWEAK_DEFAULTS, ...JSON.parse(s) } : { ...TWEAK_DEFAULTS };
+    document.documentElement.setAttribute('data-theme', t.theme || 'light');
+    document.documentElement.setAttribute('data-direction', 'precision');
+  } catch(e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.setAttribute('data-direction', 'precision');
+  }
+})();
+</script>
+</head>
+<body>
+
+<!-- ============================================================
+     TOP RAIL
+     ============================================================ -->
+<div class="top-rail">
+  <div class="page top-rail__inner">
+    <div class="wordmark">
+      <svg class="logo-mark" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M4 20 L12 6 L20 20 Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+        <circle cx="12" cy="6" r="1.6" fill="currentColor"/>
+      </svg>
+      <span>premise</span>
+      <span class="wordmark__dot">·</span>
+      <span class="wordmark__sub">phase 2 · product preview</span>
+    </div>
+    <nav class="toc">
+      <a href="Premise Phase 1.html">← Phase 1 · foundation</a>
+    </nav>
+    <div class="top-rail__meta">
+      <span class="eyebrow">v0.2 · 10 screens · Desk + Circle</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<div class="p2-index">
+  <div class="page">
+
+    <div class="p2-hero">
+      <div>
+        <div class="eyebrow">Phase 2 · product preview</div>
+        <h1>The house &nbsp;+<br/>the research floor.</h1>
+        <p>
+          Phase&nbsp;1 established the instrument. Phase&nbsp;2 builds it out
+          as a working product — the rigor of a research house
+          (standing theses, scenario tables, audited chronicle) crossed with
+          the breadth of a modern research platform (factor grades, an article
+          feed, earnings, a screener).
+        </p>
+        <div class="p2-hero__meta">
+          <div>
+            <span class="eyebrow">Core ancestry</span>
+            <b>HKCM · structured research + audited Premises</b>
+          </div>
+          <div>
+            <span class="eyebrow">Breadth ancestry</span>
+            <b>Seeking Alpha · grades + feed + estimates</b>
+          </div>
+          <div>
+            <span class="eyebrow">Product pillars</span>
+            <b>Today · Signals · Ideas · Desk · Analysts · Report · Screener · Packages · Brief</b>
+          </div>
+          <div>
+            <span class="eyebrow">This preview</span>
+            <b>10 connected screens · 2 new revenue tiers</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- A visual summary, not just words -->
+      <div>
+        <div class="premise-block premise-block--precision">
+          <div class="premise-block__tag mono">THE&nbsp;MODEL</div>
+          <p class="premise-block__body">
+            One Premise per market. Surrounded by the evidence —
+            grades, estimates, analyst notes. Audited forever,
+            with a concrete path to execution.
+          </p>
+          <div class="premise-block__meta mono">
+            <span>HKCM × SEEKING ALPHA</span>
+            <span>·</span>
+            <span>RETAIL, PROFESSIONAL-GRADE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SCREENS GRID
+         ============================================================ -->
+    <div class="eyebrow" style="margin-bottom:var(--s-5)">Ten screens · click to enter</div>
+    <div class="screens-grid">
+
+      <!-- MARKET DETAIL V2 -->
+      <a class="screen-card" href="screens/market-detail.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <!-- Header -->
+            <rect x="0" y="0" width="360" height="24" fill="var(--bg)"/>
+            <rect x="12" y="9" width="36" height="8" rx="2" fill="var(--ink-200)"/>
+            <!-- Price hero -->
+            <rect x="12" y="32" width="80" height="14" rx="2" fill="var(--ink-900)"/>
+            <rect x="12" y="52" width="48" height="8" rx="2" fill="var(--bullish)"/>
+            <!-- Chart -->
+            <rect x="12" y="72" width="220" height="76" fill="var(--bg-subtle)" rx="4"/>
+            <path d="M22,130 L40,120 L60,125 L80,110 L100,115 L120,100 L140,105 L160,92 L180,96 L200,85 L220,90" fill="none" stroke="var(--brand-700)" stroke-width="1.5"/>
+            <rect x="140" y="82" width="85" height="22" fill="rgba(30,79,107,.15)" stroke="var(--brand-700)" stroke-width="0.7" stroke-dasharray="2 1.5"/>
+            <!-- Right rail: grades -->
+            <rect x="240" y="72" width="108" height="76" fill="var(--bg-elev)" stroke="var(--surface-line)" rx="4"/>
+            <rect x="248" y="80" width="24" height="6" rx="1" fill="#1FB57A"/>
+            <rect x="248" y="92" width="40" height="6" rx="1" fill="#5DB96F"/>
+            <rect x="248" y="104" width="32" height="6" rx="1" fill="#D08A1A"/>
+            <rect x="248" y="116" width="48" height="6" rx="1" fill="#1FB57A"/>
+            <rect x="248" y="128" width="28" height="6" rx="1" fill="#5DB96F"/>
+            <!-- Feed tabs -->
+            <rect x="12" y="160" width="336" height="28" rx="3" fill="var(--bg-subtle)" stroke="var(--surface-line)"/>
+            <rect x="20" y="170" width="24" height="4" fill="var(--brand-700)"/>
+            <rect x="54" y="170" width="20" height="4" fill="var(--ink-300)"/>
+            <rect x="84" y="170" width="18" height="4" fill="var(--ink-300)"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">01 · Signals</span>
+            <span class="chip chip--brand"><span class="dot"></span>Hero</span>
+          </div>
+          <h3>Market Detail</h3>
+          <p>Premise + chart + factor grades + earnings + execution + article feed. The place the Premise converges with the evidence.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>NVDA · Nvidia</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- TODAY -->
+      <a class="screen-card" href="screens/today.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <!-- Hero panel -->
+            <rect x="12" y="12" width="220" height="92" rx="4" fill="var(--bg-elev)" stroke="var(--brand-200)"/>
+            <rect x="12" y="12" width="220" height="3" fill="var(--brand-700)"/>
+            <rect x="22" y="28" width="72" height="6" rx="1" fill="var(--brand-700)"/>
+            <rect x="22" y="42" width="180" height="9" rx="2" fill="var(--ink-900)"/>
+            <rect x="22" y="56" width="160" height="5" rx="1" fill="var(--ink-500)"/>
+            <rect x="22" y="66" width="140" height="5" rx="1" fill="var(--ink-500)"/>
+            <rect x="22" y="80" width="44" height="14" rx="3" fill="var(--brand-700)"/>
+            <!-- Movers -->
+            <rect x="240" y="12" width="108" height="92" rx="4" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="248" y="20" width="40" height="4" fill="var(--ink-400)"/>
+            <g>
+              <rect x="248" y="34" width="28" height="3" fill="var(--ink-800)"/>
+              <rect x="320" y="34" width="20" height="3" fill="var(--bullish)"/>
+              <rect x="248" y="44" width="28" height="3" fill="var(--ink-800)"/>
+              <rect x="320" y="44" width="20" height="3" fill="var(--bullish)"/>
+              <rect x="248" y="54" width="28" height="3" fill="var(--ink-800)"/>
+              <rect x="320" y="54" width="20" height="3" fill="var(--bearish)"/>
+              <rect x="248" y="64" width="28" height="3" fill="var(--ink-800)"/>
+              <rect x="320" y="64" width="20" height="3" fill="var(--bullish)"/>
+              <rect x="248" y="74" width="28" height="3" fill="var(--ink-800)"/>
+              <rect x="320" y="74" width="20" height="3" fill="var(--bearish)"/>
+            </g>
+            <!-- Feed -->
+            <rect x="12" y="116" width="336" height="32" rx="4" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="22" y="126" width="120" height="5" fill="var(--ink-900)"/>
+            <rect x="22" y="138" width="80" height="4" fill="var(--ink-500)"/>
+            <rect x="12" y="156" width="336" height="32" rx="4" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="22" y="166" width="140" height="5" fill="var(--ink-900)"/>
+            <rect x="22" y="178" width="60" height="4" fill="var(--ink-500)"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">02 · Home</span>
+            <span class="chip"><span class="dot"></span>Discovery</span>
+          </div>
+          <h3>Today</h3>
+          <p>The morning briefing. Lead Premise of the day, market snapshot, new calls, analyst activity, earnings ahead.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>Daily · editorial</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- TOP IDEAS -->
+      <a class="screen-card" href="screens/top-ideas.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <rect x="12" y="12" width="140" height="14" rx="3" fill="var(--ink-900)"/>
+            <rect x="12" y="32" width="220" height="8" fill="var(--ink-400)"/>
+            <rect x="12" y="46" width="180" height="6" fill="var(--ink-300)"/>
+            <!-- Stat tiles -->
+            <rect x="12" y="64" width="80" height="34" rx="3" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="22" y="72" width="30" height="4" fill="var(--ink-400)"/>
+            <rect x="22" y="82" width="48" height="10" fill="var(--bullish)"/>
+            <rect x="100" y="64" width="80" height="34" rx="3" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="110" y="72" width="30" height="4" fill="var(--ink-400)"/>
+            <rect x="110" y="82" width="40" height="10" fill="var(--ink-900)"/>
+            <rect x="188" y="64" width="80" height="34" rx="3" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="198" y="72" width="30" height="4" fill="var(--ink-400)"/>
+            <rect x="198" y="82" width="44" height="10" fill="var(--ink-900)"/>
+            <!-- Table rows -->
+            <rect x="12" y="108" width="336" height="22" rx="2" fill="var(--bg-subtle)"/>
+            <rect x="12" y="134" width="336" height="1" fill="var(--surface-line)"/>
+            <rect x="20" y="142" width="18" height="4" fill="var(--brand-700)"/>
+            <rect x="48" y="142" width="30" height="4" fill="var(--ink-900)"/>
+            <rect x="100" y="142" width="80" height="4" fill="var(--ink-500)"/>
+            <rect x="240" y="140" width="20" height="8" rx="1" fill="var(--bullish)"/>
+            <rect x="280" y="142" width="40" height="6" fill="var(--bullish)"/>
+            <rect x="12" y="156" width="336" height="1" fill="var(--surface-line)"/>
+            <rect x="20" y="164" width="18" height="4" fill="var(--brand-700)"/>
+            <rect x="48" y="164" width="30" height="4" fill="var(--ink-900)"/>
+            <rect x="100" y="164" width="80" height="4" fill="var(--ink-500)"/>
+            <rect x="240" y="162" width="20" height="8" rx="1" fill="var(--bullish)"/>
+            <rect x="280" y="164" width="40" height="6" fill="var(--bullish)"/>
+            <rect x="12" y="178" width="336" height="1" fill="var(--surface-line)"/>
+            <rect x="20" y="186" width="18" height="4" fill="var(--brand-700)"/>
+            <rect x="48" y="186" width="30" height="4" fill="var(--ink-900)"/>
+            <rect x="100" y="186" width="80" height="4" fill="var(--ink-500)"/>
+            <rect x="240" y="184" width="20" height="8" rx="1" fill="#D08A1A"/>
+            <rect x="280" y="186" width="40" height="6" fill="var(--bearish)"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">03 · Curated</span>
+            <span class="chip chip--bullish"><span class="dot"></span>+18.4% YTD</span>
+          </div>
+          <h3>Top Ideas</h3>
+          <p>The house's 12 highest-conviction Premises right now. Ranked, graded, audited. The Alpha-Picks analogue.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>12 active · 3 new this week</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- THE DESK (new hero feature) -->
+      <a class="screen-card" href="screens/desk.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <!-- Header -->
+            <rect x="12" y="14" width="100" height="10" rx="2" fill="var(--ink-900)"/>
+            <rect x="270" y="14" width="78" height="16" rx="8" fill="rgba(31,181,122,.14)" stroke="#1FB57A" stroke-width="0.8"/>
+            <circle cx="282" cy="22" r="3" fill="#1FB57A"/>
+            <rect x="290" y="19" width="50" height="5" fill="#1FB57A"/>
+            <!-- Stat row -->
+            <rect x="12" y="38" width="336" height="24" fill="var(--bg-subtle)" stroke="var(--surface-line)"/>
+            <rect x="22" y="44" width="30" height="3" fill="var(--ink-500)"/>
+            <rect x="22" y="52" width="38" height="6" fill="var(--ink-900)"/>
+            <rect x="92" y="44" width="30" height="3" fill="var(--ink-500)"/>
+            <rect x="92" y="52" width="22" height="6" fill="var(--ink-900)"/>
+            <rect x="160" y="44" width="30" height="3" fill="var(--ink-500)"/>
+            <rect x="160" y="52" width="28" height="6" fill="var(--bullish)"/>
+            <rect x="232" y="44" width="30" height="3" fill="var(--ink-500)"/>
+            <rect x="232" y="52" width="20" height="6" fill="var(--ink-900)"/>
+            <rect x="296" y="44" width="30" height="3" fill="var(--ink-500)"/>
+            <rect x="296" y="52" width="40" height="6" fill="var(--ink-900)"/>
+            <!-- Feed rows -->
+            <rect x="12" y="74" width="40" height="3" fill="var(--ink-500)"/>
+            <circle cx="32" cy="94" r="7" fill="rgba(31,181,122,.15)" stroke="#1FB57A" stroke-width="0.8"/>
+            <rect x="50" y="86" width="60" height="3" fill="var(--ink-500)"/>
+            <rect x="50" y="94" width="200" height="5" fill="var(--ink-900)"/>
+            <rect x="50" y="104" width="140" height="3" fill="var(--ink-500)"/>
+            <rect x="300" y="90" width="40" height="6" fill="var(--bullish)"/>
+            <rect x="12" y="116" width="336" height="1" fill="var(--surface-line)"/>
+            <circle cx="32" cy="128" r="7" fill="rgba(30,79,107,.15)" stroke="#1E4F6B" stroke-width="0.8"/>
+            <rect x="50" y="120" width="40" height="3" fill="var(--ink-500)"/>
+            <rect x="50" y="128" width="180" height="5" fill="var(--ink-900)"/>
+            <rect x="50" y="138" width="120" height="3" fill="var(--ink-500)"/>
+            <rect x="300" y="124" width="40" height="6" fill="var(--bullish)"/>
+            <rect x="12" y="150" width="336" height="1" fill="var(--surface-line)"/>
+            <circle cx="32" cy="162" r="7" fill="rgba(228,72,60,.15)" stroke="#E4483C" stroke-width="0.8"/>
+            <rect x="50" y="154" width="50" height="3" fill="var(--ink-500)"/>
+            <rect x="50" y="162" width="170" height="5" fill="var(--ink-900)"/>
+            <rect x="50" y="172" width="100" height="3" fill="var(--ink-500)"/>
+            <rect x="300" y="158" width="40" height="6" fill="var(--bearish)"/>
+            <rect x="12" y="184" width="336" height="1" fill="var(--surface-line)"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">04 · Broadcast</span>
+            <span class="chip chip--bullish"><span class="dot"></span>Live · 18 open</span>
+          </div>
+          <h3>The Desk</h3>
+          <p>Skin in the game. The house's own book — every entry, stop-move, exit broadcast the moment it happens. HKCM's differentiating promise, visible.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>€4.82M book · +12.4% YTD</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- ANALYSTS OVERVIEW -->
+      <a class="screen-card" href="screens/analysts.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <!-- Hero -->
+            <rect x="12" y="12" width="220" height="6" fill="var(--brand-700)"/>
+            <rect x="12" y="24" width="150" height="10" fill="var(--ink-900)"/>
+            <rect x="12" y="40" width="130" height="6" fill="var(--ink-500)"/>
+            <!-- Podium (2nd, 1st, 3rd) -->
+            <rect x="12" y="56" width="108" height="62" rx="3" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <circle cx="66" cy="70" r="9" fill="var(--brand-100)" stroke="var(--brand-700)" stroke-width="0.6"/>
+            <rect x="46" y="86" width="40" height="4" fill="var(--ink-900)"/>
+            <rect x="40" y="95" width="52" height="10" fill="var(--bullish)"/>
+            <rect x="44" y="110" width="44" height="3" fill="var(--ink-500)"/>
+            
+            <rect x="126" y="46" width="108" height="72" rx="3" fill="var(--brand-50)" stroke="var(--brand-700)" stroke-width="1.2"/>
+            <circle cx="180" cy="62" r="10" fill="var(--brand-700)"/>
+            <rect x="160" y="80" width="40" height="4" fill="var(--ink-900)"/>
+            <rect x="152" y="88" width="56" height="14" fill="var(--bullish)"/>
+            <rect x="156" y="108" width="48" height="3" fill="var(--ink-500)"/>
+            
+            <rect x="240" y="64" width="108" height="54" rx="3" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <circle cx="294" cy="76" r="8" fill="var(--bg-subtle)" stroke="var(--ink-500)" stroke-width="0.6"/>
+            <rect x="274" y="90" width="40" height="4" fill="var(--ink-900)"/>
+            <rect x="270" y="98" width="48" height="8" fill="var(--bullish)"/>
+            <!-- Leaderboard rows -->
+            <rect x="12" y="128" width="336" height="1" fill="var(--surface-line)"/>
+            <rect x="20" y="134" width="10" height="3" fill="var(--ink-500)"/>
+            <circle cx="42" cy="136" r="4" fill="var(--bg-subtle)"/>
+            <rect x="50" y="134" width="40" height="3" fill="var(--ink-900)"/>
+            <rect x="300" y="134" width="30" height="3" fill="var(--bullish)"/>
+            <rect x="12" y="144" width="336" height="1" fill="var(--surface-line)"/>
+            <rect x="20" y="150" width="10" height="3" fill="var(--ink-500)"/>
+            <circle cx="42" cy="152" r="4" fill="var(--bg-subtle)"/>
+            <rect x="50" y="150" width="40" height="3" fill="var(--ink-900)"/>
+            <rect x="300" y="150" width="30" height="3" fill="var(--bullish)"/>
+            <!-- Elite band -->
+            <rect x="12" y="164" width="336" height="26" rx="3" fill="#0E1420"/>
+            <rect x="24" y="172" width="56" height="4" fill="#D4A859"/>
+            <rect x="24" y="180" width="140" height="4" fill="#F5F1E6"/>
+            <rect x="280" y="172" width="56" height="14" rx="2" fill="#D4A859"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">05 · People</span>
+            <span class="chip chip--brand"><span class="dot"></span>Ranked · Elite tier</span>
+          </div>
+          <h3>Analysts</h3>
+          <p>The research floor, ranked. 24 analysts with public Chronicles, four Elite analysts behind a €99/mo paywall, and fifty seats in the Founder's Circle that sit across the whole floor.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>24 public · 4 elite · 50 circle</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- ANALYST PROFILE (detail) -->
+      <a class="screen-card" href="screens/analyst.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <!-- Avatar -->
+            <circle cx="42" cy="42" r="24" fill="var(--brand-100)" stroke="var(--brand-700)" stroke-width="1"/>
+            <text x="42" y="48" font-family="var(--font-display)" font-size="16" font-weight="600" fill="var(--brand-700)" text-anchor="middle">LF</text>
+            <rect x="78" y="26" width="80" height="10" rx="2" fill="var(--ink-900)"/>
+            <rect x="78" y="42" width="60" height="5" fill="var(--ink-500)"/>
+            <rect x="78" y="52" width="40" height="5" fill="var(--ink-500)"/>
+            <!-- Stats bar -->
+            <rect x="180" y="22" width="160" height="40" rx="4" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="190" y="30" width="28" height="3" fill="var(--ink-400)"/>
+            <rect x="190" y="38" width="36" height="10" fill="var(--bullish)"/>
+            <rect x="240" y="30" width="28" height="3" fill="var(--ink-400)"/>
+            <rect x="240" y="38" width="28" height="10" fill="var(--ink-900)"/>
+            <rect x="290" y="30" width="28" height="3" fill="var(--ink-400)"/>
+            <rect x="290" y="38" width="36" height="10" fill="var(--ink-900)"/>
+            <!-- Track record rows -->
+            <rect x="12" y="78" width="336" height="18" rx="2" fill="var(--bg-subtle)"/>
+            <g font-size="4" fill="var(--ink-500)" font-family="monospace">
+              <text x="22" y="88">DATE</text>
+              <text x="62" y="88">TICKER</text>
+              <text x="200" y="88">CALL</text>
+              <text x="280" y="88">RESULT</text>
+            </g>
+            <rect x="12" y="104" width="336" height="1" fill="var(--surface-line)"/>
+            <rect x="20" y="110" width="32" height="4" fill="var(--ink-700)"/>
+            <rect x="60" y="110" width="28" height="4" fill="var(--ink-900)"/>
+            <rect x="100" y="110" width="150" height="4" fill="var(--ink-600)"/>
+            <rect x="260" y="110" width="18" height="6" rx="1" fill="var(--bullish)"/>
+            <rect x="290" y="110" width="44" height="4" fill="var(--bullish)"/>
+            <rect x="12" y="124" width="336" height="1" fill="var(--surface-line)"/>
+            <rect x="20" y="130" width="32" height="4" fill="var(--ink-700)"/>
+            <rect x="60" y="130" width="28" height="4" fill="var(--ink-900)"/>
+            <rect x="100" y="130" width="150" height="4" fill="var(--ink-600)"/>
+            <rect x="260" y="130" width="18" height="6" rx="1" fill="var(--bullish)"/>
+            <rect x="290" y="130" width="44" height="4" fill="var(--bullish)"/>
+            <rect x="12" y="144" width="336" height="1" fill="var(--surface-line)"/>
+            <rect x="20" y="150" width="32" height="4" fill="var(--ink-700)"/>
+            <rect x="60" y="150" width="28" height="4" fill="var(--ink-900)"/>
+            <rect x="100" y="150" width="150" height="4" fill="var(--ink-600)"/>
+            <rect x="260" y="150" width="18" height="6" rx="1" fill="var(--bearish)"/>
+            <rect x="290" y="150" width="44" height="4" fill="var(--bearish)"/>
+            <rect x="12" y="164" width="336" height="1" fill="var(--surface-line)"/>
+            <rect x="20" y="170" width="32" height="4" fill="var(--ink-700)"/>
+            <rect x="60" y="170" width="28" height="4" fill="var(--ink-900)"/>
+            <rect x="100" y="170" width="150" height="4" fill="var(--ink-600)"/>
+            <rect x="260" y="170" width="18" height="6" rx="1" fill="var(--brand-700)"/>
+            <rect x="290" y="170" width="44" height="4" fill="var(--brand-700)"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">05a · Detail</span>
+            <span class="chip chip--bullish"><span class="dot"></span>71% hit</span>
+          </div>
+          <h3>Analyst Profile</h3>
+          <p>Every call, forever. Léa Fournier's 124 Premises with hit/miss status — the HKCM chronicle, aggregated.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>Léa Fournier · Equity · Semis</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- RESEARCH REPORT -->
+      <a class="screen-card" href="screens/report.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <!-- Article layout -->
+            <rect x="60" y="18" width="60" height="5" fill="var(--brand-700)"/>
+            <rect x="60" y="34" width="200" height="13" rx="1" fill="var(--ink-900)"/>
+            <rect x="60" y="52" width="160" height="13" rx="1" fill="var(--ink-900)"/>
+            <rect x="60" y="72" width="220" height="6" rx="1" fill="var(--ink-500)"/>
+            <rect x="60" y="82" width="180" height="6" rx="1" fill="var(--ink-500)"/>
+            <!-- Byline -->
+            <rect x="60" y="98" width="240" height="1" fill="var(--surface-line)"/>
+            <circle cx="68" cy="108" r="5" fill="var(--brand-100)"/>
+            <rect x="78" y="105" width="36" height="4" fill="var(--ink-900)"/>
+            <rect x="78" y="112" width="50" height="3" fill="var(--ink-500)"/>
+            <rect x="60" y="120" width="240" height="1" fill="var(--surface-line)"/>
+            <!-- Drop cap -->
+            <rect x="60" y="130" width="14" height="22" fill="var(--brand-700)"/>
+            <rect x="80" y="132" width="220" height="4" rx="1" fill="var(--ink-700)"/>
+            <rect x="80" y="140" width="200" height="4" rx="1" fill="var(--ink-700)"/>
+            <rect x="80" y="148" width="220" height="4" rx="1" fill="var(--ink-700)"/>
+            <rect x="60" y="158" width="240" height="4" rx="1" fill="var(--ink-700)"/>
+            <rect x="60" y="166" width="200" height="4" rx="1" fill="var(--ink-700)"/>
+            <!-- Pull quote -->
+            <rect x="60" y="178" width="3" height="16" fill="var(--brand-700)"/>
+            <rect x="70" y="180" width="230" height="5" fill="var(--ink-900)"/>
+            <rect x="70" y="190" width="180" height="4" fill="var(--ink-500)"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">06 · Reading</span>
+            <span class="chip"><span class="dot" style="background:var(--brand-700)"></span>11 min read</span>
+          </div>
+          <h3>Research Report</h3>
+          <p>Long-form analyst note. The standing Premise expanded — evidence, charts, scenarios, execution, disclaimer.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>The Nvidia thesis</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- SCREENER -->
+      <a class="screen-card" href="screens/screener.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <!-- Title bar -->
+            <rect x="12" y="14" width="100" height="10" rx="2" fill="var(--ink-900)"/>
+            <!-- Filter bar -->
+            <rect x="12" y="36" width="336" height="26" rx="3" fill="var(--bg-subtle)" stroke="var(--surface-line)"/>
+            <rect x="22" y="44" width="60" height="10" rx="5" fill="var(--ink-900)"/>
+            <rect x="88" y="44" width="70" height="10" rx="5" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="164" y="44" width="60" height="10" rx="5" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="230" y="44" width="80" height="10" rx="5" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <!-- Count bar -->
+            <rect x="12" y="72" width="80" height="4" fill="var(--ink-500)"/>
+            <!-- Table header -->
+            <rect x="12" y="88" width="336" height="16" fill="var(--bg-subtle)"/>
+            <!-- Rows -->
+            <g>
+              <rect x="12" y="108" width="336" height="1" fill="var(--surface-line)"/>
+              <rect x="20" y="114" width="28" height="4" fill="var(--ink-900)"/>
+              <rect x="56" y="114" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="80" y="114" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="104" y="114" width="14" height="6" rx="1" fill="#D08A1A"/>
+              <rect x="128" y="114" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="152" y="114" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="240" y="114" width="60" height="4" fill="var(--bullish)"/>
+              <rect x="12" y="124" width="336" height="1" fill="var(--surface-line)"/>
+              <rect x="20" y="130" width="28" height="4" fill="var(--ink-900)"/>
+              <rect x="56" y="130" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="80" y="130" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="104" y="130" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="128" y="130" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="152" y="130" width="14" height="6" rx="1" fill="#D08A1A"/>
+              <rect x="240" y="130" width="60" height="4" fill="var(--bullish)"/>
+              <rect x="12" y="140" width="336" height="1" fill="var(--surface-line)"/>
+              <rect x="20" y="146" width="28" height="4" fill="var(--ink-900)"/>
+              <rect x="56" y="146" width="14" height="6" rx="1" fill="#D08A1A"/>
+              <rect x="80" y="146" width="14" height="6" rx="1" fill="#E4683C"/>
+              <rect x="104" y="146" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="128" y="146" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="152" y="146" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="240" y="146" width="60" height="4" fill="var(--bearish)"/>
+              <rect x="12" y="156" width="336" height="1" fill="var(--surface-line)"/>
+              <rect x="20" y="162" width="28" height="4" fill="var(--ink-900)"/>
+              <rect x="56" y="162" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="80" y="162" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="104" y="162" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="128" y="162" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="152" y="162" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="240" y="162" width="60" height="4" fill="var(--bullish)"/>
+              <rect x="12" y="172" width="336" height="1" fill="var(--surface-line)"/>
+              <rect x="20" y="178" width="28" height="4" fill="var(--ink-900)"/>
+              <rect x="56" y="178" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="80" y="178" width="14" height="6" rx="1" fill="#5DB96F"/>
+              <rect x="104" y="178" width="14" height="6" rx="1" fill="#D08A1A"/>
+              <rect x="128" y="178" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="152" y="178" width="14" height="6" rx="1" fill="#1FB57A"/>
+              <rect x="240" y="178" width="60" height="4" fill="var(--bullish)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">07 · Tools</span>
+            <span class="chip"><span class="dot"></span>Filters</span>
+          </div>
+          <h3>Screener</h3>
+          <p>Find the market. Filter by sentiment, grades, analyst, sector, time horizon. Premise's answer to SA's screener.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>4,280 markets · 18 filters</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- PACKAGES -->
+      <a class="screen-card" href="screens/packages.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <!-- 4 pricing cards -->
+            <rect x="20" y="30" width="72" height="140" rx="4" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="30" y="42" width="18" height="18" rx="3" fill="var(--bg-subtle)"/>
+            <rect x="30" y="70" width="40" height="6" fill="var(--ink-900)"/>
+            <rect x="30" y="84" width="32" height="16" fill="var(--ink-900)"/>
+            <rect x="30" y="108" width="52" height="2" fill="var(--ink-300)"/>
+            <rect x="30" y="116" width="40" height="2" fill="var(--ink-300)"/>
+            <rect x="30" y="124" width="48" height="2" fill="var(--ink-300)"/>
+            <rect x="30" y="132" width="36" height="2" fill="var(--ink-300)"/>
+            <rect x="30" y="152" width="52" height="10" rx="2" fill="var(--bg-subtle)"/>
+
+            <rect x="100" y="30" width="72" height="140" rx="4" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="110" y="42" width="18" height="18" rx="3" fill="var(--bg-subtle)"/>
+            <rect x="110" y="70" width="40" height="6" fill="var(--ink-900)"/>
+            <rect x="110" y="84" width="32" height="16" fill="var(--ink-900)"/>
+            <rect x="110" y="108" width="52" height="2" fill="var(--ink-300)"/>
+            <rect x="110" y="116" width="40" height="2" fill="var(--ink-300)"/>
+            <rect x="110" y="124" width="48" height="2" fill="var(--ink-300)"/>
+            <rect x="110" y="152" width="52" height="10" rx="2" fill="var(--bg-subtle)"/>
+
+            <rect x="180" y="30" width="72" height="140" rx="4" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="190" y="42" width="18" height="18" rx="3" fill="var(--bg-subtle)"/>
+            <rect x="190" y="70" width="40" height="6" fill="var(--ink-900)"/>
+            <rect x="190" y="84" width="32" height="16" fill="var(--ink-900)"/>
+            <rect x="190" y="108" width="52" height="2" fill="var(--ink-300)"/>
+            <rect x="190" y="116" width="40" height="2" fill="var(--ink-300)"/>
+            <rect x="190" y="124" width="48" height="2" fill="var(--ink-300)"/>
+            <rect x="190" y="152" width="52" height="10" rx="2" fill="var(--bg-subtle)"/>
+
+            <!-- Featured card -->
+            <rect x="260" y="24" width="80" height="152" rx="4" fill="var(--brand-50)" stroke="var(--brand-700)" stroke-width="1.3"/>
+            <rect x="260" y="24" width="80" height="12" fill="var(--brand-700)"/>
+            <rect x="270" y="44" width="22" height="22" rx="3" fill="var(--brand-700)"/>
+            <rect x="270" y="74" width="48" height="7" fill="var(--ink-900)"/>
+            <rect x="270" y="88" width="40" height="20" fill="var(--ink-900)"/>
+            <rect x="270" y="118" width="60" height="2" fill="var(--ink-500)"/>
+            <rect x="270" y="126" width="50" height="2" fill="var(--ink-500)"/>
+            <rect x="270" y="134" width="56" height="2" fill="var(--ink-500)"/>
+            <rect x="270" y="142" width="44" height="2" fill="var(--ink-500)"/>
+            <rect x="270" y="150" width="52" height="2" fill="var(--ink-500)"/>
+            <rect x="270" y="162" width="60" height="10" rx="2" fill="var(--brand-700)"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">08 · Commerce</span>
+            <span class="chip chip--brand"><span class="dot"></span>From €59/mo</span>
+          </div>
+          <h3>Packages</h3>
+          <p>Equities, Crypto, Commodities — or The House. Monthly or annual, 7-day trial. The subscription surface, priced the way HKCM prices.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>4 tiers · save 2 months annual</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- MORNING BRIEF -->
+      <a class="screen-card" href="screens/brief.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <rect width="360" height="200" fill="#ECE8DF"/>
+            <!-- Envelope -->
+            <rect x="40" y="16" width="280" height="170" fill="#FAF8F2" stroke="var(--surface-line)"/>
+            <!-- Masthead -->
+            <rect x="130" y="28" width="100" height="3" fill="var(--ink-500)"/>
+            <rect x="90" y="40" width="180" height="16" fill="var(--ink-900)"/>
+            <rect x="60" y="64" width="240" height="1.5" fill="var(--ink-900)"/>
+            <rect x="120" y="72" width="40" height="3" fill="var(--ink-500)"/>
+            <rect x="170" y="72" width="24" height="3" fill="var(--ink-500)"/>
+            <rect x="204" y="72" width="36" height="3" fill="var(--ink-500)"/>
+            <!-- Eyebrow + headline -->
+            <rect x="60" y="88" width="60" height="3" fill="var(--brand-700)"/>
+            <rect x="60" y="98" width="180" height="10" fill="var(--ink-900)"/>
+            <!-- Body paragraphs -->
+            <rect x="60" y="116" width="12" height="12" fill="var(--brand-700)"/>
+            <rect x="76" y="118" width="220" height="3" fill="var(--ink-700)"/>
+            <rect x="76" y="124" width="210" height="3" fill="var(--ink-700)"/>
+            <rect x="60" y="132" width="236" height="3" fill="var(--ink-700)"/>
+            <rect x="60" y="138" width="200" height="3" fill="var(--ink-700)"/>
+            <!-- Premise box -->
+            <rect x="60" y="148" width="240" height="22" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="60" y="148" width="3" height="22" fill="var(--brand-700)"/>
+            <rect x="70" y="154" width="200" height="3" fill="var(--ink-900)"/>
+            <rect x="70" y="160" width="180" height="3" fill="var(--ink-900)"/>
+            <rect x="70" y="166" width="80" height="2" fill="var(--ink-500)"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">09 · Delivered</span>
+            <span class="chip"><span class="dot"></span>07:30 CET · daily</span>
+          </div>
+          <h3>Morning Brief</h3>
+          <p>The e-mail, designed. What actually lands in the subscriber's inbox at dawn — lead premise, desk summary, markets, earnings. The paper.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>No. 412 · 17 April 2026</span>
+          <span class="arrow">Open →</span>
+        </div>
+      </a>
+
+      <!-- PHASE 1 LINK-BACK -->
+      <a class="screen-card" href="Premise Phase 1.html">
+        <div class="screen-card__preview">
+          <svg viewBox="0 0 360 200" width="100%" height="100%">
+            <rect x="20" y="20" width="200" height="160" rx="4" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="32" y="32" width="80" height="6" fill="var(--brand-700)"/>
+            <rect x="32" y="46" width="160" height="14" fill="var(--ink-900)"/>
+            <rect x="32" y="64" width="120" height="14" fill="var(--ink-900)"/>
+            <rect x="32" y="90" width="140" height="4" fill="var(--ink-500)"/>
+            <rect x="32" y="98" width="160" height="4" fill="var(--ink-500)"/>
+            <rect x="32" y="106" width="100" height="4" fill="var(--ink-500)"/>
+            <!-- Right column -->
+            <rect x="240" y="20" width="100" height="50" rx="3" fill="var(--brand-50)" stroke="var(--brand-200)"/>
+            <rect x="248" y="28" width="40" height="4" fill="var(--brand-700)"/>
+            <rect x="248" y="40" width="80" height="6" fill="var(--ink-900)"/>
+            <rect x="248" y="52" width="60" height="6" fill="var(--ink-900)"/>
+            <rect x="240" y="82" width="100" height="36" rx="3" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+            <rect x="248" y="90" width="30" height="3" fill="var(--ink-400)"/>
+            <rect x="248" y="100" width="80" height="12" rx="1" fill="var(--ink-900)"/>
+            <rect x="240" y="130" width="100" height="50" rx="3" fill="var(--bg-elev)" stroke="var(--surface-line)"/>
+          </svg>
+        </div>
+        <div class="screen-card__body">
+          <div class="screen-card__label">
+            <span class="eyebrow">00 · Foundation</span>
+            <span class="chip chip--brand"><span class="dot"></span>Approved</span>
+          </div>
+          <h3>Phase 1 · Foundation</h3>
+          <p>The tokens, logo, moodboard, and original Market Detail v1. Everything here inherits from there.</p>
+        </div>
+        <div class="screen-card__foot">
+          <span>Moodboard · tokens · logo</span>
+          <span class="arrow">← Back</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ============================================================
+         SYSTEM NOTES
+         ============================================================ -->
+    <div style="margin-top: var(--s-10); display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6);">
+      <div class="card card-pad">
+        <div class="eyebrow">Inherited from Phase 1</div>
+        <h4 style="font-family:var(--font-display); font-size:20px; font-weight:500; letter-spacing:-0.01em; margin:8px 0 10px">Same tokens, same voice, no reinvention.</h4>
+        <ul style="margin:0; padding-left:20px; font-size:14px; line-height:1.65; color:var(--ink-700)">
+          <li>Petrol teal primary, bullish/bearish/neutral sentiment channel</li>
+          <li>Inter · General Sans · JetBrains Mono · Source Serif 4</li>
+          <li>The Premise block — editorial, precision, and dossier variants</li>
+          <li>Target-zone signature on every chart</li>
+        </ul>
+      </div>
+      <div class="card card-pad">
+        <div class="eyebrow">New in Phase 2</div>
+        <h4 style="font-family:var(--font-display); font-size:20px; font-weight:500; letter-spacing:-0.01em; margin:8px 0 10px">Nine new patterns; everything else unchanged.</h4>
+        <ul style="margin:0; padding-left:20px; font-size:14px; line-height:1.65; color:var(--ink-700)">
+          <li><b>Factor Grades</b> — 5-factor A–F scoring, right rail or dedicated column</li>
+          <li><b>Article Feed</b> — tabbed, per market, with sentiment tag per item</li>
+          <li><b>Execution rail</b> — concrete instruments matched to the Premise</li>
+          <li><b>Earnings block</b> — countdown + consensus + 4-quarter history</li>
+          <li><b>Chronicle</b> — per-market + per-analyst, auditable forever</li>
+          <li><b>The Desk</b> — live broadcast of the house's own book</li>
+          <li><b>Analyst ranking</b> — podium, leaderboard, floor stats</li>
+          <li><b>Elite tier</b> — four capacity-constrained analysts, €99/mo</li>
+          <li><b>Founder's Circle</b> — 50-seat cap, €499/mo, with a Zurich dinner</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

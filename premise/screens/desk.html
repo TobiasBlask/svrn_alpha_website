@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-direction="precision">
+<head><meta charset="utf-8"/><title>Premise · The Desk · Live</title><meta name="viewport" content="width=1440"/>
+<link rel="stylesheet" href="../tokens.css"/><link rel="stylesheet" href="../base.css"/><link rel="stylesheet" href="../premise.css?v=2"/><link rel="stylesheet" href="../phase2.css?v=7"/>
+<script>(function(){try{const s=localStorage.getItem('premise_tweaks');const t=s?JSON.parse(s):{};document.documentElement.setAttribute('data-theme',t.theme||'light');}catch(e){}})();</script>
+</head><body class="screen">
+<div class="app-return-bar"><span>PREMISE · PHASE 2 · 04 OF 10 · THE DESK</span><a href="../Premise Phase 2.html">← Back to index</a></div>
+<div class="app">
+  <aside class="app__side" id="side"></aside>
+  <main class="app__main">
+    <header class="app__top" id="topbar"></header>
+
+    <!-- HEAD -->
+    <div class="desk-head">
+      <div>
+        <div class="eyebrow" style="color:var(--ink-500)">The house · real money · real time</div>
+        <h2>The Desk.</h2>
+        <p class="lede">Every position the house holds, every entry, every exit, every stop-move — broadcast the moment it happens. The analysts have skin in the game. You see the game.</p>
+      </div>
+      <span class="desk-live"><span class="desk-live__dot"></span>Live · 18 positions open</span>
+    </div>
+
+    <!-- HOUSE STATS -->
+    <div class="desk-stat-row">
+      <div class="desk-stat">
+        <div class="desk-stat__label">House book · NAV</div>
+        <div class="desk-stat__value">€4.82M</div>
+        <div class="desk-stat__sub">+12.4% YTD · +€532k</div>
+      </div>
+      <div class="desk-stat">
+        <div class="desk-stat__label">Open positions</div>
+        <div class="desk-stat__value">18</div>
+        <div class="desk-stat__sub">14 long · 3 short · 1 pair</div>
+      </div>
+      <div class="desk-stat">
+        <div class="desk-stat__label">Exposure</div>
+        <div class="desk-stat__value">84%</div>
+        <div class="desk-stat__sub">16% cash · 3.2× gross</div>
+      </div>
+      <div class="desk-stat">
+        <div class="desk-stat__label">Today · events</div>
+        <div class="desk-stat__value">7</div>
+        <div class="desk-stat__sub">2 entries · 1 exit · 4 adds/stops</div>
+      </div>
+      <div class="desk-stat">
+        <div class="desk-stat__label">Biggest position</div>
+        <div class="desk-stat__value">NVDA · 6.4%</div>
+        <div class="desk-stat__sub">In buy zone · Léa F.</div>
+      </div>
+    </div>
+
+    <!-- LAYOUT: feed + positions rail -->
+    <div class="desk-layout">
+
+      <!-- FEED -->
+      <div class="desk-feed">
+
+        <div class="desk-day">Today · Fri 17 April 2026 · all times Europe/Berlin</div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">16:04</div>
+          <div class="desk-event__glyph desk-event__glyph--add">+</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>NVDA</b> · added to buy zone at <span class="mono">847.23</span> — position now <b>6.4%</b> of book</div>
+            <div class="desk-event__meta"><span>BUY</span><span class="sep">·</span><span>14 shares</span><span class="sep">·</span><span>Fill: 847.23 (VWAP 847.18)</span><span class="sep">·</span><span>Zone: 820–860</span><span class="sep">·</span><span>Stop: 710 daily close</span></div>
+            <div class="desk-event__quote">"The pullback held the 0.382 to the tick on falling volume. This is the buy. We're now two-thirds of our intended size; last third reserved for a move to 835 if offered."</div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--up">+2.14%</span>
+            <span class="desk-event__analyst">Léa F.</span>
+          </div>
+        </div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">14:32</div>
+          <div class="desk-event__glyph desk-event__glyph--note">◉</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>ASML</b> · stop raised to <span class="mono">890</span> from <span class="mono">860</span> after target-1 hit</div>
+            <div class="desk-event__meta"><span>STOP UPDATE</span><span class="sep">·</span><span>Position: 5.1%</span><span class="sep">·</span><span>Cost basis: 872.40</span><span class="sep">·</span><span>Now: +8.0%</span></div>
+            <div class="desk-event__quote">"Lock in the trade-worst case. 890 is above prior shelf and above cost. We still want T2 at 1,150; this de-risks the sit."</div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--up">+8.0%</span>
+            <span class="desk-event__analyst">Marek K.</span>
+          </div>
+        </div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">11:18</div>
+          <div class="desk-event__glyph desk-event__glyph--short">S</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>TSLA</b> · opened short at <span class="mono">213.60</span> · stop on daily close above <span class="mono">245</span></div>
+            <div class="desk-event__meta"><span>SHORT · NEW</span><span class="sep">·</span><span>2.2% of book</span><span class="sep">·</span><span>Target: 135</span><span class="sep">·</span><span>R/R 1 : 2.1</span></div>
+            <div class="desk-event__quote">"Reaction to the 210 break is weak. Volume profile shows no demand until 178. Sizing small — we only get paid if China margins keep compressing into Q2."</div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--up">+0.3%</span>
+            <span class="desk-event__analyst">Anders H.</span>
+          </div>
+        </div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">10:02</div>
+          <div class="desk-event__glyph desk-event__glyph--sell">–</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>ASML</b> · trimmed <b>30%</b> into 940 target-1 · <span class="mono">+7.8%</span> realized on the slice</div>
+            <div class="desk-event__meta"><span>PARTIAL EXIT</span><span class="sep">·</span><span>Sold 4 of 12 shares</span><span class="sep">·</span><span>Fill: 942.10</span><span class="sep">·</span><span>Remaining 70% trails to T2</span></div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--up">+7.8%</span>
+            <span class="desk-event__analyst">Marek K.</span>
+          </div>
+        </div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">09:18</div>
+          <div class="desk-event__glyph desk-event__glyph--note">◉</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>TLT</b> · premise reiterated ahead of Wed auction · no position change</div>
+            <div class="desk-event__meta"><span>NOTE</span><span class="sep">·</span><span>Position: 3.8%</span><span class="sep">·</span><span>Avg cost: 89.72</span><span class="sep">·</span><span>Now: 90.14</span></div>
+            <div class="desk-event__quote">"We go into the 30Y auction exactly as sized. If the stop-through at 92 is clean, we add the reserve 1% on the retest."</div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--up">+0.5%</span>
+            <span class="desk-event__analyst">Anders H.</span>
+          </div>
+        </div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">08:44</div>
+          <div class="desk-event__glyph desk-event__glyph--buy">B</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>BTC·USD</b> · opened at <span class="mono">73,410</span> · target 92–98k · stop 62k</div>
+            <div class="desk-event__meta"><span>LONG · NEW</span><span class="sep">·</span><span>2.8% of book</span><span class="sep">·</span><span>R/R 1 : 2.4</span></div>
+            <div class="desk-event__quote">"Re-accumulation base has held 12 weeks. ETF flows turned green on Friday. We don't need a breakout — we just need the base to not break."</div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--up">+1.1%</span>
+            <span class="desk-event__analyst">Sofia R.</span>
+          </div>
+        </div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">08:02</div>
+          <div class="desk-event__glyph desk-event__glyph--stop">✕</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>CL·USD</b> · stopped out of short at <span class="mono">82.10</span> · <span class="mono" style="color:var(--bearish-700)">−1.8%</span> realized</div>
+            <div class="desk-event__meta"><span>STOPPED</span><span class="sep">·</span><span>Loss size: €14,220 · 0.3% of book</span><span class="sep">·</span><span>As planned. No averaging.</span></div>
+            <div class="desk-event__quote">"The pivot held. We respect it. Thesis stays on the board, re-enter only on a clean lower high."</div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--dn">−1.8%</span>
+            <span class="desk-event__analyst">Sofia R.</span>
+          </div>
+        </div>
+
+        <!-- YESTERDAY -->
+        <div class="desk-day">Yesterday · Thu 16 April 2026</div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">17:52</div>
+          <div class="desk-event__glyph desk-event__glyph--sell">–</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>RHM.DE</b> · closed position at <span class="mono">712.40</span> · <span class="mono" style="color:var(--bullish-700)">+28.6%</span> realized over 9 weeks</div>
+            <div class="desk-event__meta"><span>FULL EXIT</span><span class="sep">·</span><span>T2 at 720 · closing into strength</span></div>
+            <div class="desk-event__quote">"Three months, two targets, clean exit at the structural number. This is what the plan looks like when it works. New premise on RHM pending — 720 is not the last chapter."</div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--up">+28.6%</span>
+            <span class="desk-event__analyst">Marek K.</span>
+          </div>
+        </div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">14:15</div>
+          <div class="desk-event__glyph desk-event__glyph--add">+</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>NVDA</b> · first third at <span class="mono">853.80</span> — "a tranche, not a trade"</div>
+            <div class="desk-event__meta"><span>BUY · INITIATION</span><span class="sep">·</span><span>4.2% of book · two thirds in reserve</span></div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--dn">−0.8%</span>
+            <span class="desk-event__analyst">Léa F.</span>
+          </div>
+        </div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">11:44</div>
+          <div class="desk-event__glyph desk-event__glyph--note">◉</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>ETH·USD</b> · removed from watch — structure invalidated on the 3,180 break</div>
+            <div class="desk-event__meta"><span>REMOVED</span><span class="sep">·</span><span>No position taken</span><span class="sep">·</span><span>Called correctly</span></div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__analyst">Sofia R.</span>
+          </div>
+        </div>
+
+        <!-- FRIDAY -->
+        <div class="desk-day">Wednesday · 15 April 2026</div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">16:12</div>
+          <div class="desk-event__glyph desk-event__glyph--sell">–</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>AAPL</b> · trimmed 50% at <span class="mono">221.40</span> · T1 hit · trailing the rest to the structural 240</div>
+            <div class="desk-event__meta"><span>PARTIAL EXIT</span><span class="sep">·</span><span>+12.1% on the slice</span></div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--up">+12.1%</span>
+            <span class="desk-event__analyst">Léa F.</span>
+          </div>
+        </div>
+
+        <div class="desk-event">
+          <div class="desk-event__time">09:04</div>
+          <div class="desk-event__glyph desk-event__glyph--buy">B</div>
+          <div class="desk-event__main">
+            <div class="desk-event__headline"><b>GC·USD</b> · Gold · opened at <span class="mono">2,418</span> · target 2,640 · stop 2,310</div>
+            <div class="desk-event__meta"><span>LONG · NEW</span><span class="sep">·</span><span>3.0% of book</span><span class="sep">·</span><span>R/R 1 : 2.0</span></div>
+          </div>
+          <div class="desk-event__side">
+            <span class="desk-event__pnl desk-event__pnl--up">+0.7%</span>
+            <span class="desk-event__analyst">Sofia R.</span>
+          </div>
+        </div>
+
+        <div style="text-align:center;padding:20px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--ink-500);text-transform:uppercase">Load earlier · <span style="color:var(--brand-700)">last 30 days ↓</span></div>
+
+      </div>
+
+      <!-- POSITIONS RAIL -->
+      <aside class="desk-positions">
+        <h3>Open positions · by size</h3>
+
+        <div class="pos-card">
+          <div class="pos-card__head"><span class="pos-card__ticker">NVDA</span><span class="chip chip--bullish chip--xs"><span class="dot"></span>+2.1%</span></div>
+          <div class="pos-card__bar"><div class="pos-card__bar-fill" style="width:64%"></div></div>
+          <div class="pos-card__meta"><span>6.4% · LONG</span><span>In zone · Léa F.</span></div>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-card__head"><span class="pos-card__ticker">ASML</span><span class="chip chip--bullish chip--xs"><span class="dot"></span>+8.0%</span></div>
+          <div class="pos-card__bar"><div class="pos-card__bar-fill" style="width:51%"></div></div>
+          <div class="pos-card__meta"><span>5.1% · LONG</span><span>T1 hit · Marek K.</span></div>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-card__head"><span class="pos-card__ticker">AAPL</span><span class="chip chip--bullish chip--xs"><span class="dot"></span>+12.1%</span></div>
+          <div class="pos-card__bar"><div class="pos-card__bar-fill" style="width:42%"></div></div>
+          <div class="pos-card__meta"><span>4.2% · LONG</span><span>Trailing · Léa F.</span></div>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-card__head"><span class="pos-card__ticker">TLT</span><span class="chip chip--bullish chip--xs"><span class="dot"></span>+0.5%</span></div>
+          <div class="pos-card__bar"><div class="pos-card__bar-fill" style="width:38%"></div></div>
+          <div class="pos-card__meta"><span>3.8% · LONG</span><span>Pre-auction · Anders H.</span></div>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-card__head"><span class="pos-card__ticker">GC·USD</span><span class="chip chip--bullish chip--xs"><span class="dot"></span>+0.7%</span></div>
+          <div class="pos-card__bar"><div class="pos-card__bar-fill" style="width:30%"></div></div>
+          <div class="pos-card__meta"><span>3.0% · LONG</span><span>Gold · Sofia R.</span></div>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-card__head"><span class="pos-card__ticker">BTC·USD</span><span class="chip chip--bullish chip--xs"><span class="dot"></span>+1.1%</span></div>
+          <div class="pos-card__bar"><div class="pos-card__bar-fill" style="width:28%"></div></div>
+          <div class="pos-card__meta"><span>2.8% · LONG</span><span>New · Sofia R.</span></div>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-card__head"><span class="pos-card__ticker">TSLA</span><span class="chip chip--bearish chip--xs"><span class="dot"></span>+0.3%</span></div>
+          <div class="pos-card__bar"><div class="pos-card__bar-fill" style="width:22%;background:var(--bearish)"></div></div>
+          <div class="pos-card__meta"><span>2.2% · SHORT</span><span>New · Anders H.</span></div>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-card__head"><span class="pos-card__ticker">+ 11 more</span><span class="mono" style="font-size:10px;color:var(--ink-500)">56.5% of book</span></div>
+          <div class="pos-card__meta" style="margin-top:8px"><span>All positions →</span><span></span></div>
+        </div>
+
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--ink-500);margin-top:24px;padding-top:16px;border-top:1px solid var(--surface-line);line-height:1.6;text-transform:uppercase">
+          The Desk book is the house's own capital.<br/>
+          Every position · every size · every move · transmitted the moment it clears.
+        </div>
+
+      </aside>
+    </div>
+
+  </main>
+</div>
+<script src="_shell.js?v=3"></script>
+<script>renderShell('desk', ['The Desk', 'Live broadcast']);</script>
+</body></html>

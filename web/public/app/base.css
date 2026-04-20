@@ -1,0 +1,132 @@
+/* ============================================================
+   Premise — Base styles (imports tokens.css)
+   ============================================================ */
+
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap');
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  color: var(--ink-900);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+  font-variant-numeric: tabular-nums;
+  line-height: var(--lh-normal);
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+/* ---------- Utility ---------- */
+.tnum { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); }
+.serif { font-family: var(--font-serif); }
+.display { font-family: var(--font-display); }
+
+.eyebrow {
+  font-family: var(--eyebrow-font);
+  text-transform: var(--eyebrow-transform);
+  letter-spacing: var(--eyebrow-tracking);
+  font-weight: var(--eyebrow-weight);
+  font-size: var(--fs-11);
+  color: var(--ink-500);
+}
+
+/* ---------- Page scaffold ---------- */
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--s-7);
+}
+
+.section {
+  padding: var(--s-10) 0;
+  border-bottom: 1px solid var(--surface-line);
+}
+.section:last-child { border-bottom: 0; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--s-6);
+  margin-bottom: var(--s-8);
+}
+.section-head h2 {
+  font-family: var(--font-headline);
+  font-size: var(--fs-40);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+  font-weight: 500;
+}
+[data-direction="editorial"] .section-head h2 { font-weight: 600; font-style: italic; font-variation-settings: "opsz" 60; }
+
+.section-head .meta { color: var(--ink-500); font-size: var(--fs-13); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--bg-elev);
+  border: 1px solid var(--surface-line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-xs);
+}
+.card-pad { padding: var(--s-6); }
+
+/* ---------- Chips / badges ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-12);
+  font-weight: 500;
+  background: var(--bg-inset);
+  color: var(--ink-700);
+  border: 1px solid var(--surface-line);
+  white-space: nowrap;
+}
+.chip .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.chip--bullish { background: var(--bullish-50); color: var(--bullish-700); border-color: var(--bullish-200); }
+.chip--bearish { background: var(--bearish-50); color: var(--bearish-700); border-color: var(--bearish-200); }
+.chip--neutral { background: var(--neutral-50); color: var(--neutral-700); border-color: var(--neutral-200); }
+.chip--brand   { background: var(--brand-50); color: var(--brand-700); border-color: var(--brand-200); }
+
+[data-theme="dark"] .chip--bullish { color: var(--bullish); }
+[data-theme="dark"] .chip--bearish { color: var(--bearish); }
+[data-theme="dark"] .chip--brand { color: var(--brand-700); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--r-button);
+  font-size: var(--fs-14);
+  font-weight: 500;
+  border: 1px solid var(--surface-line);
+  background: var(--bg-elev);
+  color: var(--ink-800);
+  cursor: pointer;
+  transition: transform .08s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover { border-color: var(--ink-300); }
+.btn:active { transform: translateY(1px); }
+.btn--primary { background: var(--brand-700); color: #fff; border-color: var(--brand-700); }
+.btn--primary:hover { background: var(--brand-800); border-color: var(--brand-800); }
+[data-theme="dark"] .btn--primary { background: var(--brand-700); color: #061018; border-color: var(--brand-700); }
+[data-theme="dark"] .btn--primary:hover { background: var(--brand-400); }
+
+.btn--ghost { background: transparent; border-color: transparent; color: var(--ink-700); }
+.btn--ghost:hover { background: var(--bg-inset); }
+
+.btn--sm { padding: 5px 10px; font-size: var(--fs-13); }
+
+/* ---------- Divider ---------- */
+.hr { height: 1px; background: var(--surface-line); border: 0; margin: var(--s-6) 0; }

@@ -1,0 +1,289 @@
+/* ============================================================
+   Premise — Paper Skin
+   Re-tones the product to match Landing Page:
+   cream paper background, oxblood accent, serif italic spots,
+   harder edges, tactile shadows. Applied when html has
+   data-skin="paper". Overrides tokens.css + premise.css + phase2.css.
+   ============================================================ */
+
+html[data-skin="paper"]{
+  /* --- Surfaces (cream instead of cool white) --- */
+  --bg:            #F7F2E7;
+  --bg-elev:       #FFFDF6;
+  --bg-subtle:     #EFE7D3;
+  --bg-inset:      #EAE0C7;
+  --surface-line:  #E1D5B7;
+  --surface-line-strong: #CBBB94;
+
+  /* --- Ink (true black, not navy) --- */
+  --ink-900: #111111;
+  --ink-800: #1A1A1A;
+  --ink-700: #2A2A2A;
+  --ink-600: #4A4238;
+  --ink-500: #6B6358;
+  --ink-400: #9B917F;
+  --ink-300: #B8AD97;
+  --ink-200: #D6CBAE;
+  --ink-100: #E4D9BB;
+  --ink-50:  #EFE7D3;
+
+  /* --- Brand → oxblood spot --- */
+  --brand-900: #4C0F08;
+  --brand-800: #6A180E;
+  --brand-700: #9B2A1F;     /* Primary accent */
+  --brand-600: #B03A2C;
+  --brand-500: #C4503F;
+  --brand-400: #D57767;
+  --brand-300: #E3A092;
+  --brand-200: #EEC5BB;
+  --brand-100: #F7DED6;
+  --brand-50:  #FCEEE9;
+
+  /* --- Signal colors (warmer) --- */
+  --bullish-700: #0F7A50;
+  --bullish:     #16A06B;
+  --bullish-200: #BFE6CD;
+  --bullish-50:  #E4F3E8;
+
+  --bearish-700: #8C2217;
+  --bearish:     #B33A2B;
+  --bearish-200: #EEC5BB;
+  --bearish-50:  #FAE5DE;
+
+  --neutral-700: #6B6358;
+  --neutral:     #8C8270;
+  --neutral-200: #D6CBAE;
+  --neutral-50:  #EFE7D3;
+
+  --warn: #B58A3C;
+  --info: #5A4B2E;
+
+  --zone-fill: color-mix(in oklab, var(--brand-700) 10%, transparent);
+  --zone-stroke: color-mix(in oklab, var(--brand-700) 55%, transparent);
+
+  /* --- Harder corners, tactile shadows --- */
+  --r-xs: 2px; --r-sm: 4px; --r-md: 6px; --r-lg: 8px; --r-xl: 12px; --r-2xl: 16px;
+
+  --shadow-xs: 0 1px 0 rgba(17,17,17,.05);
+  --shadow-sm: 0 2px 0 rgba(17,17,17,.06), 0 1px 2px rgba(17,17,17,.05);
+  --shadow-md: 2px 3px 0 rgba(17,17,17,.08), 0 2px 8px rgba(17,17,17,.04);
+  --shadow-lg: 6px 6px 0 rgba(17,17,17,.1), 0 6px 16px rgba(17,17,17,.06);
+  --shadow-glow: 0 0 0 3px color-mix(in oklab, var(--brand-700) 22%, transparent);
+}
+
+/* --- Direction overrides: make even "precision" screens feel warmer --- */
+html[data-skin="paper"][data-direction="precision"]{
+  --r-card: 8px;
+  --r-button: 4px;
+  --eyebrow-font: 'JetBrains Mono', ui-monospace, monospace;
+}
+html[data-skin="paper"][data-direction="editorial"]{
+  --r-card: 8px;
+  --r-button: 4px;
+}
+
+/* --- Body & type --- */
+html[data-skin="paper"] body{
+  background: var(--bg);
+  color: var(--ink-900);
+}
+
+/* Serif italic for the "em" spots in headlines */
+html[data-skin="paper"] h1 em,
+html[data-skin="paper"] h2 em,
+html[data-skin="paper"] .today-hero__h em,
+html[data-skin="paper"] .cover__title em{
+  font-family: 'Source Serif 4','Source Serif Pro',Georgia,serif;
+  font-style: italic;
+  font-variation-settings: "opsz" 72;
+  color: var(--brand-700);
+  font-weight: 400;
+}
+
+/* --- Return bar (top system strip) --- */
+html[data-skin="paper"] .app-return-bar{
+  background: var(--ink-900);
+  color: #E1D5B7;
+}
+html[data-skin="paper"] .app-return-bar a{ color: #E4B457; }
+
+/* --- Top rail / sidebar --- */
+html[data-skin="paper"] .top-rail{
+  background: color-mix(in oklab, var(--bg) 92%, transparent);
+  border-bottom: 1px solid var(--surface-line);
+}
+html[data-skin="paper"] .wordmark .logo-mark,
+html[data-skin="paper"] .wordmark .logo-mark *{ color: var(--brand-700); fill: var(--brand-700); }
+
+/* --- Cards everywhere: harder edge, drop-shadow block --- */
+html[data-skin="paper"] .card,
+html[data-skin="paper"] .feed-card,
+html[data-skin="paper"] .factor-grades,
+html[data-skin="paper"] .earnings-card,
+html[data-skin="paper"] .execution-card,
+html[data-skin="paper"] .brief-card,
+html[data-skin="paper"] .movers-card,
+html[data-skin="paper"] .picks-card,
+html[data-skin="paper"] .alerts-card,
+html[data-skin="paper"] .calendar-card,
+html[data-skin="paper"] .history-card,
+html[data-skin="paper"] .premise-block{
+  background: var(--bg-elev);
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Hero premise → gradient on cream, oxblood band */
+html[data-skin="paper"] .premise-block--hero{
+  background: linear-gradient(180deg, #FFFDF6, #F9EFDD);
+  border-color: #E1D5B7;
+  border-left: 3px solid var(--brand-700);
+}
+html[data-skin="paper"] .premise-block__label{ color: var(--brand-700); }
+html[data-skin="paper"] .premise-block__label-tick{
+  background: var(--brand-700);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand-700) 20%, transparent);
+}
+html[data-skin="paper"] .premise-block--editorial,
+html[data-skin="paper"] .premise-block--precision{
+  border-left: 3px solid var(--brand-700);
+}
+html[data-skin="paper"] .premise-block__rule,
+html[data-skin="paper"] .premise-block__drop,
+html[data-skin="paper"] .premise-block__accent,
+html[data-skin="paper"] .premise-block__tag{ color: var(--brand-700); }
+
+/* --- Today hero → paper gradient --- */
+html[data-skin="paper"] .today-hero{
+  background: linear-gradient(180deg, #F9EFDD, var(--bg));
+  border-bottom: 1px solid var(--surface-line);
+}
+html[data-skin="paper"] .today-hero__h{
+  font-family: 'General Sans','Inter',sans-serif;
+  letter-spacing: -.025em;
+}
+html[data-skin="paper"] .today-hero__lede em{
+  font-family: 'Source Serif 4',Georgia,serif;
+  font-style: italic;
+  color: var(--ink-900);
+}
+
+/* --- Buttons --- */
+html[data-skin="paper"] .btn,
+html[data-skin="paper"] button.btn,
+html[data-skin="paper"] a.btn{
+  border-radius: 4px;
+  font-family: 'General Sans','Inter',sans-serif;
+  font-weight: 500;
+  letter-spacing: -.005em;
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+}
+html[data-skin="paper"] .btn--primary,
+html[data-skin="paper"] .btn.primary,
+html[data-skin="paper"] .btn-primary{
+  background: var(--ink-900);
+  color: var(--bg);
+  border: 1px solid var(--ink-900);
+}
+html[data-skin="paper"] .btn--primary:hover,
+html[data-skin="paper"] .btn.primary:hover,
+html[data-skin="paper"] .btn-primary:hover{
+  background: var(--brand-700);
+  border-color: var(--brand-700);
+  transform: translate(-1px,-1px);
+  box-shadow: 3px 3px 0 var(--ink-900);
+}
+html[data-skin="paper"] .btn--ghost,
+html[data-skin="paper"] .btn-ghost{
+  background: transparent;
+  color: var(--ink-900);
+  border: 1px solid var(--ink-900);
+}
+html[data-skin="paper"] .btn--ghost:hover,
+html[data-skin="paper"] .btn-ghost:hover{
+  background: var(--ink-900);
+  color: var(--bg);
+}
+
+/* --- Chips / badges recolor --- */
+html[data-skin="paper"] .chip{
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .1em;
+}
+html[data-skin="paper"] .chip--brand{
+  background: var(--brand-50);
+  color: var(--brand-700);
+  border: 1px solid var(--brand-200);
+}
+html[data-skin="paper"] .chip--bullish{
+  background: var(--bullish-50);
+  color: var(--bullish-700);
+  border: 1px solid var(--bullish-200);
+}
+html[data-skin="paper"] .chip--bearish{
+  background: var(--bearish-50);
+  color: var(--bearish-700);
+  border: 1px solid var(--bearish-200);
+}
+
+/* --- Feed / mover / alert / calendar rows: dashed paper dividers --- */
+html[data-skin="paper"] .feed-item,
+html[data-skin="paper"] .mover-row,
+html[data-skin="paper"] .alert-row,
+html[data-skin="paper"] .cal-row,
+html[data-skin="paper"] .history-row,
+html[data-skin="paper"] .exec-product{
+  border-bottom: 1px dashed var(--surface-line);
+}
+
+/* Sparkline colors (inline strokes on today) — recolor via currentColor if possible */
+html[data-skin="paper"] .up{ color: var(--bullish-700) !important; }
+html[data-skin="paper"] .dn{ color: var(--bearish-700) !important; }
+
+/* --- Eyebrows everywhere → mono, muted ink --- */
+html[data-skin="paper"] .eyebrow{
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+/* --- Factor grades: gold A, oxblood D --- */
+html[data-skin="paper"] .fg-grade--a{ background:#F5E9C4; color:#8A6A1A; border-color:#E0CA88; }
+html[data-skin="paper"] .fg-grade--b{ background:var(--brand-50); color:var(--brand-700); border-color:var(--brand-200); }
+html[data-skin="paper"] .fg-grade--c{ background:var(--bg-subtle); color:var(--ink-700); border-color:var(--surface-line); }
+html[data-skin="paper"] .fg-grade--d{ background:var(--bearish-50); color:var(--bearish-700); border-color:var(--bearish-200); }
+html[data-skin="paper"] .fg-row__bar-fill--a{ background:#B58A3C; }
+html[data-skin="paper"] .fg-row__bar-fill--b{ background: var(--brand-700); }
+html[data-skin="paper"] .fg-row__bar-fill--c{ background: var(--neutral); }
+
+/* --- Chart / zone colors in SVG (affect inline styles only where they read tokens) --- */
+html[data-skin="paper"] .chart-axis{ stroke: var(--surface-line); }
+html[data-skin="paper"] .chart-line{ stroke: var(--brand-700); }
+html[data-skin="paper"] .chart-zone--buy{ fill: rgba(15,122,80,.12); stroke: rgba(15,122,80,.5); }
+html[data-skin="paper"] .chart-zone--target{ fill: rgba(181,138,60,.15); stroke: rgba(181,138,60,.55); }
+
+/* --- Links --- */
+html[data-skin="paper"] a{ color: inherit; }
+html[data-skin="paper"] a:hover{ color: var(--brand-700); }
+html[data-skin="paper"] .toc a:hover{ color: var(--brand-700); }
+
+/* --- Return-to-landing link in top-rail (adds a home button) --- */
+html[data-skin="paper"] .wordmark::after{
+  content: "";
+  display: inline-block;
+  width: 1px; height: 14px;
+  background: var(--surface-line-strong);
+  margin: 0 6px;
+}
+
+/* --- Sidebar tweaks (if any) --- */
+html[data-skin="paper"] .app__side{
+  background: var(--bg-subtle);
+  border-right: 1px solid var(--surface-line);
+}
+
+/* --- Section borders → dashed paper --- */
+html[data-skin="paper"] .section{ border-bottom: 1px dashed var(--surface-line); }

@@ -1,0 +1,1027 @@
+<!DOCTYPE html><html lang="en" data-theme="light" data-direction="precision"><head>
+
+
+<meta charset="utf-8">
+<title>Premise — Phase 1</title>
+<meta name="viewport" content="width=1440">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="premise.css">
+
+<script>
+// ---- Tweaks defaults (persisted to file via editor) ----
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "direction": "precision",
+  "theme": "light"
+}/*EDITMODE-END*/;
+
+// Read from localStorage, fall back to defaults
+function getTweaks() {
+  try {
+    const s = localStorage.getItem('premise_tweaks');
+    if (s) return { ...TWEAK_DEFAULTS, ...JSON.parse(s) };
+  } catch(e) {}
+  return { ...TWEAK_DEFAULTS };
+}
+function applyTweaks(t) {
+  document.documentElement.setAttribute('data-theme', t.theme || 'light');
+  document.documentElement.setAttribute('data-direction', t.direction || 'precision');
+  try { localStorage.setItem('premise_tweaks', JSON.stringify(t)); } catch(e) {}
+}
+applyTweaks(getTweaks());
+</script>
+</head>
+<body data-cc-id="cc-1" style="cursor: crosshair; font-family: Times;">
+
+<!-- ============================================================
+     0. TOP RAIL
+     ============================================================ -->
+<div class="top-rail">
+  <div class="page top-rail__inner">
+    <div class="wordmark">
+      <svg class="logo-mark" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M4 20 L12 6 L20 20 Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"></path>
+        <circle cx="12" cy="6" r="1.6" fill="currentColor"></circle>
+      </svg>
+      <span>premise</span>
+      <span class="wordmark__dot">·</span>
+      <span class="wordmark__sub">design phase 1</span>
+    </div>
+    <nav class="toc">
+      <a href="#moodboard">Moodboard</a>
+      <a href="#tokens">Tokens</a>
+      <a href="#logo">Logo</a>
+      <a href="#premise-block">Premise block</a>
+      <a href="#market-detail">Market detail</a>
+    </nav>
+    <div class="top-rail__meta">
+      <span class="eyebrow">v0.1 · 2026-04-19 · for Tobias</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     1. COVER
+     ============================================================ -->
+<section class="cover section" id="cover">
+  <div class="page cover__grid">
+    <div class="cover__left">
+      <div class="eyebrow">Design briefing · Phase 1</div>
+      <h1 class="cover__title">
+        <span class="cover__title-pre">A working theory of</span>
+        <span class="cover__title-main">Premise.</span>
+      </h1>
+      <p class="cover__lede">
+        Institutional-grade research for retail — a calm instrument for people
+        who read <em>Money Stuff</em> on the train and don't want another
+        rocket-emoji trading app. This document sets the visual premise: tokens,
+        logo directions, the signature <em>Premise</em> block, and a first
+        hi-fi pass of the key screen, <strong>Market Detail Desktop</strong>.
+      </p>
+      <div class="cover__kv">
+        <div><span class="eyebrow">Scope</span><span>Phase 1 · concept gate</span></div>
+        <div><span class="eyebrow">Directions</span><span>Editorial · Precision</span></div>
+        <div><span class="eyebrow">Mode</span><span>Light · Dark</span></div>
+        <div><span class="eyebrow">Deliverable</span><span>1 document, toggleable</span></div>
+      </div>
+      <div class="cover__cta">
+        <button class="btn btn--primary" id="btn-open-tweaks">Open Tweaks</button>
+        <a class="btn btn--ghost" href="#market-detail">Skip to Market Detail →</a>
+      </div>
+    </div>
+    <aside class="cover__right">
+      <!-- THE PREMISE — hero demonstration of the namesake component -->
+      <div class="premise-block premise-block--hero">
+        <div class="premise-block__label">
+          <span class="premise-block__label-tick"></span>
+          The Premise
+        </div>
+        <p class="premise-block__body">
+          Finfluencers have the reach.<br>
+          Research houses have the rigor.<br>
+          Neither has both. <span class="premise-block__accent">We do.</span>
+        </p>
+        <div class="premise-block__meta">
+          <span>by the house</span><span>·</span><span>standing thesis</span><span>·</span><span>2026-04-19</span>
+        </div>
+      </div>
+      <div class="cover__right-footnote eyebrow">
+        ↑ the Premise block · appears in every artifact in the product
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================================================
+     2. MOODBOARD (2 directions)
+     ============================================================ -->
+<section class="section" id="moodboard">
+  <div class="page">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">02 · Direction · locked</div>
+        <h2>Precision.<br>A calm instrument.</h2>
+      </div>
+      <div class="meta">
+        <b>Chosen 2026-04-19.</b> Geometric sans, monospaced eyebrows,
+        tight grids. Linear × Stripe × TradingView — without the bloat.
+        The chart and the number are the heroes.
+      </div>
+    </div>
+
+    <div class="mood-grid mood-grid--single">
+      <!-- PRECISION TILE -->
+      <article class="mood-tile mood-tile--precision mood-tile--locked">
+        <header class="mood-tile__head">
+          <div>
+            <div class="eyebrow"><span class="lock-dot"></span> Locked direction</div>
+            <h3 class="mood-tile__title">Precision<br>Instrument</h3>
+          </div>
+          <span class="chip chip--brand"><span class="dot"></span>SELECTED</span>
+        </header>
+        <p class="mood-tile__lede">
+          A calm measuring device. Geometric sans, monospaced eyebrows,
+          tight grids. Linear × Stripe × TradingView — without the bloat.
+          The chart and the number are the heroes.
+        </p>
+        <div class="mood-tile__swatches">
+          <span class="sw" style="background:#FAFCFF"><i>Snow</i></span>
+          <span class="sw" style="background:#1E4F6B;color:#fff"><i>Petrol</i></span>
+          <span class="sw" style="background:#5AB3C2;color:#fff"><i>Accent</i></span>
+          <span class="sw" style="background:#0E1726;color:#fff"><i>Ink</i></span>
+          <span class="sw" style="background:#ECF1F7"><i>Inset</i></span>
+        </div>
+        <dl class="mood-tile__specs">
+          <dt>Headlines</dt><dd>General Sans 500/600</dd>
+          <dt>Body</dt><dd>Inter 14/21</dd>
+          <dt>Numerals</dt><dd>JetBrains Mono tabular</dd>
+          <dt>Radius</dt><dd>10px cards · 6px buttons</dd>
+          <dt>Gesture</dt><dd>Grid · monospace labels · rules</dd>
+          <dt>Paper</dt><dd>#FAFCFF snow, crisp 1px rules</dd>
+        </dl>
+        <div class="mood-tile__preview precision-sample">
+          <div class="precision-sample__row">
+            <span class="mono precision-sample__tag">NVDA · NASDAQ</span>
+            <span class="chip chip--bullish"><span class="dot"></span>BULLISH</span>
+          </div>
+          <div class="precision-sample__price">
+            <span class="precision-sample__big mono">847.<span class="precision-sample__small">23</span></span>
+            <span class="precision-sample__delta mono">+2.14%</span>
+          </div>
+          <div class="precision-sample__chart">
+            <svg viewBox="0 0 280 80" preserveAspectRatio="none" width="100%" height="80">
+              <defs>
+                <linearGradient id="ps1" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#1FB57A" stop-opacity=".25"></stop>
+                  <stop offset="1" stop-color="#1FB57A" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M0,60 L20,55 L40,58 L60,50 L80,52 L100,45 L120,48 L140,40 L160,42 L180,33 L200,36 L220,28 L240,30 L260,22 L280,18 L280,80 L0,80 Z" fill="url(#ps1)"></path>
+              <path d="M0,60 L20,55 L40,58 L60,50 L80,52 L100,45 L120,48 L140,40 L160,42 L180,33 L200,36 L220,28 L240,30 L260,22 L280,18" fill="none" stroke="#1FB57A" stroke-width="1.5"></path>
+              <rect x="200" y="14" width="80" height="14" fill="rgba(30,79,107,.15)" stroke="rgba(30,79,107,.55)" stroke-width="1" stroke-dasharray="3 2"></rect>
+              <text x="204" y="25" font-size="8" fill="#1E4F6B" font-family="JetBrains Mono">820–860</text>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Principles sidebar (replaces the Editorial comparison tile) -->
+      <aside class="principles">
+        <div class="eyebrow">The principles</div>
+        <ol class="principles__list">
+          <li><b>The number is the hero.</b><span>Tabular JetBrains Mono. No jitter. Decimals de-emphasized.</span></li>
+          <li><b>Every label earns its place.</b><span>Monospaced eyebrows signal "this is measured, not decorative."</span></li>
+          <li><b>Grid, not float.</b><span>1px rules do the work that shadows do elsewhere. Calm, not soft.</span></li>
+          <li><b>Color has function.</b><span>Green = bullish, red = bearish, petrol = the house. Nothing else gets color.</span></li>
+          <li><b>Data density without density.</b><span>7 / 10 on the density slider — Bloomberg honesty, Linear restraint.</span></li>
+          <li><b>One typographic voice.</b><span>Display (General Sans) × Body (Inter) × Numerals (JetBrains Mono). Serif is gone.</span></li>
+        </ol>
+        <div class="principles__foot mono">v0.1 · locked 2026-04-19 · TS + LF</div>
+      </aside>
+    </div>
+
+    <!-- References strip -->
+    <div class="references">
+      <div class="references__head eyebrow">Reference territory · good company</div>
+      <div class="references__grid">
+        <div class="ref-chip"><span class="ref-chip__name">Linear</span><span class="ref-chip__why">ruhe · dichte · klarheit</span></div>
+        <div class="ref-chip"><span class="ref-chip__name">Stripe Dashboard</span><span class="ref-chip__why">zahlen-trust</span></div>
+        <div class="ref-chip"><span class="ref-chip__name">Apple Stocks</span><span class="ref-chip__why">radikale reduktion</span></div>
+        <div class="ref-chip"><span class="ref-chip__name">Substack Reader</span><span class="ref-chip__why">lese-qualität</span></div>
+        <div class="ref-chip"><span class="ref-chip__name">Koyfin</span><span class="ref-chip__why">chart kompetenz</span></div>
+        <div class="ref-chip"><span class="ref-chip__name">Public.com</span><span class="ref-chip__why">retail premium</span></div>
+      </div>
+      <div class="references__anti eyebrow">Not this territory</div>
+      <div class="references__grid references__grid--anti">
+        <div class="ref-chip ref-chip--anti"><span class="ref-chip__name">eToro</span><span class="ref-chip__why">zu sozial</span></div>
+        <div class="ref-chip ref-chip--anti"><span class="ref-chip__name">Bloomberg</span><span class="ref-chip__why">zu dicht</span></div>
+        <div class="ref-chip ref-chip--anti"><span class="ref-chip__name">Robinhood</span><span class="ref-chip__why">gamifiziert</span></div>
+        <div class="ref-chip ref-chip--anti"><span class="ref-chip__name">Crypto exchanges</span><span class="ref-chip__why">zu laut</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. TOKENS
+     ============================================================ -->
+<section class="section" id="tokens">
+  <div class="page">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">03 · Tokens</div>
+        <h2>Color, type, radii.<br>The calm instrument.</h2>
+      </div>
+      <div class="meta">
+        Full set in <code class="mono">tokens.css</code>.
+        Color has function, never decoration — green = bullish, red = bearish,
+        petrol = neutral information. Every color pairing AA.
+      </div>
+    </div>
+
+    <div class="tokens-grid">
+
+      <!-- Brand ramp -->
+      <div class="token-card">
+        <div class="token-card__label"><span class="eyebrow">Brand · Petrol Teal</span><span class="mono">#1E4F6B → #5AB3C2</span></div>
+        <div class="ramp">
+          <span class="ramp__cell" style="background:#0F3447"><b>900</b></span>
+          <span class="ramp__cell" style="background:#14425A"><b>800</b></span>
+          <span class="ramp__cell ramp__cell--primary" style="background:#1E4F6B"><b>700</b><i>primary</i></span>
+          <span class="ramp__cell" style="background:#276585"><b>600</b></span>
+          <span class="ramp__cell" style="background:#3A83A3"><b>500</b></span>
+          <span class="ramp__cell" style="background:#5AB3C2;color:#0E1726"><b>400</b><i>accent</i></span>
+          <span class="ramp__cell" style="background:#93D0D9;color:#0E1726"><b>300</b></span>
+          <span class="ramp__cell" style="background:#C2E4E9;color:#0E1726"><b>200</b></span>
+          <span class="ramp__cell" style="background:#E3F2F5;color:#0E1726"><b>100</b></span>
+          <span class="ramp__cell" style="background:#F1F8F9;color:#0E1726"><b>50</b></span>
+        </div>
+      </div>
+
+      <!-- Semantic pairings -->
+      <div class="token-card">
+        <div class="token-card__label"><span class="eyebrow">Semantic · Market Sentiment</span><span class="mono">2-channel (color + icon)</span></div>
+        <div class="sentiment-row">
+          <div class="sentiment sentiment--bullish">
+            <span class="sentiment__ico">
+              <svg viewBox="0 0 16 16" width="14" height="14"><path d="M2 11 L7 6 L10 9 L14 4" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 4 L14 4 L14 7" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+            <div><b>Bullish</b><i class="mono">#1FB57A</i></div>
+          </div>
+          <div class="sentiment sentiment--neutral">
+            <span class="sentiment__ico">
+              <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 8 L13 8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path></svg>
+            </span>
+            <div><b>Neutral</b><i class="mono">#6B7A90</i></div>
+          </div>
+          <div class="sentiment sentiment--bearish">
+            <span class="sentiment__ico">
+              <svg viewBox="0 0 16 16" width="14" height="14"><path d="M2 5 L7 10 L10 7 L14 12" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 12 L14 12 L14 9" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+            <div><b>Bearish</b><i class="mono">#E4483C</i></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Greyscale -->
+      <div class="token-card">
+        <div class="token-card__label"><span class="eyebrow">Ink · Greyscale</span><span class="mono">900 → 50</span></div>
+        <div class="greyscale">
+          <span style="background:#0E1726"><b>900</b></span>
+          <span style="background:#1A2433"><b>800</b></span>
+          <span style="background:#2E3A4D"><b>700</b></span>
+          <span style="background:#4A5668"><b>600</b></span>
+          <span style="background:#6B7A90"><b>500</b></span>
+          <span style="background:#8A97AC;color:#0E1726"><b>400</b></span>
+          <span style="background:#B2BCCC;color:#0E1726"><b>300</b></span>
+          <span style="background:#D5DCE7;color:#0E1726"><b>200</b></span>
+          <span style="background:#E9EEF5;color:#0E1726"><b>100</b></span>
+          <span style="background:#F5F8FC;color:#0E1726"><b>50</b></span>
+        </div>
+      </div>
+
+      <!-- Type -->
+      <div class="token-card token-card--wide">
+        <div class="token-card__label"><span class="eyebrow">Type · four families, one voice</span><span class="mono">Inter · General Sans · Source Serif 4 · JetBrains Mono</span></div>
+        <div class="type-grid">
+          <div class="type-spec">
+            <div class="type-spec__label">Display / Headline</div>
+            <div class="type-spec__sample" style="font-family:var(--font-display); font-size:44px; line-height:1.05; letter-spacing:-0.02em; font-weight:500">Our premise: the Fed pivots in&nbsp;Q3.</div>
+            <div class="type-spec__meta mono">General Sans · 500 · −0.02em</div>
+          </div>
+          <div class="type-spec">
+            <div class="type-spec__label">Editorial headline</div>
+            <div class="type-spec__sample serif" style="font-size:40px; line-height:1.05; font-style:italic; font-variation-settings:'opsz' 60; font-weight:600">A working theory&nbsp;of <em>Nvidia.</em></div>
+            <div class="type-spec__meta mono">Source Serif 4 · 600 · italic · opsz 60</div>
+          </div>
+          <div class="type-spec">
+            <div class="type-spec__label">Body</div>
+            <div class="type-spec__sample" style="font-size:16px; line-height:1.55; max-width:52ch">
+              The primary scenario carries a 65% probability. The alternate — a
+              rejection at the 860 zone followed by a retest of the 710 swing
+              low — is not a prediction, it is a contingency.
+            </div>
+            <div class="type-spec__meta mono">Inter · 16 / 25</div>
+          </div>
+          <div class="type-spec">
+            <div class="type-spec__label">Numerals · live</div>
+            <div class="type-spec__sample mono" style="font-size:40px; letter-spacing:-0.01em">
+              <span>847.23</span>
+              <span style="color:var(--bullish); font-size:24px; margin-left:8px">+2.14%</span>
+            </div>
+            <div class="type-spec__meta mono">JetBrains Mono · tabular · no jumps</div>
+          </div>
+          <div class="type-spec">
+            <div class="type-spec__label">Eyebrow / tag</div>
+            <div class="type-spec__sample mono" style="font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-500)">
+              Primary scenario · 65% probability
+            </div>
+            <div class="type-spec__meta mono">JetBrains Mono · 12 · tracking 0.14</div>
+          </div>
+          <div class="type-spec">
+            <div class="type-spec__label">The Premise voice</div>
+            <div class="type-spec__sample serif" style="font-size:20px; line-height:1.4; font-style:italic">
+              “Nvidia is running into a corrective wave 4 before a final
+              high in wave 5 — buy zone 820–860 $.”
+            </div>
+            <div class="type-spec__meta mono">Source Serif 4 · 500 · italic</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Radii + shadows -->
+      <div class="token-card">
+        <div class="token-card__label"><span class="eyebrow">Radius · Surface</span><span class="mono">xs 4 · sm 6 · md 10 · lg 14 · xl 20</span></div>
+        <div class="radii-row">
+          <div class="radii" style="border-radius:4px"><span>xs</span></div>
+          <div class="radii" style="border-radius:6px"><span>sm</span></div>
+          <div class="radii" style="border-radius:10px"><span>md</span></div>
+          <div class="radii" style="border-radius:14px"><span>lg</span></div>
+          <div class="radii" style="border-radius:20px"><span>xl</span></div>
+        </div>
+      </div>
+
+      <div class="token-card">
+        <div class="token-card__label"><span class="eyebrow">Elevation</span><span class="mono">xs · sm · md · lg</span></div>
+        <div class="shadow-row">
+          <div class="shd" style="box-shadow:var(--shadow-xs)">xs</div>
+          <div class="shd" style="box-shadow:var(--shadow-sm)">sm</div>
+          <div class="shd" style="box-shadow:var(--shadow-md)">md</div>
+          <div class="shd" style="box-shadow:var(--shadow-lg)">lg</div>
+        </div>
+      </div>
+
+      <!-- Target zone -->
+      <div class="token-card token-card--wide">
+        <div class="token-card__label"><span class="eyebrow">Signature · Target Zone</span><span class="mono">primary @ 15% alpha · 55% stroke</span></div>
+        <div class="zone-demo">
+          <svg viewBox="0 0 800 180" preserveAspectRatio="none" width="100%" height="180">
+            <defs>
+              <pattern id="grid" width="40" height="30" patternUnits="userSpaceOnUse">
+                <path d="M40 0 L0 0 0 30" fill="none" stroke="var(--surface-line)" stroke-width="1"></path>
+              </pattern>
+            </defs>
+            <rect width="800" height="180" fill="url(#grid)"></rect>
+            <!-- Zone rect -->
+            <rect x="560" y="52" width="220" height="58" fill="var(--zone-fill)" stroke="var(--zone-stroke)" stroke-width="1" stroke-dasharray="4 3"></rect>
+            <text x="572" y="46" font-family="var(--font-mono)" font-size="11" fill="var(--brand-700)">Target zone · 820–860</text>
+            <!-- Price path -->
+            <path d="M20,140 L60,120 L100,130 L140,110 L180,115 L220,100 L260,105 L300,90 L340,95 L380,82 L420,88 L460,72 L500,78 L540,68 L580,75" fill="none" stroke="var(--brand-700)" stroke-width="1.75"></path>
+            <!-- Waves -->
+            <circle cx="60" cy="120" r="9" fill="var(--brand-700)"></circle><text x="60" y="124" font-size="10" fill="#fff" text-anchor="middle" font-family="var(--font-mono)">1</text>
+            <circle cx="140" cy="110" r="9" fill="var(--brand-700)"></circle><text x="140" y="114" font-size="10" fill="#fff" text-anchor="middle" font-family="var(--font-mono)">2</text>
+            <circle cx="260" cy="105" r="9" fill="var(--brand-700)"></circle><text x="260" y="109" font-size="10" fill="#fff" text-anchor="middle" font-family="var(--font-mono)">3</text>
+            <circle cx="380" cy="82" r="9" fill="var(--brand-700)"></circle><text x="380" y="86" font-size="10" fill="#fff" text-anchor="middle" font-family="var(--font-mono)">4</text>
+            <circle cx="540" cy="68" r="9" fill="var(--brand-700)"></circle><text x="540" y="72" font-size="10" fill="#fff" text-anchor="middle" font-family="var(--font-mono)">5</text>
+            <!-- Alt dashed -->
+            <path d="M540,68 L600,105 L660,90 L720,120" fill="none" stroke="var(--ink-400)" stroke-width="1.25" stroke-dasharray="3 3"></path>
+          </svg>
+          <div class="zone-demo__caption mono">Primary scenario · solid · waves 1–5 · zone = 15% primary · alt dashed</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. LOGO
+     ============================================================ -->
+<section class="section" id="logo">
+  <div class="page">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">04 · Logo · three directions</div>
+        <h2>The premise is<br>a shape with a conclusion.</h2>
+      </div>
+      <div class="meta">
+        All three sit on the same grid and ship as wordmark, app icon (1024²),
+        and 32-px favicon. All work reversed on dark.
+      </div>
+    </div>
+    <div class="logos-grid">
+
+      <!-- LOGO 1 -->
+      <article class="logo-card">
+        <div class="logo-card__stage">
+          <svg viewBox="0 0 240 120" width="100%" height="100%">
+            <g transform="translate(30,30)">
+              <path d="M0 60 L30 0 L60 60 Z" fill="none" stroke="var(--ink-900)" stroke-width="2.5" stroke-linejoin="round"></path>
+              <circle cx="30" cy="0" r="4.2" fill="var(--ink-900)"></circle>
+            </g>
+            <text x="100" y="73" font-family="var(--font-display)" font-size="34" font-weight="600" letter-spacing="-0.02em" fill="var(--ink-900)">premise</text>
+          </svg>
+        </div>
+        <div class="logo-card__meta">
+          <h4>01 · The Premise Triangle</h4>
+          <p>Two premises converge to a single point — the conclusion. Apex dot makes the "point of thesis" explicit. Works at 16 px.</p>
+          <div class="logo-card__variants">
+            <div class="lv"><svg viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="var(--brand-700)"></rect><g transform="translate(12,12)"><path d="M0 24 L12 0 L24 24 Z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"></path><circle cx="12" cy="0" r="2.2" fill="#fff"></circle></g></svg><span class="eyebrow">App 1024</span></div>
+            <div class="lv"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="var(--ink-900)"></rect><g transform="translate(8,8)"><path d="M0 16 L8 0 L16 16 Z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="0" r="1.6" fill="#fff"></circle></g></svg><span class="eyebrow">Fav 32</span></div>
+            <div class="lv lv--dark"><svg viewBox="0 0 80 32"><g transform="translate(6,6)"><path d="M0 20 L10 0 L20 20 Z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="10" cy="0" r="1.5" fill="#fff"></circle></g><text x="34" y="22" font-family="var(--font-display)" font-size="16" font-weight="600" letter-spacing="-0.02em" fill="#fff">premise</text></svg><span class="eyebrow">Reversed</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- LOGO 2 -->
+      <article class="logo-card">
+        <div class="logo-card__stage">
+          <svg viewBox="0 0 240 120" width="100%" height="100%">
+            <g transform="translate(30,30)">
+              <!-- P with direction line -->
+              <path d="M0 0 L0 60" stroke="var(--ink-900)" stroke-width="5" stroke-linecap="round"></path>
+              <path d="M0 0 L30 0 A 15 15 0 0 1 30 30 L0 30" stroke="var(--ink-900)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M36 46 L58 24" stroke="var(--brand-700)" stroke-width="5" stroke-linecap="round"></path>
+              <circle cx="58" cy="24" r="3.5" fill="var(--brand-700)"></circle>
+            </g>
+            <text x="110" y="73" font-family="var(--font-display)" font-size="34" font-weight="500" letter-spacing="-0.02em" fill="var(--ink-900)">premise</text>
+          </svg>
+        </div>
+        <div class="logo-card__meta">
+          <h4>02 · P with Target Vector</h4>
+          <p>The letterform itself carries a direction line that lands on a target dot — premise and conclusion in one glyph. Reads as "P·" at favicon size.</p>
+          <div class="logo-card__variants">
+            <div class="lv"><svg viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="#FAFCFF"></rect><g transform="translate(12,10)"><path d="M0 0 L0 28" stroke="#1E4F6B" stroke-width="3" stroke-linecap="round"></path><path d="M0 0 L14 0 A 7 7 0 0 1 14 14 L0 14" stroke="#1E4F6B" stroke-width="3" fill="none" stroke-linejoin="round"></path><path d="M17 22 L26 13" stroke="#5AB3C2" stroke-width="3" stroke-linecap="round"></path><circle cx="26" cy="13" r="2.2" fill="#5AB3C2"></circle></g></svg><span class="eyebrow">App 1024</span></div>
+            <div class="lv"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="var(--brand-700)"></rect><g transform="translate(9,8)"><path d="M0 0 L0 18" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path d="M0 0 L8 0 A 4 4 0 0 1 8 8 L0 8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linejoin="round"></path><path d="M10 14 L15 9" stroke="#5AB3C2" stroke-width="2.2" stroke-linecap="round"></path></g></svg><span class="eyebrow">Fav 32</span></div>
+            <div class="lv lv--dark"><svg viewBox="0 0 80 32"><g transform="translate(6,5)"><path d="M0 0 L0 20" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path d="M0 0 L10 0 A 5 5 0 0 1 10 10 L0 10" stroke="#fff" stroke-width="2.2" fill="none" stroke-linejoin="round"></path><path d="M12 16 L20 8" stroke="#5AB3C2" stroke-width="2.2" stroke-linecap="round"></path></g><text x="34" y="22" font-family="var(--font-display)" font-size="16" font-weight="500" letter-spacing="-0.02em" fill="#fff">premise</text></svg><span class="eyebrow">Reversed</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- LOGO 3 -->
+      <article class="logo-card">
+        <div class="logo-card__stage">
+          <svg viewBox="0 0 240 120" width="100%" height="100%">
+            <g transform="translate(30,30)">
+              <!-- Stacked premise bars -->
+              <rect x="0" y="12" width="40" height="6" rx="1" fill="var(--ink-900)"></rect>
+              <rect x="0" y="26" width="56" height="6" rx="1" fill="var(--ink-900)"></rect>
+              <rect x="0" y="40" width="28" height="6" rx="1" fill="var(--ink-900)"></rect>
+              <path d="M0 60 L60 60" stroke="var(--ink-900)" stroke-width="1.5"></path>
+              <path d="M0 60 L60 60 L30 6 Z" fill="none" stroke="var(--brand-700)" stroke-width="1.2" stroke-dasharray="2 2"></path>
+            </g>
+            <text x="110" y="73" font-family="var(--font-display)" font-size="34" font-weight="500" letter-spacing="-0.02em" fill="var(--ink-900)">premise</text>
+          </svg>
+        </div>
+        <div class="logo-card__meta">
+          <h4>03 · The Argument Stack</h4>
+          <p>A stack of premises with a conclusion line underneath — literal logical form. Most editorial of the three; reads as a research-house mark.</p>
+          <div class="logo-card__variants">
+            <div class="lv"><svg viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="var(--ink-900)"></rect><g transform="translate(10,12)"><rect x="0" y="4" width="18" height="3" rx="1" fill="#fff"></rect><rect x="0" y="10" width="26" height="3" rx="1" fill="#fff"></rect><rect x="0" y="16" width="12" height="3" rx="1" fill="#fff"></rect><path d="M0 25 L28 25" stroke="#5AB3C2" stroke-width="1.5"></path></g></svg><span class="eyebrow">App 1024</span></div>
+            <div class="lv"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#FAFCFF" stroke="var(--surface-line)"></rect><g transform="translate(6,9)"><rect x="0" y="2" width="12" height="2.4" rx="1" fill="var(--ink-900)"></rect><rect x="0" y="7" width="18" height="2.4" rx="1" fill="var(--ink-900)"></rect><rect x="0" y="12" width="8" height="2.4" rx="1" fill="var(--ink-900)"></rect><path d="M0 18 L20 18" stroke="var(--brand-700)" stroke-width="1.4"></path></g></svg><span class="eyebrow">Fav 32</span></div>
+            <div class="lv lv--dark"><svg viewBox="0 0 80 32"><g transform="translate(6,6)"><rect x="0" y="2" width="10" height="2" rx="1" fill="#fff"></rect><rect x="0" y="7" width="16" height="2" rx="1" fill="#fff"></rect><rect x="0" y="12" width="7" height="2" rx="1" fill="#fff"></rect><path d="M0 17 L18 17" stroke="#5AB3C2" stroke-width="1.2"></path></g><text x="34" y="22" font-family="var(--font-display)" font-size="16" font-weight="500" letter-spacing="-0.02em" fill="#fff">premise</text></svg><span class="eyebrow">Reversed</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. THE PREMISE BLOCK (signature component, 3 variants)
+     ============================================================ -->
+<section class="section" id="premise-block">
+  <div class="page">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">05 · Signature component</div>
+        <h2>The Premise block,<br>in three keys.</h2>
+      </div>
+      <div class="meta">
+        Every artifact — chart, report, portfolio — opens with one.
+        Three variants, same data. Different volume.
+      </div>
+    </div>
+
+    <div class="premise-variants">
+
+      <!-- Variant A — editorial pull-quote -->
+      <div class="pv">
+        <div class="pv__label"><span class="eyebrow">Variant A · Editorial</span></div>
+        <div class="premise-block premise-block--editorial">
+          <div class="premise-block__rule"></div>
+          <p class="premise-block__body serif">
+            <span class="premise-block__drop">N</span>vidia is running into a corrective
+            wave&nbsp;4 before a final high in wave&nbsp;5 — buy zone 820–860&nbsp;$,
+            invalidation below 710.
+          </p>
+          <div class="premise-block__meta">
+            <span><b class="initials">LF</b>Léa Fournier</span>
+            <span>·</span>
+            <span>Primary scenario · 65%</span>
+            <span>·</span>
+            <span>Apr 17, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variant B — precision left-border -->
+      <div class="pv">
+        <div class="pv__label"><span class="eyebrow">Variant B · Precision</span></div>
+        <div class="premise-block premise-block--precision">
+          <div class="premise-block__tag mono">THE&nbsp;PREMISE</div>
+          <p class="premise-block__body">
+            Nvidia is running into a corrective wave&nbsp;4 before a final
+            high in wave&nbsp;5 — buy zone&nbsp;820–860&nbsp;$,
+            invalidation below&nbsp;710.
+          </p>
+          <div class="premise-block__meta mono">
+            <span>LF · LÉA FOURNIER</span>
+            <span>·</span>
+            <span>PRIMARY 65% · ALT 35%</span>
+            <span>·</span>
+            <span>2026-04-17</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variant C — full dossier card -->
+      <div class="pv pv--wide">
+        <div class="pv__label"><span class="eyebrow">Variant C · Dossier</span></div>
+        <div class="premise-block premise-block--dossier">
+          <div class="premise-block__dossier-head">
+            <div class="premise-block__dossier-author">
+              <span class="initials initials--lg">LF</span>
+              <div>
+                <b>Léa Fournier</b>
+                <span class="eyebrow">Equity · Semis · US</span>
+              </div>
+            </div>
+            <div class="premise-block__dossier-meta">
+              <span class="chip chip--brand"><span class="dot"></span>Primary · 65%</span>
+              <span class="chip"><span class="dot" style="background:var(--ink-400)"></span>Alternate · 35%</span>
+              <span class="chip">Published 2026-04-17 · 14:32 UTC</span>
+            </div>
+          </div>
+          <div class="premise-block__tag mono">THE&nbsp;PREMISE</div>
+          <p class="premise-block__body">
+            Nvidia is running into a corrective wave&nbsp;4 before a final high in
+            wave&nbsp;5. Accumulation zone 820–860&nbsp;$ invites a measured re-entry;
+            target for the terminal impulse sits at 1,040–1,120&nbsp;$ by Q3.
+            <b>Invalidation</b> below the 710 swing low.
+          </p>
+          <div class="premise-block__dossier-kv">
+            <div><span class="eyebrow">Entry zone</span><b class="mono">820 – 860</b></div>
+            <div><span class="eyebrow">Target</span><b class="mono">1,040 – 1,120</b></div>
+            <div><span class="eyebrow">Invalidation</span><b class="mono">&lt; 710</b></div>
+            <div><span class="eyebrow">Risk / reward</span><b class="mono">1 : 3.4</b></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. MARKET DETAIL DESKTOP — hi-fi key screen
+     ============================================================ -->
+<section class="section section--canvas" id="market-detail">
+  <div class="page">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">06 · Hi-fi · key screen</div>
+        <h2>Market Detail, desktop.<br>Where everything converges.</h2>
+      </div>
+      <div class="meta">
+        Chart signature, Premise block, analyst attribution, and
+        live alert state — in one breath. 1440 × 960 canvas.
+      </div>
+    </div>
+
+    <!-- Device frame wrapping the product -->
+    <div class="md-frame">
+      <div class="md-frame__chrome">
+        <span class="md-frame__lights"><i></i><i></i><i></i></span>
+        <span class="md-frame__url mono">premise.markets / signals / nvda</span>
+        <span class="eyebrow">1440 × 960</span>
+      </div>
+
+      <!-- The product itself -->
+      <div class="app" id="app">
+
+        <!-- Sidebar -->
+        <aside class="app__side">
+          <div class="app__brand">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20 L12 6 L20 20 Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"></path><circle cx="12" cy="6" r="1.6" fill="currentColor"></circle></svg>
+            <span>premise</span>
+          </div>
+          <div class="app__nav-group">
+            <div class="app__nav-label eyebrow">Workspace</div>
+            <a class="app__nav-item">Today</a>
+            <a class="app__nav-item app__nav-item--active">
+              Signals
+              <span class="app__nav-count mono">14</span>
+            </a>
+            <a class="app__nav-item">Desk</a>
+            <a class="app__nav-item">Portfolios</a>
+            <a class="app__nav-item">Alerts <span class="app__nav-dot"></span></a>
+          </div>
+          <div class="app__nav-group">
+            <div class="app__nav-label eyebrow">Signals · watching</div>
+            <a class="app__nav-item app__nav-item--sub app__nav-item--current">
+              <span class="app__ticker mono">NVDA</span>
+              <span class="chip chip--bullish chip--xs"><span class="dot"></span>BULL</span>
+            </a>
+            <a class="app__nav-item app__nav-item--sub">
+              <span class="app__ticker mono">DAX&nbsp;40</span>
+              <span class="chip chip--neutral chip--xs"><span class="dot"></span>NEUT</span>
+            </a>
+            <a class="app__nav-item app__nav-item--sub">
+              <span class="app__ticker mono">BTC·USD</span>
+              <span class="chip chip--bullish chip--xs"><span class="dot"></span>BULL</span>
+            </a>
+            <a class="app__nav-item app__nav-item--sub">
+              <span class="app__ticker mono">EUR·USD</span>
+              <span class="chip chip--bearish chip--xs"><span class="dot"></span>BEAR</span>
+            </a>
+            <a class="app__nav-item app__nav-item--sub">
+              <span class="app__ticker mono">GOLD</span>
+              <span class="chip chip--neutral chip--xs"><span class="dot"></span>NEUT</span>
+            </a>
+            <a class="app__nav-item app__nav-item--sub app__nav-item--muted">+ 9 more</a>
+          </div>
+          <div class="app__side-foot">
+            <div class="app__user">
+              <span class="initials">TS</span>
+              <div>
+                <b>Tobias Sauer</b>
+                <span class="eyebrow">pro · 2026</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main column -->
+        <main class="app__main">
+          <!-- Top bar -->
+          <header class="app__top">
+            <div class="app__top-left">
+              <div class="breadcrumb">
+                <span>Signals</span>
+                <span class="sep">/</span>
+                <span>US Equities</span>
+                <span class="sep">/</span>
+                <b>NVDA</b>
+              </div>
+            </div>
+            <div class="app__search">
+              <svg viewBox="0 0 16 16" width="14" height="14"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M10.5 10.5 L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+              <input placeholder="Search markets, reports, analysts, portfolios…">
+              <span class="kbd mono">⌘K</span>
+            </div>
+            <div class="app__top-right">
+              <button class="btn btn--sm btn--ghost" title="Alerts">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 2 C10.5 2 12 3.5 12 7 L12 10 L13 12 L3 12 L4 10 L4 7 C4 3.5 5.5 2 8 2 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M7 13.5 C7 14.3 7.4 14.8 8 14.8 C8.6 14.8 9 14.3 9 13.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                <span class="badge-dot">3</span>
+              </button>
+              <button class="btn btn--sm">Share</button>
+              <button class="btn btn--sm btn--primary">+ Watch</button>
+            </div>
+          </header>
+
+          <!-- Hero: ticker + price + sentiment -->
+          <section class="md-hero">
+            <div class="md-hero__id">
+              <div class="md-hero__row">
+                <span class="md-hero__ticker mono">NVDA</span>
+                <span class="md-hero__name">NVIDIA Corp.</span>
+                <span class="md-hero__exch mono">NASDAQ · USD</span>
+                <span class="chip chip--bullish"><span class="dot"></span>BULLISH</span>
+                <span class="chip"><span class="dot" style="background:var(--brand-700)"></span>Premise · primary · 65%</span>
+              </div>
+              <div class="md-hero__row md-hero__row--price">
+                <span class="md-hero__price mono">847.<span class="md-hero__price-frac">23</span></span>
+                <span class="md-hero__delta md-hero__delta--pos mono">
+                  <svg viewBox="0 0 10 10" width="10" height="10"><path d="M5 1 L9 6 L6.5 6 L6.5 9 L3.5 9 L3.5 6 L1 6 Z" fill="currentColor"></path></svg>
+                  +17.74 &nbsp;·&nbsp; +2.14%
+                </span>
+                <span class="md-hero__session eyebrow">today · 16:04:12 EDT</span>
+              </div>
+            </div>
+            <div class="md-hero__stats">
+              <div><span class="eyebrow">Prev close</span><b class="mono">829.49</b></div>
+              <div><span class="eyebrow">Day range</span><b class="mono">831.10 – 852.77</b></div>
+              <div><span class="eyebrow">52-w range</span><b class="mono">394.50 – 974.00</b></div>
+              <div><span class="eyebrow">Volume</span><b class="mono">41.2M</b></div>
+              <div><span class="eyebrow">Mkt cap</span><b class="mono">2.08T</b></div>
+              <div><span class="eyebrow">Target zone</span><b class="mono" style="color:var(--brand-700)">820 – 860</b></div>
+            </div>
+          </section>
+
+          <!-- Grid: chart + right rail -->
+          <div class="md-grid">
+
+            <!-- LEFT: chart + below -->
+            <div class="md-left">
+
+              <!-- The Premise block above the chart -->
+              <div class="premise-block premise-block--precision premise-block--inline">
+                <div class="premise-block__head-row">
+                  <div class="premise-block__tag mono">THE&nbsp;PREMISE</div>
+                  <div class="premise-block__head-meta mono">
+                    <span>LÉA FOURNIER</span>
+                    <span>·</span>
+                    <span>UPDATED 2H AGO</span>
+                  </div>
+                </div>
+                <p class="premise-block__body">
+                  Nvidia is running into a corrective wave&nbsp;4 before a final high in
+                  wave&nbsp;5 — <b>buy zone 820–860&nbsp;$</b>, target 1,040–1,120&nbsp;$,
+                  invalidation below&nbsp;710.
+                </p>
+              </div>
+
+              <!-- Chart card -->
+              <div class="chart-card">
+                <div class="chart-card__head">
+                  <div class="chart-card__tabs">
+                    <button class="chart-tab">1D</button>
+                    <button class="chart-tab">1W</button>
+                    <button class="chart-tab chart-tab--active">1M</button>
+                    <button class="chart-tab">3M</button>
+                    <button class="chart-tab">1Y</button>
+                    <button class="chart-tab">5Y</button>
+                    <button class="chart-tab">All</button>
+                  </div>
+                  <div class="chart-card__tools">
+                    <button class="chart-tool" aria-label="Candles">
+                      <svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 2 L4 14 M12 2 L12 14" stroke="currentColor" stroke-width="1.25"></path><rect x="2" y="5" width="4" height="6" fill="currentColor"></rect><rect x="10" y="3" width="4" height="9" fill="none" stroke="currentColor" stroke-width="1.25"></rect></svg>
+                    </button>
+                    <button class="chart-tool" aria-label="Waves">
+                      <svg viewBox="0 0 16 16" width="14" height="14"><path d="M1 11 L4 7 L7 9 L10 4 L13 6 L15 3" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"></path></svg>
+                    </button>
+                    <button class="chart-tool" aria-label="Zone">
+                      <svg viewBox="0 0 16 16" width="14" height="14"><rect x="2" y="4" width="12" height="5" fill="none" stroke="currentColor" stroke-width="1.25" stroke-dasharray="2 1.5"></rect></svg>
+                    </button>
+                    <button class="chart-tool" aria-label="Fullscreen">
+                      <svg viewBox="0 0 16 16" width="14" height="14"><path d="M2 6 L2 2 L6 2 M10 2 L14 2 L14 6 M14 10 L14 14 L10 14 M6 14 L2 14 L2 10" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- The chart itself (custom SVG, TradingView-Lightweight style) -->
+                <div class="chart-card__body">
+                  <div class="chart-card__y mono">
+                    <span>880</span><span>860</span><span>840</span><span>820</span><span>800</span><span>780</span><span>760</span><span>740</span><span>720</span>
+                  </div>
+                  <div class="chart-card__canvas" id="chart-canvas"><svg viewBox="0 0 380 430" preserveAspectRatio="none" width="100%" height="100%"><rect x="0" y="53.75" width="380" height="107.5" fill="color-mix(in oklab, #1E4F6B 15%, transparent)"></rect><line x1="0" x2="380" y1="53.75" y2="53.75" stroke="color-mix(in oklab, #1E4F6B 55%, transparent)" stroke-width="1" stroke-dasharray="4 3"></line><line x1="0" x2="380" y1="161.25" y2="161.25" stroke="color-mix(in oklab, #1E4F6B 55%, transparent)" stroke-width="1" stroke-dasharray="4 3"></line><text x="12" y="47.75" font-family="JetBrains Mono, monospace" font-size="10" fill="#1E4F6B">Target zone · 820–860</text><line x1="0" x2="380" y1="428" y2="428" stroke="#E4483C" stroke-width="1" stroke-dasharray="2 2" opacity=".6"></line><text x="12" y="424" font-family="JetBrains Mono, monospace" font-size="10" fill="#E4483C">Invalidation · &lt; 710</text><line x1="3.1666666666666665" x2="3.1666666666666665" y1="220.00807220537544" y2="251.23938617470486" stroke="#1FB57A" stroke-width="1"></line><rect x="1.33" y="231.67317006328364" width="3.673333333333333" height="10.201829936716365" fill="#1FB57A" opacity=".95"></rect><line x1="9.5" x2="9.5" y1="218.19548736472" y2="232.21636451913406" stroke="#1FB57A" stroke-width="1"></line><rect x="7.663333333333334" y="224.19925874703526" width="3.673333333333333" height="7.473911316248376" fill="#1FB57A" opacity=".95"></rect><line x1="15.833333333333332" x2="15.833333333333332" y1="207.49383974378665" y2="227.7310249252868" stroke="#1FB57A" stroke-width="1"></line><rect x="13.996666666666666" y="215.29554635803495" width="3.673333333333333" height="8.903712389000304" fill="#1FB57A" opacity=".95"></rect><line x1="22.166666666666668" x2="22.166666666666668" y1="191.9993096545424" y2="225.3319551813358" stroke="#1FB57A" stroke-width="1"></line><rect x="20.330000000000002" y="203.15468895032413" width="3.673333333333333" height="12.140857407710826" fill="#1FB57A" opacity=".95"></rect><line x1="28.5" x2="28.5" y1="198.1586829278689" y2="210.3799687433499" stroke="#E4483C" stroke-width="1"></line><rect x="26.663333333333334" y="203.15468895032413" width="3.673333333333333" height="1" fill="#E4483C" opacity=".95"></rect><line x1="34.83333333333333" x2="34.83333333333333" y1="198.65522718484343" y2="207.74478069552862" stroke="#1FB57A" stroke-width="1"></line><rect x="32.99666666666666" y="200.99964361318692" width="3.673333333333333" height="3.0332703736712574" fill="#1FB57A" opacity=".95"></rect><line x1="41.166666666666664" x2="41.166666666666664" y1="195.11505990586753" y2="213.65771306980523" stroke="#E4483C" stroke-width="1"></line><rect x="39.33" y="200.99964361318692" width="3.673333333333333" height="4.488169714989795" fill="#E4483C" opacity=".95"></rect><line x1="47.49999999999999" x2="47.49999999999999" y1="196.9972794094975" y2="213.86648423505963" stroke="#1FB57A" stroke-width="1"></line><rect x="45.66333333333333" y="198.11893392938703" width="3.673333333333333" height="7.368879398789687" fill="#1FB57A" opacity=".95"></rect><line x1="53.83333333333333" x2="53.83333333333333" y1="189.76741989275433" y2="201.25945805162803" stroke="#E4483C" stroke-width="1"></line><rect x="51.99666666666666" y="198.11893392938703" width="3.673333333333333" height="1.3663418713078386" fill="#E4483C" opacity=".95"></rect><line x1="60.166666666666664" x2="60.166666666666664" y1="189.47311156422876" y2="199.74631121357862" stroke="#1FB57A" stroke-width="1"></line><rect x="58.33" y="191.93018801168765" width="3.673333333333333" height="7.555087789007217" fill="#1FB57A" opacity=".95"></rect><line x1="66.5" x2="66.5" y1="183.4792658044221" y2="206.92203228814725" stroke="#E4483C" stroke-width="1"></line><rect x="64.66333333333333" y="191.93018801168765" width="3.673333333333333" height="2.9394289414521495" fill="#E4483C" opacity=".95"></rect><line x1="72.83333333333333" x2="72.83333333333333" y1="188.3590328836234" y2="195.40321873280257" stroke="#1FB57A" stroke-width="1"></line><rect x="70.99666666666666" y="188.96929162486583" width="3.673333333333333" height="5.900325328273965" fill="#1FB57A" opacity=".95"></rect><line x1="79.16666666666667" x2="79.16666666666667" y1="172.9122501623288" y2="192.41074948010814" stroke="#1FB57A" stroke-width="1"></line><rect x="77.33" y="180.90709327523717" width="3.673333333333333" height="8.062198349628659" fill="#1FB57A" opacity=".95"></rect><line x1="85.5" x2="85.5" y1="171.8480981481296" y2="188.54318815205463" stroke="#E4483C" stroke-width="1"></line><rect x="83.66333333333333" y="180.90709327523717" width="3.673333333333333" height="1.767680164141325" fill="#E4483C" opacity=".95"></rect><line x1="91.83333333333333" x2="91.83333333333333" y1="173.6055872931021" y2="189.42753719445716" stroke="#1FB57A" stroke-width="1"></line><rect x="89.99666666666666" y="178.4099085314339" width="3.673333333333333" height="4.264864907944599" fill="#1FB57A" opacity=".95"></rect><line x1="98.16666666666667" x2="98.16666666666667" y1="160.24768452012808" y2="183.09788930041242" stroke="#1FB57A" stroke-width="1"></line><rect x="96.33" y="170.19452848614128" width="3.673333333333333" height="8.21538004529262" fill="#1FB57A" opacity=".95"></rect><line x1="104.5" x2="104.5" y1="163.1359388695788" y2="176.22638013919882" stroke="#1FB57A" stroke-width="1"></line><rect x="102.66333333333333" y="169.77129988904926" width="3.673333333333333" height="1" fill="#1FB57A" opacity=".95"></rect><line x1="110.83333333333333" x2="110.83333333333333" y1="165.96948044406167" y2="170.07338108920655" stroke="#1FB57A" stroke-width="1"></line><rect x="108.99666666666666" y="166.10460472573453" width="3.673333333333333" height="3.666695163314728" fill="#1FB57A" opacity=".95"></rect><line x1="117.16666666666667" x2="117.16666666666667" y1="161.69890766063415" y2="175.1315711912123" stroke="#1FB57A" stroke-width="1"></line><rect x="115.33" y="164.30143625588542" width="3.673333333333333" height="1.803168469849112" fill="#1FB57A" opacity=".95"></rect><line x1="123.5" x2="123.5" y1="159.9391846299931" y2="167.7367170673868" stroke="#1FB57A" stroke-width="1"></line><rect x="121.66333333333333" y="162.6460842297104" width="3.673333333333333" height="1.6553520261750236" fill="#1FB57A" opacity=".95"></rect><line x1="129.83333333333331" x2="129.83333333333331" y1="161.6165827250426" y2="168.9221641140799" stroke="#E4483C" stroke-width="1"></line><rect x="127.99666666666664" y="162.6460842297104" width="3.673333333333333" height="1.4812070108970943" fill="#E4483C" opacity=".95"></rect><line x1="136.16666666666666" x2="136.16666666666666" y1="159.33865491385336" y2="170.4439481461826" stroke="#E4483C" stroke-width="1"></line><rect x="134.32999999999998" y="164.1272912406075" width="3.673333333333333" height="1" fill="#E4483C" opacity=".95"></rect><line x1="142.49999999999997" x2="142.49999999999997" y1="146.8810759319081" y2="165.0051100893822" stroke="#1FB57A" stroke-width="1"></line><rect x="140.6633333333333" y="155.35111962726003" width="3.673333333333333" height="9.121562065266517" fill="#1FB57A" opacity=".95"></rect><line x1="148.83333333333331" x2="148.83333333333331" y1="150.5471420366236" y2="160.94459979460194" stroke="#1FB57A" stroke-width="1"></line><rect x="146.99666666666664" y="154.10746252795897" width="3.673333333333333" height="1.2436570993010605" fill="#1FB57A" opacity=".95"></rect><line x1="155.16666666666666" x2="155.16666666666666" y1="153.4824342563267" y2="160.68355710539868" stroke="#E4483C" stroke-width="1"></line><rect x="153.32999999999998" y="154.10746252795897" width="3.673333333333333" height="1" fill="#E4483C" opacity=".95"></rect><line x1="161.49999999999997" x2="161.49999999999997" y1="142.2141471363525" y2="163.3079623790842" stroke="#1FB57A" stroke-width="1"></line><rect x="159.6633333333333" y="149.9899778226992" width="3.673333333333333" height="4.581082251174422" fill="#1FB57A" opacity=".95"></rect><line x1="167.83333333333331" x2="167.83333333333331" y1="138.30111530281957" y2="155.65072062497268" stroke="#1FB57A" stroke-width="1"></line><rect x="165.99666666666664" y="146.64827773448232" width="3.673333333333333" height="3.341700088216868" fill="#1FB57A" opacity=".95"></rect><line x1="174.16666666666666" x2="174.16666666666666" y1="133.27786993817915" y2="151.09047185606292" stroke="#1FB57A" stroke-width="1"></line><rect x="172.32999999999998" y="140.81331150798331" width="3.673333333333333" height="5.834966226499006" fill="#1FB57A" opacity=".95"></rect><line x1="180.49999999999997" x2="180.49999999999997" y1="131.52166067465078" y2="153.07352277123601" stroke="#E4483C" stroke-width="1"></line><rect x="178.6633333333333" y="140.81331150798331" width="3.673333333333333" height="3.785771200966053" fill="#E4483C" opacity=".95"></rect><line x1="186.83333333333331" x2="186.83333333333331" y1="134.77010462086653" y2="149.93282381986387" stroke="#1FB57A" stroke-width="1"></line><rect x="184.99666666666664" y="142.54006485975287" width="3.673333333333333" height="2.0590178491964934" fill="#1FB57A" opacity=".95"></rect><line x1="193.16666666666666" x2="193.16666666666666" y1="132.4503883161418" y2="146.44192635586725" stroke="#1FB57A" stroke-width="1"></line><rect x="191.32999999999998" y="139.71378948597112" width="3.673333333333333" height="2.8262753737817548" fill="#1FB57A" opacity=".95"></rect><line x1="199.49999999999997" x2="199.49999999999997" y1="135.88785001313016" y2="140.91301196681175" stroke="#1FB57A" stroke-width="1"></line><rect x="197.6633333333333" y="139.58084433291032" width="3.673333333333333" height="1" fill="#1FB57A" opacity=".95"></rect><line x1="205.83333333333331" x2="205.83333333333331" y1="131.20068863334205" y2="143.66976382775323" stroke="#1FB57A" stroke-width="1"></line><rect x="203.99666666666664" y="131.89522409127323" width="3.673333333333333" height="7.685620241637082" fill="#1FB57A" opacity=".95"></rect><line x1="212.16666666666666" x2="212.16666666666666" y1="124.35038144857833" y2="140.09179229879672" stroke="#E4483C" stroke-width="1"></line><rect x="210.32999999999998" y="131.89522409127323" width="3.673333333333333" height="1" fill="#E4483C" opacity=".95"></rect><line x1="218.49999999999997" x2="218.49999999999997" y1="124.7816228955173" y2="138.37394003822047" stroke="#1FB57A" stroke-width="1"></line><rect x="216.6633333333333" y="129.0718623419614" width="3.673333333333333" height="3.3193382948510646" fill="#1FB57A" opacity=".95"></rect><line x1="224.83333333333331" x2="224.83333333333331" y1="125.96763020309572" y2="139.61671533500783" stroke="#E4483C" stroke-width="1"></line><rect x="222.99666666666664" y="129.0718623419614" width="3.673333333333333" height="2.7700736672460096" fill="#E4483C" opacity=".95"></rect><line x1="231.16666666666666" x2="231.16666666666666" y1="123.39657793647184" y2="140.7630679706476" stroke="#1FB57A" stroke-width="1"></line><rect x="229.32999999999998" y="126.25156833330954" width="3.673333333333333" height="5.59036767589788" fill="#1FB57A" opacity=".95"></rect><line x1="237.49999999999997" x2="237.49999999999997" y1="114.63052956830647" y2="131.13265805133076" stroke="#1FB57A" stroke-width="1"></line><rect x="235.6633333333333" y="121.46571190645918" width="3.673333333333333" height="4.7858564268503585" fill="#1FB57A" opacity=".95"></rect><line x1="243.83333333333331" x2="243.83333333333331" y1="119.35634930194828" y2="123.54226099104162" stroke="#1FB57A" stroke-width="1"></line><rect x="241.99666666666664" y="120.49972421498234" width="3.673333333333333" height="1" fill="#1FB57A" opacity=".95"></rect><line x1="250.16666666666666" x2="250.16666666666666" y1="115.25792949783258" y2="128.20113913689949" stroke="#1FB57A" stroke-width="1"></line><rect x="248.32999999999998" y="120.08248316362919" width="3.673333333333333" height="1" fill="#1FB57A" opacity=".95"></rect><line x1="256.5" x2="256.5" y1="112.74362536076708" y2="135.18661744191274" stroke="#E4483C" stroke-width="1"></line><rect x="254.66333333333333" y="120.08248316362919" width="3.673333333333333" height="6.492072138754935" fill="#E4483C" opacity=".95"></rect><line x1="262.8333333333333" x2="262.8333333333333" y1="118.94008564378508" y2="134.50607724058307" stroke="#1FB57A" stroke-width="1"></line><rect x="260.99666666666667" y="122.61227426132736" width="3.673333333333333" height="3.9622810410567695" fill="#1FB57A" opacity=".95"></rect><line x1="269.1666666666667" x2="269.1666666666667" y1="116.47137539428041" y2="127.33227168917311" stroke="#1FB57A" stroke-width="1"></line><rect x="267.33000000000004" y="118.8519101586667" width="3.673333333333333" height="3.7603641026606596" fill="#1FB57A" opacity=".95"></rect><line x1="275.5" x2="275.5" y1="117.57666712330706" y2="131.60560790511676" stroke="#E4483C" stroke-width="1"></line><rect x="273.66333333333336" y="118.8519101586667" width="3.673333333333333" height="8.227705432372403" fill="#E4483C" opacity=".95"></rect><line x1="281.8333333333333" x2="281.8333333333333" y1="123.32212092232545" y2="135.22288063871892" stroke="#E4483C" stroke-width="1"></line><rect x="279.99666666666667" y="127.0796155910391" width="3.673333333333333" height="3.006065017683028" fill="#E4483C" opacity=".95"></rect><line x1="288.1666666666667" x2="288.1666666666667" y1="127.12368055809046" y2="146.58873639541673" stroke="#E4483C" stroke-width="1"></line><rect x="286.33000000000004" y="130.08568060872213" width="3.673333333333333" height="7.806381640116172" fill="#E4483C" opacity=".95"></rect><line x1="294.5" x2="294.5" y1="132.06681929328062" y2="139.3401726859803" stroke="#1FB57A" stroke-width="1"></line><rect x="292.66333333333336" y="137.09761716260226" width="3.673333333333333" height="1" fill="#1FB57A" opacity=".95"></rect><line x1="300.8333333333333" x2="300.8333333333333" y1="133.0349189480804" y2="143.32372452806547" stroke="#1FB57A" stroke-width="1"></line><rect x="298.99666666666667" y="134.7124917642858" width="3.673333333333333" height="2.385125398316461" fill="#1FB57A" opacity=".95"></rect><line x1="307.1666666666667" x2="307.1666666666667" y1="130.60901148200244" y2="145.96595051695536" stroke="#1FB57A" stroke-width="1"></line><rect x="305.33000000000004" y="131.34351463307823" width="3.673333333333333" height="3.368977131207572" fill="#1FB57A" opacity=".95"></rect><line x1="313.5" x2="313.5" y1="120.75746700648158" y2="134.84807311710838" stroke="#1FB57A" stroke-width="1"></line><rect x="311.66333333333336" y="127.55409034860976" width="3.673333333333333" height="3.789424284468467" fill="#1FB57A" opacity=".95"></rect><line x1="319.8333333333333" x2="319.8333333333333" y1="122.95570290248638" y2="134.33771002194575" stroke="#1FB57A" stroke-width="1"></line><rect x="317.99666666666667" y="125.40992615969213" width="3.673333333333333" height="2.144164188917628" fill="#1FB57A" opacity=".95"></rect><line x1="326.1666666666667" x2="326.1666666666667" y1="120.74934608574307" y2="139.2972023298292" stroke="#E4483C" stroke-width="1"></line><rect x="324.33000000000004" y="125.40992615969213" width="3.673333333333333" height="2.6674343976117143" fill="#E4483C" opacity=".95"></rect><line x1="332.5" x2="332.5" y1="125.71679045194729" y2="136.19539940619143" stroke="#E4483C" stroke-width="1"></line><rect x="330.66333333333336" y="128.07736055730385" width="3.673333333333333" height="1.781622790235872" fill="#E4483C" opacity=".95"></rect><line x1="338.8333333333333" x2="338.8333333333333" y1="127.16257987983083" y2="131.77519016616966" stroke="#E4483C" stroke-width="1"></line><rect x="336.99666666666667" y="129.85898334753972" width="3.673333333333333" height="1" fill="#E4483C" opacity=".95"></rect><line x1="345.1666666666667" x2="345.1666666666667" y1="120.35247042143072" y2="133.93081688509213" stroke="#1FB57A" stroke-width="1"></line><rect x="343.33000000000004" y="129.82840854520921" width="3.673333333333333" height="1" fill="#1FB57A" opacity=".95"></rect><line x1="351.5" x2="351.5" y1="122.1299304872698" y2="132.5417213358455" stroke="#1FB57A" stroke-width="1"></line><rect x="349.66333333333336" y="128.9613047145211" width="3.673333333333333" height="1" fill="#1FB57A" opacity=".95"></rect><line x1="357.8333333333333" x2="357.8333333333333" y1="121.43662820953597" y2="141.69748367127093" stroke="#E4483C" stroke-width="1"></line><rect x="355.99666666666667" y="128.9613047145211" width="3.673333333333333" height="6.156573574180413" fill="#E4483C" opacity=".95"></rect><line x1="364.1666666666667" x2="364.1666666666667" y1="122.28089003425895" y2="144.2949543532052" stroke="#1FB57A" stroke-width="1"></line><rect x="362.33000000000004" y="125.50911522576935" width="3.673333333333333" height="9.60876306293217" fill="#1FB57A" opacity=".95"></rect><line x1="370.5" x2="370.5" y1="122.9789816955982" y2="130.7542993818559" stroke="#E4483C" stroke-width="1"></line><rect x="368.66333333333336" y="125.50911522576935" width="3.673333333333333" height="1.9133813351562168" fill="#E4483C" opacity=".95"></rect><line x1="376.8333333333333" x2="376.8333333333333" y1="73.18062500000005" y2="134.5651741438604" stroke="#1FB57A" stroke-width="1"></line><rect x="374.99666666666667" y="88.06937499999995" width="3.673333333333333" height="39.353121560925615" fill="#1FB57A" opacity=".95"></rect><path d="M 41.166666666666664 322.5 L 91.83333333333333 370.875 L 193.16666666666666 26.875 L 300.8333333333333 193.5 L 370.5 88.6875" fill="none" stroke="#1E4F6B" stroke-width="1.8" stroke-linejoin="round"></path><path d="M 300.8333333333333 193.5 L 370 26.875" fill="none" stroke="#1E4F6B" stroke-width="1.6" stroke-dasharray="5 4"></path><circle cx="370" cy="26.875" r="3" fill="#1E4F6B"></circle><text x="356" y="16.875" font-family="JetBrains Mono, monospace" font-size="11" fill="#1E4F6B" font-weight="600">5</text><path d="M 300.8333333333333 193.5 L 330.8333333333333 268.75 L 372.8333333333333 188.125 L 420.8333333333333 376.25" fill="none" stroke="#6B7A90" stroke-width="1.2" stroke-dasharray="3 3" opacity=".75"></path><circle cx="330.8333333333333" cy="268.75" r="8" fill="#FFFFFF" stroke="#6B7A90" stroke-width="1"></circle><text x="330.8333333333333" y="272.25" font-size="9" fill="#6B7A90" text-anchor="middle" font-family="JetBrains Mono, monospace">A</text><circle cx="372.8333333333333" cy="188.125" r="8" fill="#FFFFFF" stroke="#6B7A90" stroke-width="1"></circle><text x="372.8333333333333" y="191.625" font-size="9" fill="#6B7A90" text-anchor="middle" font-family="JetBrains Mono, monospace">B</text><circle cx="420.8333333333333" cy="376.25" r="8" fill="#FFFFFF" stroke="#6B7A90" stroke-width="1"></circle><text x="420.8333333333333" y="379.75" font-size="9" fill="#6B7A90" text-anchor="middle" font-family="JetBrains Mono, monospace">C</text><circle cx="41.166666666666664" cy="304.5" r="10" fill="#1E4F6B"></circle><text x="41.166666666666664" y="308.5" font-size="11" fill="#fff" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="600">1</text><line x1="41.166666666666664" x2="41.166666666666664" y1="314.5" y2="322.5" stroke="#1E4F6B" stroke-width="1"></line><circle cx="91.83333333333333" cy="352.875" r="10" fill="#1E4F6B"></circle><text x="91.83333333333333" y="356.875" font-size="11" fill="#fff" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="600">2</text><line x1="91.83333333333333" x2="91.83333333333333" y1="362.875" y2="370.875" stroke="#1E4F6B" stroke-width="1"></line><circle cx="193.16666666666666" cy="8.875" r="10" fill="#1E4F6B"></circle><text x="193.16666666666666" y="12.875" font-size="11" fill="#fff" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="600">3</text><line x1="193.16666666666666" x2="193.16666666666666" y1="18.875" y2="26.875" stroke="#1E4F6B" stroke-width="1"></line><circle cx="300.8333333333333" cy="175.5" r="10" fill="#1E4F6B"></circle><text x="300.8333333333333" y="179.5" font-size="11" fill="#fff" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="600">4</text><line x1="300.8333333333333" x2="300.8333333333333" y1="185.5" y2="193.5" stroke="#1E4F6B" stroke-width="1"></line><line x1="370.5" x2="370.5" y1="0" y2="430" stroke="#8A97AC" stroke-width="1" stroke-dasharray="2 3" opacity=".5"></line><line x1="0" x2="380" y1="88.6875" y2="88.6875" stroke="#8A97AC" stroke-width="1" stroke-dasharray="2 3" opacity=".5"></line><rect x="324" y="78.6875" width="54" height="20" rx="3" fill="#1E4F6B"></rect><text x="351" y="92.6875" font-family="JetBrains Mono, monospace" font-size="11" fill="#fff" text-anchor="middle" font-weight="500">847.23</text><circle cx="370.5" cy="88.6875" r="5" fill="#1E4F6B"></circle><circle cx="370.5" cy="88.6875" r="5" fill="none" stroke="#1E4F6B" stroke-width="1">
+        <animate attributeName="r" from="5" to="14" dur="1.8s" repeatCount="indefinite"></animate>
+        <animate attributeName="opacity" from=".8" to="0" dur="1.8s" repeatCount="indefinite"></animate>
+      </circle><rect x="1.33" y="417.8903978052126" width="3.673333333333333" height="8.10960219478738" fill="#1FB57A" opacity=".18"></rect><rect x="7.663333333333334" y="407.8277091906722" width="3.673333333333333" height="18.172290809327848" fill="#1FB57A" opacity=".18"></rect><rect x="13.996666666666666" y="414.76090534979426" width="3.673333333333333" height="11.239094650205761" fill="#1FB57A" opacity=".18"></rect><rect x="20.330000000000002" y="388.41838134430725" width="3.673333333333333" height="37.58161865569273" fill="#1FB57A" opacity=".18"></rect><rect x="26.663333333333334" y="400.6026063100137" width="3.673333333333333" height="25.397393689986288" fill="#E4483C" opacity=".18"></rect><rect x="32.99666666666666" y="414.079012345679" width="3.673333333333333" height="11.920987654320989" fill="#1FB57A" opacity=".18"></rect><rect x="39.33" y="414.1315500685871" width="3.673333333333333" height="11.868449931412894" fill="#E4483C" opacity=".18"></rect><rect x="45.66333333333333" y="390.78491083676266" width="3.673333333333333" height="35.215089163237316" fill="#1FB57A" opacity=".18"></rect><rect x="51.99666666666666" y="395.6934156378601" width="3.673333333333333" height="30.30658436213992" fill="#E4483C" opacity=".18"></rect><rect x="58.33" y="417.6965706447188" width="3.673333333333333" height="8.303429355281207" fill="#1FB57A" opacity=".18"></rect><rect x="64.66333333333333" y="397.04128943758576" width="3.673333333333333" height="28.958710562414268" fill="#E4483C" opacity=".18"></rect><rect x="70.99666666666666" y="410.27078189300414" width="3.673333333333333" height="15.729218106995887" fill="#1FB57A" opacity=".18"></rect><rect x="77.33" y="417.780109739369" width="3.673333333333333" height="8.219890260631" fill="#1FB57A" opacity=".18"></rect><rect x="83.66333333333333" y="406.0384087791495" width="3.673333333333333" height="19.96159122085048" fill="#E4483C" opacity=".18"></rect><rect x="89.99666666666666" y="412.47777777777776" width="3.673333333333333" height="13.522222222222222" fill="#1FB57A" opacity=".18"></rect><rect x="96.33" y="401.0488340192044" width="3.673333333333333" height="24.95116598079561" fill="#1FB57A" opacity=".18"></rect><rect x="102.66333333333333" y="404.4429355281207" width="3.673333333333333" height="21.557064471879286" fill="#1FB57A" opacity=".18"></rect><rect x="108.99666666666666" y="388.98106995884774" width="3.673333333333333" height="37.01893004115227" fill="#1FB57A" opacity=".18"></rect><rect x="115.33" y="418.1694101508916" width="3.673333333333333" height="7.830589849108367" fill="#1FB57A" opacity=".18"></rect><rect x="121.66333333333333" y="410.92153635116597" width="3.673333333333333" height="15.078463648834019" fill="#1FB57A" opacity=".18"></rect><rect x="127.99666666666664" y="390.44732510288065" width="3.673333333333333" height="35.552674897119346" fill="#E4483C" opacity=".18"></rect><rect x="134.32999999999998" y="391.8085048010974" width="3.673333333333333" height="34.19149519890261" fill="#E4483C" opacity=".18"></rect><rect x="140.6633333333333" y="412.140877914952" width="3.673333333333333" height="13.85912208504801" fill="#1FB57A" opacity=".18"></rect><rect x="146.99666666666664" y="403.5432098765432" width="3.673333333333333" height="22.45679012345679" fill="#1FB57A" opacity=".18"></rect><rect x="153.32999999999998" y="404.63278463648834" width="3.673333333333333" height="21.36721536351166" fill="#E4483C" opacity=".18"></rect><rect x="159.6633333333333" y="394.7676268861454" width="3.673333333333333" height="31.232373113854596" fill="#1FB57A" opacity=".18"></rect><rect x="165.99666666666664" y="414.9353909465021" width="3.673333333333333" height="11.064609053497943" fill="#1FB57A" opacity=".18"></rect><rect x="172.32999999999998" y="411.3089163237311" width="3.673333333333333" height="14.691083676268862" fill="#1FB57A" opacity=".18"></rect><rect x="178.6633333333333" y="409.4684499314129" width="3.673333333333333" height="16.53155006858711" fill="#E4483C" opacity=".18"></rect><rect x="184.99666666666664" y="411.29053497942385" width="3.673333333333333" height="14.70946502057613" fill="#1FB57A" opacity=".18"></rect><rect x="191.32999999999998" y="398.50356652949245" width="3.673333333333333" height="27.496433470507544" fill="#1FB57A" opacity=".18"></rect><rect x="197.6633333333333" y="410.9100137174211" width="3.673333333333333" height="15.089986282578876" fill="#1FB57A" opacity=".18"></rect><rect x="203.99666666666664" y="411.2753086419753" width="3.673333333333333" height="14.72469135802469" fill="#1FB57A" opacity=".18"></rect><rect x="210.32999999999998" y="416.883401920439" width="3.673333333333333" height="9.116598079561042" fill="#E4483C" opacity=".18"></rect><rect x="216.6633333333333" y="417.7589849108368" width="3.673333333333333" height="8.241015089163238" fill="#1FB57A" opacity=".18"></rect><rect x="222.99666666666664" y="401.55637860082305" width="3.673333333333333" height="24.443621399176955" fill="#E4483C" opacity=".18"></rect><rect x="229.32999999999998" y="389.1150891632373" width="3.673333333333333" height="36.88491083676269" fill="#1FB57A" opacity=".18"></rect><rect x="235.6633333333333" y="416.6820301783265" width="3.673333333333333" height="9.317969821673525" fill="#1FB57A" opacity=".18"></rect><rect x="241.99666666666664" y="400.80041152263374" width="3.673333333333333" height="25.19958847736626" fill="#1FB57A" opacity=".18"></rect><rect x="248.32999999999998" y="397.8652949245542" width="3.673333333333333" height="28.13470507544582" fill="#1FB57A" opacity=".18"></rect><rect x="254.66333333333333" y="394.34581618655693" width="3.673333333333333" height="31.654183813443076" fill="#E4483C" opacity=".18"></rect><rect x="260.99666666666667" y="395.67407407407404" width="3.673333333333333" height="30.32592592592593" fill="#1FB57A" opacity=".18"></rect><rect x="267.33000000000004" y="397.80068587105626" width="3.673333333333333" height="28.199314128943758" fill="#1FB57A" opacity=".18"></rect><rect x="273.66333333333336" y="401.4170096021948" width="3.673333333333333" height="24.582990397805215" fill="#E4483C" opacity=".18"></rect><rect x="279.99666666666667" y="404.8440329218107" width="3.673333333333333" height="21.1559670781893" fill="#E4483C" opacity=".18"></rect><rect x="286.33000000000004" y="407.58792866941013" width="3.673333333333333" height="18.412071330589853" fill="#E4483C" opacity=".18"></rect><rect x="292.66333333333336" y="392.5622770919067" width="3.673333333333333" height="33.43772290809328" fill="#1FB57A" opacity=".18"></rect><rect x="298.99666666666667" y="414.9769547325103" width="3.673333333333333" height="11.023045267489714" fill="#1FB57A" opacity=".18"></rect><rect x="305.33000000000004" y="413.8936899862826" width="3.673333333333333" height="12.106310013717422" fill="#1FB57A" opacity=".18"></rect><rect x="311.66333333333336" y="418.4482853223594" width="3.673333333333333" height="7.551714677640604" fill="#1FB57A" opacity=".18"></rect><rect x="317.99666666666667" y="412.7395061728395" width="3.673333333333333" height="13.260493827160495" fill="#1FB57A" opacity=".18"></rect><rect x="324.33000000000004" y="403.3846364883402" width="3.673333333333333" height="22.615363511659808" fill="#E4483C" opacity=".18"></rect><rect x="330.66333333333336" y="401.7417009602195" width="3.673333333333333" height="24.25829903978052" fill="#E4483C" opacity=".18"></rect><rect x="336.99666666666667" y="416.79835390946505" width="3.673333333333333" height="9.201646090534979" fill="#E4483C" opacity=".18"></rect><rect x="343.33000000000004" y="394.72743484224964" width="3.673333333333333" height="31.272565157750343" fill="#1FB57A" opacity=".18"></rect><rect x="349.66333333333336" y="393.10919067215366" width="3.673333333333333" height="32.89080932784637" fill="#1FB57A" opacity=".18"></rect><rect x="355.99666666666667" y="413.8201646090535" width="3.673333333333333" height="12.179835390946502" fill="#E4483C" opacity=".18"></rect><rect x="362.33000000000004" y="406.58875171467764" width="3.673333333333333" height="19.411248285322362" fill="#1FB57A" opacity=".18"></rect><rect x="368.66333333333336" y="411.21742112482855" width="3.673333333333333" height="14.782578875171469" fill="#E4483C" opacity=".18"></rect><rect x="374.99666666666667" y="390.4716049382716" width="3.673333333333333" height="35.528395061728396" fill="#1FB57A" opacity=".18"></rect></svg></div>
+                </div>
+
+                <!-- X axis -->
+                <div class="chart-card__x mono">
+                  <span>Mar 18</span><span>Mar 25</span><span>Apr 01</span><span>Apr 08</span><span>Apr 15</span><span>Apr 19</span><span>Apr 26</span><span>May 03</span>
+                </div>
+
+                <!-- Chart legend -->
+                <div class="chart-card__legend">
+                  <span class="legend-item"><i class="legend-swatch legend-swatch--line"></i>Price · candles</span>
+                  <span class="legend-item"><i class="legend-swatch legend-swatch--primary"></i>Primary · waves 1–5</span>
+                  <span class="legend-item"><i class="legend-swatch legend-swatch--alt"></i>Alternate · ABC</span>
+                  <span class="legend-item"><i class="legend-swatch legend-swatch--zone"></i>Target zone · 820–860</span>
+                  <span class="legend-item"><i class="legend-swatch legend-swatch--invalid"></i>Invalidation · 710</span>
+                </div>
+              </div>
+
+              <!-- Scenarios row -->
+              <div class="scenarios">
+                <div class="scenario scenario--primary">
+                  <div class="scenario__head">
+                    <span class="chip chip--brand"><span class="dot"></span>Primary · 65%</span>
+                    <span class="eyebrow">Preferred count</span>
+                  </div>
+                  <h5>Wave 4 correction, then final wave 5 to 1,040–1,120.</h5>
+                  <div class="scenario__kv mono">
+                    <div><span class="eyebrow">Entry</span>820 – 860</div>
+                    <div><span class="eyebrow">Target 1</span>980</div>
+                    <div><span class="eyebrow">Target 2</span>1,040 – 1,120</div>
+                    <div><span class="eyebrow">Invalidation</span>&lt; 710</div>
+                    <div><span class="eyebrow">Horizon</span>Q3 2026</div>
+                    <div><span class="eyebrow">R / R</span>1 : 3.4</div>
+                  </div>
+                </div>
+                <div class="scenario scenario--alt">
+                  <div class="scenario__head">
+                    <span class="chip"><span class="dot" style="background:var(--ink-400)"></span>Alternate · 35%</span>
+                    <span class="eyebrow">Bearish count</span>
+                  </div>
+                  <h5>Failed 5th; ABC correction to the 710 swing low.</h5>
+                  <div class="scenario__kv mono">
+                    <div><span class="eyebrow">Trigger</span>&lt; 780 daily</div>
+                    <div><span class="eyebrow">Target A</span>740</div>
+                    <div><span class="eyebrow">Target B</span>710</div>
+                    <div><span class="eyebrow">Target C</span>640</div>
+                    <div><span class="eyebrow">Horizon</span>6 – 10 wks</div>
+                    <div><span class="eyebrow">R / R</span>1 : 1.9</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Analyst commentary -->
+              <div class="commentary">
+                <div class="commentary__head">
+                  <span class="eyebrow">Analyst commentary</span>
+                  <span class="eyebrow">3 min read · updated 2h ago</span>
+                </div>
+                <div class="commentary__body">
+                  <p>
+                    The impulse from the October low remains constructive.
+                    Volume on the April 12 break-out was confirming, and the
+                    820–860 band aligns with the 0.382 retrace of waves 1–3 as
+                    well as the prior breakout shelf.
+                  </p>
+                  <p>
+                    <b>What would change our mind.</b> A daily close below 780
+                    opens the door to the alternate count — an ABC correction
+                    that would test the 710 pivot. We would not be short there,
+                    but we would step aside from new longs.
+                  </p>
+                </div>
+                <a class="commentary__more">Read the full note on Desk →</a>
+              </div>
+
+            </div>
+
+            <!-- RIGHT RAIL -->
+            <aside class="md-right">
+
+              <!-- Live alert -->
+              <div class="alert-live">
+                <div class="alert-live__head">
+                  <span class="alert-live__pulse"></span>
+                  <span class="eyebrow">LIVE · 2 MIN AGO</span>
+                </div>
+                <div class="alert-live__title">Entering target zone</div>
+                <div class="alert-live__body mono">NVDA · 847.23 · 820 – 860</div>
+                <div class="alert-live__foot">
+                  <button class="btn btn--sm btn--primary">View trigger</button>
+                  <button class="btn btn--sm btn--ghost">Snooze</button>
+                </div>
+              </div>
+
+              <!-- Analyst -->
+              <div class="analyst-card">
+                <div class="analyst-card__head">
+                  <span class="initials initials--lg">LF</span>
+                  <div>
+                    <b>Léa Fournier</b>
+                    <span class="eyebrow">Equity · Semis · US</span>
+                  </div>
+                </div>
+                <div class="analyst-card__stats">
+                  <div><span class="eyebrow">Track</span><b class="mono">+18.4%</b><i>ytd</i></div>
+                  <div><span class="eyebrow">Calls</span><b class="mono">124</b><i>hit rate 71%</i></div>
+                  <div><span class="eyebrow">Tenure</span><b class="mono">7y</b><i>at house</i></div>
+                </div>
+                <a class="analyst-card__cta">View profile &nbsp;→</a>
+              </div>
+
+              <!-- Related portfolios -->
+              <div class="related-card">
+                <div class="related-card__head">
+                  <span class="eyebrow">NVDA appears in</span>
+                  <span class="eyebrow">3 portfolios</span>
+                </div>
+                <a class="related-row">
+                  <span>
+                    <b>AI Infrastructure Core</b>
+                    <span class="eyebrow">weight · 8.2%</span>
+                  </span>
+                  <span class="mono chip chip--bullish"><span class="dot"></span>+24.1%</span>
+                </a>
+                <a class="related-row">
+                  <span>
+                    <b>US Large-Cap Growth</b>
+                    <span class="eyebrow">weight · 4.1%</span>
+                  </span>
+                  <span class="mono chip chip--bullish"><span class="dot"></span>+11.2%</span>
+                </a>
+                <a class="related-row">
+                  <span>
+                    <b>Secular Tech 2026</b>
+                    <span class="eyebrow">weight · 6.5%</span>
+                  </span>
+                  <span class="mono chip chip--bullish"><span class="dot"></span>+16.8%</span>
+                </a>
+              </div>
+
+              <!-- History -->
+              <div class="history-card">
+                <div class="history-card__head eyebrow">Chronicle · this market</div>
+                <div class="history-row">
+                  <span class="history-row__dot" style="background:var(--bullish)"></span>
+                  <div>
+                    <b>Wave 3 completed at 905</b>
+                    <span class="eyebrow">2026-04-02 · Fournier · hit</span>
+                  </div>
+                </div>
+                <div class="history-row">
+                  <span class="history-row__dot" style="background:var(--ink-400)"></span>
+                  <div>
+                    <b>Pullback count revised — wave 4 zone 820–860</b>
+                    <span class="eyebrow">2026-04-12 · Fournier · active</span>
+                  </div>
+                </div>
+                <div class="history-row">
+                  <span class="history-row__dot" style="background:var(--brand-700)"></span>
+                  <div>
+                    <b>Target zone touched</b>
+                    <span class="eyebrow">2026-04-19 · live</span>
+                  </div>
+                </div>
+              </div>
+
+            </aside>
+          </div>
+        </main>
+      </div>
+
+      <!-- Toast (live alert) -->
+      <div class="toast-layer">
+        <div class="toast">
+          <div class="toast__pulse"></div>
+          <div class="toast__body">
+            <div class="eyebrow">TARGET ZONE REACHED · 2 MIN AGO</div>
+            <div class="toast__title">NVDA&nbsp;·&nbsp;847.23 <span class="mono">→ 820 – 860</span></div>
+          </div>
+          <div class="toast__actions">
+            <button class="btn btn--sm btn--primary">Open</button>
+            <button class="btn btn--sm btn--ghost">×</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next steps -->
+    <div class="next-steps">
+      <div class="next-steps__head">
+        <div>
+          <div class="eyebrow">Phase 1 gate</div>
+          <h3>What's next, if you say go.</h3>
+        </div>
+        <a class="btn btn--primary">Approve direction →</a>
+      </div>
+      <ol class="next-steps__list">
+        <li><span class="mono">01</span><b>Pick a direction.</b><span>Editorial or Precision. Either carries the token system — we just commit typography and paper tone.</span></li>
+        <li><span class="mono">02</span><b>Pick a logo.</b><span>Triangle, target-vector P, or argument stack. All pass the 16-px test.</span></li>
+        <li><span class="mono">03</span><b>Wireframe 22 screens.</b><span>Lo-fi, all-in-one canvas, still within this document. ~2 days.</span></li>
+        <li><span class="mono">04</span><b>Hi-fi, in waves, by pillar.</b><span>Signals → Desk → Portfolios. Each wave ends with a build-ready hand-off.</span></li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     TWEAKS PANEL
+     ============================================================ -->
+<aside class="tweaks" id="tweaks">
+  <div class="tweaks__head">
+    <b>Tweaks</b>
+    <button class="btn btn--sm btn--ghost" id="btn-close-tweaks">×</button>
+  </div>
+  <div class="tweaks__row">
+    <span class="eyebrow">Mode</span>
+    <div class="seg">
+      <button data-key="theme" data-val="light" class="is-active">Light</button>
+      <button data-key="theme" data-val="dark" class="">Dark</button>
+    </div>
+  </div>
+  <div class="tweaks__foot eyebrow">
+    Preference is persisted · restart-safe
+  </div>
+</aside>
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="chart.js"></script>
+<script src="tweaks.js"></script>
+
+
+
+<script src="chart.js?t=1776590585774"></script><script src="chart.js?t=1776590586340"></script><script src="chart.js?t=1776590588485"></script><script src="chart.js?t=1776590605027"></script><script src="chart.js?t=1776590609144"></script><script src="chart.js?t=1776590611010"></script><script src="chart.js?t=1776590612226"></script><script src="chart.js?t=1776590682097"></script><script src="chart.js?t=1776590693722"></script><script src="chart.js?t=1776590694643"></script><script src="chart.js?t=1776590697235"></script></body></html>

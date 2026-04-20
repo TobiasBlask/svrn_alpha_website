@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="de" data-theme="light" data-direction="precision" data-skin="paper">
+<head>
+<meta charset="utf-8"/>
+<title>Premise · Marktdetail — NVDA</title>
+<meta name="viewport" content="width=1440"/>
+<link rel="stylesheet" href="../tokens.css"/>
+<link rel="stylesheet" href="../base.css"/>
+<link rel="stylesheet" href="../premise.css?v=2"/>
+<link rel="stylesheet" href="../phase2.css?v=7"/><link rel="stylesheet" href="../paper-skin.css?v=1"/>
+<script>
+(function(){try{const s=localStorage.getItem('premise_tweaks');const t=s?JSON.parse(s):{};document.documentElement.setAttribute('data-theme',t.theme||'light');}catch(e){}})();
+</script>
+</head>
+<body class="screen">
+
+<div class="app-return-bar"><span>PREMISE · PHASE 2 · 01 VON 10 · MARKTDETAIL</span><a href="../Premise Phase 2.html">← Zurück zum Index</a></div>
+
+<div class="app">
+  <aside class="app__side" id="side"></aside>
+  <main class="app__main">
+    <header class="app__top" id="topbar"></header>
+
+    <!-- Hero -->
+    <section class="md-hero">
+      <div class="md-hero__id">
+        <div class="md-hero__row">
+          <span class="md-hero__ticker mono">NVDA</span>
+          <span class="md-hero__name">NVIDIA Corp.</span>
+          <span class="md-hero__exch mono">NASDAQ · USD</span>
+          <span class="chip chip--bullish"><span class="dot"></span>BULLISH</span>
+          <span class="chip"><span class="dot" style="background:var(--brand-700)"></span>Prämisse · primär · 65 %</span>
+          <span class="chip"><span class="dot" style="background:#1FB57A"></span>Quant A · Strong Buy</span>
+        </div>
+        <div class="md-hero__row md-hero__row--price">
+          <span class="md-hero__price mono">$847,<span class="md-hero__price-frac">23</span></span>
+          <span class="md-hero__delta md-hero__delta--pos mono">▲ +$17,74 &nbsp;·&nbsp; +2,14 %</span>
+          <span class="md-hero__session eyebrow">heute · 16:04:12 EDT</span>
+        </div>
+      </div>
+      <div class="md-hero__stats">
+        <div><span class="eyebrow">Vortagesschluss</span><b class="mono">$829,49</b></div>
+        <div><span class="eyebrow">Tagesspanne</span><b class="mono">$831,10 – $852,77</b></div>
+        <div><span class="eyebrow">52-W-Spanne</span><b class="mono">$394,50 – $974,00</b></div>
+        <div><span class="eyebrow">Volumen</span><b class="mono">41,2 Mio.</b></div>
+        <div><span class="eyebrow">Marktkap.</span><b class="mono">2,08 Bio.</b></div>
+        <div><span class="eyebrow">Kurszielzone</span><b class="mono" style="color:var(--brand-700)">$820 – $860</b></div>
+      </div>
+    </section>
+
+    <div class="md-grid">
+      <div class="md-left">
+
+        <!-- Premise -->
+        <div class="premise-block premise-block--precision premise-block--inline">
+          <div class="premise-block__head-row">
+            <div class="premise-block__tag mono">DIE&nbsp;PRÄMISSE</div>
+            <div class="premise-block__head-meta mono"><span>LÉA FOURNIER</span><span>·</span><span>AKTUALISIERT VOR 2 STD</span><span>·</span><a href="report.html" style="color:var(--brand-700)">VOLLSTÄNDIGER BERICHT →</a></div>
+          </div>
+          <p class="premise-block__body">Nvidia läuft in eine korrektive Welle&nbsp;4 vor einem letzten Hoch in Welle&nbsp;5 — <b>Kaufzone $820–$860</b>, Kursziel $1.040–$1.120, Invalidierung unter $710.</p>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-card">
+          <div class="chart-card__head">
+            <div class="chart-card__tabs">
+              <button class="chart-tab">1T</button><button class="chart-tab">1W</button>
+              <button class="chart-tab chart-tab--active">1M</button><button class="chart-tab">3M</button>
+              <button class="chart-tab">1J</button><button class="chart-tab">5J</button><button class="chart-tab">Alles</button>
+            </div>
+            <div class="chart-card__tools">
+              <button class="chart-tool"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 2 L4 14 M12 2 L12 14" stroke="currentColor" stroke-width="1.25"/><rect x="2" y="5" width="4" height="6" fill="currentColor"/><rect x="10" y="3" width="4" height="9" fill="none" stroke="currentColor" stroke-width="1.25"/></svg></button>
+              <button class="chart-tool"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M1 11 L4 7 L7 9 L10 4 L13 6 L15 3" fill="none" stroke="currentColor" stroke-width="1.25"/></svg></button>
+              <button class="chart-tool"><svg viewBox="0 0 16 16" width="14" height="14"><rect x="2" y="4" width="12" height="5" fill="none" stroke="currentColor" stroke-width="1.25" stroke-dasharray="2 1.5"/></svg></button>
+            </div>
+          </div>
+          <div class="chart-card__body">
+            <div class="chart-card__y mono"><span>880</span><span>860</span><span>840</span><span>820</span><span>800</span><span>780</span><span>760</span><span>740</span><span>720</span></div>
+            <div class="chart-card__canvas" id="chart-canvas"></div>
+          </div>
+          <div class="chart-card__x mono"><span>18. Mär</span><span>25. Mär</span><span>01. Apr</span><span>08. Apr</span><span>15. Apr</span><span>19. Apr</span><span>26. Apr</span><span>03. Mai</span></div>
+          <div class="chart-card__legend">
+            <span class="legend-item"><i class="legend-swatch legend-swatch--line"></i>Kurs · Kerzen</span>
+            <span class="legend-item"><i class="legend-swatch legend-swatch--primary"></i>Primär · Wellen 1–5</span>
+            <span class="legend-item"><i class="legend-swatch legend-swatch--alt"></i>Alternativ · ABC</span>
+            <span class="legend-item"><i class="legend-swatch legend-swatch--zone"></i>Kurszielzone · 820–860</span>
+            <span class="legend-item"><i class="legend-swatch legend-swatch--invalid"></i>Invalidierung · 710</span>
+          </div>
+        </div>
+
+        <!-- Scenarios -->
+        <div class="scenarios">
+          <div class="scenario scenario--primary">
+            <div class="scenario__head"><span class="chip chip--brand"><span class="dot"></span>Primär · 65 %</span><span class="eyebrow">Bevorzugte Zählung</span></div>
+            <h5>Welle-4-Korrektur, dann finale Welle 5 auf 1.040–1.120.</h5>
+            <div class="scenario__kv mono">
+              <div><span class="eyebrow">Einstieg</span>$820 – $860</div><div><span class="eyebrow">Kursziel 1</span>$980</div><div><span class="eyebrow">Kursziel 2</span>$1.040 – $1.120</div>
+              <div><span class="eyebrow">Invalidierung</span>&lt; $710</div><div><span class="eyebrow">Horizont</span>Q3 2026</div><div><span class="eyebrow">R / R</span>1 : 3,4</div>
+            </div>
+          </div>
+          <div class="scenario scenario--alt">
+            <div class="scenario__head"><span class="chip"><span class="dot" style="background:var(--ink-400)"></span>Alternativ · 35 %</span><span class="eyebrow">Bärische Zählung</span></div>
+            <h5>Gescheiterte 5. Welle; ABC-Korrektur zum Swing-Tief bei 710.</h5>
+            <div class="scenario__kv mono">
+              <div><span class="eyebrow">Trigger</span>&lt; $780 Tagesschluss</div><div><span class="eyebrow">Ziel A</span>$740</div><div><span class="eyebrow">Ziel B</span>$710</div>
+              <div><span class="eyebrow">Ziel C</span>$640</div><div><span class="eyebrow">Horizont</span>6 – 10 Wochen</div><div><span class="eyebrow">R / R</span>1 : 1,9</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article Feed -->
+        <div class="feed-card">
+          <div class="feed-card__tabs">
+            <button class="feed-tab feed-tab--active">Alle <span class="feed-tab__count">42</span></button>
+            <button class="feed-tab">Bullish <span class="feed-tab__count">28</span></button>
+            <button class="feed-tab">Bärisch <span class="feed-tab__count">6</span></button>
+            <button class="feed-tab">Quant <span class="feed-tab__count">4</span></button>
+            <button class="feed-tab">Earnings <span class="feed-tab__count">3</span></button>
+            <button class="feed-tab">News <span class="feed-tab__count">12</span></button>
+          </div>
+          <div class="feed-item">
+            <span class="initials feed-item__author">LF</span>
+            <div class="feed-item__body">
+              <div class="feed-item__title">Die Nvidia-These — Welle 4 ist das Geschenk, um das wir gebeten haben</div>
+              <div class="feed-item__meta"><span>Léa Fournier · Haus</span><span>·</span><span class="mono">17. APR · 11 MIN</span><span>·</span><span class="mono">PRÄMISSEN-UPDATE</span></div>
+              <p class="feed-item__snippet">Akkumulation bei 820–860 ist nicht optional — sie ist der gesamte Trade. Wir legen die drei Belegsäulen offen, die eine terminale Welle 5 stützen…</p>
+            </div>
+            <div class="feed-item__tags"><span class="chip chip--bullish chip--xs"><span class="dot"></span>BULL</span></div>
+          </div>
+          <div class="feed-item">
+            <span class="initials feed-item__author">MK</span>
+            <div class="feed-item__body">
+              <div class="feed-item__title">Q1-Capex-Beat verdeckt eine weichere Data-Center-Mix-Verschiebung</div>
+              <div class="feed-item__meta"><span>Marek Koller · Haus</span><span>·</span><span class="mono">16. APR · 8 MIN</span><span>·</span><span class="mono">ANALYSE</span></div>
+              <p class="feed-item__snippet">Die Hyperscaler-Kommentare waren durchweg stark, doch die Bruttomargen-Guidance impliziert, dass der nächste Lagerzyklus noch nicht entrisikt ist…</p>
+            </div>
+            <div class="feed-item__tags"><span class="chip chip--neutral chip--xs"><span class="dot"></span>NEUT</span></div>
+          </div>
+          <div class="feed-item">
+            <span class="initials feed-item__author" style="background:#0E1726; color:#5AB3C2; border-color:#2E3A4D">Q</span>
+            <div class="feed-item__body">
+              <div class="feed-item__title">Quant: Momentum-Score von B+ auf A− hochgestuft</div>
+              <div class="feed-item__meta"><span>Premise Quant · automatisiert</span><span>·</span><span class="mono">15. APR · 2 MIN</span><span>·</span><span class="mono">SCORE-UPDATE</span></div>
+              <p class="feed-item__snippet">Das 12-Monats-Trailing-Momentum wurde nach dem Ausbruch vom 12. April neu bewertet. Der Revisions-Faktor bleibt mit C+ die schwächste Säule…</p>
+            </div>
+            <div class="feed-item__tags"><span class="chip chip--bullish chip--xs"><span class="dot"></span>BULL</span></div>
+          </div>
+          <div class="feed-item">
+            <span class="initials feed-item__author">AH</span>
+            <div class="feed-item__body">
+              <div class="feed-item__title">Gegenposition: Die 710er-Marke wird vor einem neuen Hoch getestet</div>
+              <div class="feed-item__meta"><span>Anders Holm · Haus</span><span>·</span><span class="mono">14. APR · 6 MIN</span><span>·</span><span class="mono">ALTERNATIVE SICHT</span></div>
+              <p class="feed-item__snippet">Das Haus hält ein 35 %-Alternativszenario aus gutem Grund. Das Volumenprofil des Oktober-Impulses hat bei 718 eine ungefüllte Lücke hinterlassen…</p>
+            </div>
+            <div class="feed-item__tags"><span class="chip chip--bearish chip--xs"><span class="dot"></span>BEAR</span></div>
+          </div>
+          <div class="feed-item">
+            <span class="initials feed-item__author" style="background:#0E1726; color:#5AB3C2; border-color:#2E3A4D">N</span>
+            <div class="feed-item__body">
+              <div class="feed-item__title">GTC-Vorschau · Blackwell-Nachfolger-Roadmap wird am 14. Mai erwartet</div>
+              <div class="feed-item__meta"><span>Premise News Desk</span><span>·</span><span class="mono">13. APR · 3 MIN</span><span>·</span><span class="mono">EVENT-VORSCHAU</span></div>
+              <p class="feed-item__snippet">Die Keynote am 14. Mai dürfte den Rubin-Zeitplan bestätigen und den nächsten CX-Networking-SKU vorstellen…</p>
+            </div>
+            <div class="feed-item__tags"><span class="chip chip--xs"><span class="dot"></span>NEWS</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right rail -->
+      <aside class="md-right">
+
+        <!-- Factor Grades -->
+        <div class="factor-grades">
+          <div class="factor-grades__head"><b>Premise Factor Grades</b><span class="factor-grades__score mono">A − · 87 / 100</span></div>
+          <div class="fg-row"><span class="fg-row__name">Bewertung</span><span class="fg-grade fg-grade--c">C</span><span class="fg-row__bar"><span class="fg-row__bar-fill fg-row__bar-fill--c" style="width:52%"></span></span><span class="fg-row__pct">52</span></div>
+          <div class="fg-row"><span class="fg-row__name">Wachstum</span><span class="fg-grade fg-grade--a">A</span><span class="fg-row__bar"><span class="fg-row__bar-fill fg-row__bar-fill--a" style="width:94%"></span></span><span class="fg-row__pct">94</span></div>
+          <div class="fg-row"><span class="fg-row__name">Profitabilität</span><span class="fg-grade fg-grade--a">A</span><span class="fg-row__bar"><span class="fg-row__bar-fill fg-row__bar-fill--a" style="width:96%"></span></span><span class="fg-row__pct">96</span></div>
+          <div class="fg-row"><span class="fg-row__name">Momentum</span><span class="fg-grade fg-grade--b">B+</span><span class="fg-row__bar"><span class="fg-row__bar-fill fg-row__bar-fill--b" style="width:84%"></span></span><span class="fg-row__pct">84</span></div>
+          <div class="fg-row"><span class="fg-row__name">Revisionen</span><span class="fg-grade fg-grade--b">B</span><span class="fg-row__bar"><span class="fg-row__bar-fill fg-row__bar-fill--b" style="width:78%"></span></span><span class="fg-row__pct">78</span></div>
+          <div class="factor-grades__summary">
+            <div><span class="eyebrow">Sektor</span><b>Halbleiter · Nr. 3</b></div>
+            <div><span class="eyebrow">Branche</span><b>Top 5 %</b></div>
+            <div><span class="eyebrow">Aktualisiert</span><b>vor 2 Std</b></div>
+            <div><span class="eyebrow">Methodik</span><b>v3.2</b></div>
+          </div>
+        </div>
+
+        <!-- Earnings -->
+        <div class="earnings-card">
+          <div class="earnings-card__head"><b>Earnings</b><span class="earnings-countdown">IN 26 TAGEN</span></div>
+          <div class="earnings-next">
+            <div class="earnings-next__date"><b>15</b><span class="eyebrow">MAI 2026</span></div>
+            <div class="earnings-next__body"><b>Q1-Bericht · GJ 27</b><span>NACHBÖRSLICH · CALL 17:00 ET</span></div>
+            <span class="chip chip--brand chip--xs"><span class="dot"></span>BESTÄTIGT</span>
+          </div>
+          <div class="earnings-grid">
+            <div><span class="eyebrow">Konsens EPS</span><b>6,34</b></div>
+            <div><span class="eyebrow">Konsens Umsatz</span><b>43,8 Mrd.</b></div>
+            <div><span class="eyebrow">Haus EPS</span><b>6,52</b></div>
+            <div><span class="eyebrow">Whisper</span><b>6,48</b></div>
+          </div>
+          <div class="earnings-history">
+            <div class="earnings-history-row"><span>Q4 GJ 26</span><span class="inline">5,16 / 5,01</span><span class="beat">TREFFER</span><span class="beat">+3,0 %</span></div>
+            <div class="earnings-history-row"><span>Q3 GJ 26</span><span class="inline">4,92 / 4,80</span><span class="beat">TREFFER</span><span class="beat">+2,5 %</span></div>
+            <div class="earnings-history-row"><span>Q2 GJ 26</span><span class="inline">4,41 / 4,44</span><span class="miss">FEHLER</span><span class="miss">−0,7 %</span></div>
+            <div class="earnings-history-row"><span>Q1 GJ 26</span><span class="inline">3,71 / 3,61</span><span class="beat">TREFFER</span><span class="beat">+2,8 %</span></div>
+          </div>
+        </div>
+
+        <!-- Execution rail -->
+        <div class="execution-card">
+          <div class="execution-card__head"><b>Die Prämisse umsetzen</b><span class="eyebrow">3 Produkte</span></div>
+          <div class="exec-product">
+            <div><div class="exec-product__name">NVDA · Stammaktie</div><div class="exec-product__meta">NASDAQ · MM0Q · USD</div></div>
+            <div><div class="exec-product__leverage">1,0 ×</div><div class="exec-product__roi mono">+31 % zu T2</div></div>
+          </div>
+          <div class="exec-product">
+            <div><div class="exec-product__name">Call-Optionsschein · Strike 880</div><div class="exec-product__meta">SG · DE000SH2P4Q7 · 19. Sep 26</div></div>
+            <div><div class="exec-product__leverage">4,8 ×</div><div class="exec-product__roi mono">+148 % zu T2</div></div>
+          </div>
+          <div class="exec-product">
+            <div><div class="exec-product__name">Knock-Out Long · Barriere 705</div><div class="exec-product__meta">HSBC · DE000HR8P2K1 · Open-End</div></div>
+            <div><div class="exec-product__leverage">7,2 ×</div><div class="exec-product__roi mono">+223 % zu T2</div></div>
+          </div>
+          <a class="commentary__more" style="display:block; margin-top:6px">Alle 18 passenden Produkte →</a>
+        </div>
+
+        <!-- Analyst -->
+        <div class="analyst-card">
+          <div class="analyst-card__head"><span class="initials initials--lg">LF</span><div><b>Léa Fournier</b><span class="eyebrow">Aktien · Halbleiter · US</span></div></div>
+          <div class="analyst-card__stats">
+            <div><span class="eyebrow">Track</span><b class="mono">+18,4 %</b><i>YTD</i></div>
+            <div><span class="eyebrow">Calls</span><b class="mono">124</b><i>71 % Trefferquote</i></div>
+            <div><span class="eyebrow">Zugehörigkeit</span><b class="mono">7 J.</b><i>im Haus</i></div>
+          </div>
+          <a class="analyst-card__cta" href="analyst.html">Profil ansehen &nbsp;→</a>
+        </div>
+
+        <!-- Chronicle (per market) -->
+        <div class="history-card">
+          <div class="history-card__head eyebrow">Chronik · dieser Markt</div>
+          <div class="history-row"><span class="history-row__dot" style="background:var(--bullish)"></span><div><b>Welle 3 abgeschlossen bei 905</b><span class="eyebrow">2026-04-02 · Fournier · Treffer</span></div></div>
+          <div class="history-row"><span class="history-row__dot" style="background:var(--ink-400)"></span><div><b>Pullback-Zählung revidiert — Welle-4-Zone 820–860</b><span class="eyebrow">2026-04-12 · Fournier · aktiv</span></div></div>
+          <div class="history-row"><span class="history-row__dot" style="background:var(--brand-700)"></span><div><b>Kurszielzone berührt</b><span class="eyebrow">2026-04-19 · live</span></div></div>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+</div>
+
+<script src="_shell.js?v=3"></script>
+<script src="../chart.js"></script>
+<script>renderShell('signals', ['Signale', 'US-Aktien', 'NVDA']);</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+# deps
+node_modules/
+.pnpm-store/
+
+# next.js
+.next/
+out/
+.vercel/
+
+# env
+.env
+.env.local
+.env*.local
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# os / editor
+.DS_Store
+.idea/
+.vscode/
+
+# build artefacts
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# supabase local
+supabase/.branches
+supabase/.temp
+
+# bundle (kept locally as design reference, not in git)
+design_bundle/
+
+# claude code memory (local only)
+.claude/

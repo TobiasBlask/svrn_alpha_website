@@ -1,0 +1,202 @@
+/* ============================================================
+   Premise — Design Tokens
+   Phase 1. Supports: light/dark × editorial/precision directions.
+   ============================================================ */
+
+:root {
+  /* ---------- Brand & semantic colors (light) ---------- */
+  --bg:            #FAFCFF;
+  --bg-elev:       #FFFFFF;
+  --bg-subtle:     #F3F6FB;
+  --bg-inset:      #ECF1F7;
+  --surface-line:  #E3E9F1;
+  --surface-line-strong: #CED6E2;
+
+  --ink-900: #0E1726;
+  --ink-800: #1A2433;
+  --ink-700: #2E3A4D;
+  --ink-600: #4A5668;
+  --ink-500: #6B7A90;
+  --ink-400: #8A97AC;
+  --ink-300: #B2BCCC;
+  --ink-200: #D5DCE7;
+  --ink-100: #E9EEF5;
+  --ink-50:  #F5F8FC;
+
+  --brand-900: #0F3447;
+  --brand-800: #14425A;
+  --brand-700: #1E4F6B;     /* Primary */
+  --brand-600: #276585;
+  --brand-500: #3A83A3;
+  --brand-400: #5AB3C2;     /* Primary accent */
+  --brand-300: #93D0D9;
+  --brand-200: #C2E4E9;
+  --brand-100: #E3F2F5;
+  --brand-50:  #F1F8F9;
+
+  --bullish-700: #0F7A50;
+  --bullish:     #1FB57A;
+  --bullish-200: #B8EAD3;
+  --bullish-50:  #E7F7EF;
+
+  --bearish-700: #A8291E;
+  --bearish:     #E4483C;
+  --bearish-200: #F5C6C1;
+  --bearish-50:  #FBE8E6;
+
+  --neutral-700: #4C576A;
+  --neutral:     #6B7A90;
+  --neutral-200: #D2D8E2;
+  --neutral-50:  #EEF1F6;
+
+  --warn: #D08A1A;
+  --info: #2563A8;
+
+  --zone-fill: color-mix(in oklab, var(--brand-700) 15%, transparent);
+  --zone-stroke: color-mix(in oklab, var(--brand-700) 55%, transparent);
+
+  /* ---------- Radii ---------- */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-2xl: 28px;
+  --r-pill: 999px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-xs: 0 1px 0 rgba(14, 23, 38, 0.04), 0 1px 2px rgba(14, 23, 38, 0.04);
+  --shadow-sm: 0 1px 2px rgba(14, 23, 38, 0.04), 0 2px 6px rgba(14, 23, 38, 0.05);
+  --shadow-md: 0 4px 14px rgba(14, 23, 38, 0.06), 0 1px 2px rgba(14, 23, 38, 0.04);
+  --shadow-lg: 0 18px 40px -12px rgba(14, 23, 38, 0.18), 0 4px 10px rgba(14, 23, 38, 0.06);
+  --shadow-glow: 0 0 0 4px color-mix(in oklab, var(--brand-400) 25%, transparent);
+
+  /* ---------- Spacing scale (4px base) ---------- */
+  --s-0: 0;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 32px;
+  --s-8: 40px;
+  --s-9: 56px;
+  --s-10: 72px;
+  --s-11: 96px;
+
+  /* ---------- Type ---------- */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'General Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Source Serif 4', 'Source Serif Pro', 'Iowan Old Style', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+  --fs-28: 28px;
+  --fs-32: 32px;
+  --fs-40: 40px;
+  --fs-56: 56px;
+  --fs-72: 72px;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.45;
+  --lh-relaxed: 1.6;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.14em;
+}
+
+/* ---------- Dark mode overrides ---------- */
+[data-theme="dark"] {
+  --bg:            #070B14;
+  --bg-elev:       #0E1422;
+  --bg-subtle:     #0B111D;
+  --bg-inset:      #141B2B;
+  --surface-line:  #1E2738;
+  --surface-line-strong: #2A3448;
+
+  --ink-900: #F5F8FC;
+  --ink-800: #E4EAF3;
+  --ink-700: #C6D0E0;
+  --ink-600: #97A3B8;
+  --ink-500: #7B8699;
+  --ink-400: #5E6A7E;
+  --ink-300: #3E4A5E;
+  --ink-200: #2A3448;
+  --ink-100: #1D2637;
+  --ink-50:  #141B2B;
+
+  --brand-700: #5AB3C2;
+  --brand-600: #7BC3CF;
+  --brand-400: #9ED3DC;
+  --brand-200: #2A4A56;
+  --brand-100: #1A2F38;
+  --brand-50:  #14232A;
+
+  --bullish: #32D492;
+  --bullish-200: #1F4836;
+  --bullish-50:  #122A22;
+  --bearish: #F46A5E;
+  --bearish-200: #4A2622;
+  --bearish-50:  #2A1514;
+  --neutral: #8A97AC;
+
+  --zone-fill: color-mix(in oklab, var(--brand-700) 18%, transparent);
+  --zone-stroke: color-mix(in oklab, var(--brand-700) 70%, transparent);
+
+  --shadow-xs: 0 1px 0 rgba(0,0,0,.4);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.5), 0 2px 6px rgba(0,0,0,.4);
+  --shadow-md: 0 4px 14px rgba(0,0,0,.5), 0 1px 2px rgba(0,0,0,.4);
+  --shadow-lg: 0 20px 50px -14px rgba(0,0,0,.7), 0 4px 10px rgba(0,0,0,.4);
+}
+
+/* ---------- Direction tokens: Editorial vs Precision ----------
+   Editorial: more serif, warmer, looser spacing, softer corners
+   Precision: more mono, tighter, crisper, squarer corners
+---------------------------------------------------------------- */
+[data-direction="editorial"] {
+  --font-ui: var(--font-sans);
+  --font-headline: var(--font-serif);
+  --font-premise: var(--font-serif);
+  --accent-underline: 2px;
+  --r-card: var(--r-lg);
+  --r-button: 8px;
+  --eyebrow-font: var(--font-sans);
+  --eyebrow-transform: none;
+  --eyebrow-tracking: var(--tracking-normal);
+  --eyebrow-weight: 500;
+  --numeric-font: var(--font-sans);
+}
+[data-direction="precision"] {
+  --font-ui: var(--font-sans);
+  --font-headline: var(--font-display);
+  --font-premise: var(--font-display);
+  --accent-underline: 1px;
+  --r-card: var(--r-md);
+  --r-button: 6px;
+  --eyebrow-font: var(--font-mono);
+  --eyebrow-transform: uppercase;
+  --eyebrow-tracking: var(--tracking-wider);
+  --eyebrow-weight: 500;
+  --numeric-font: var(--font-mono);
+}
+
+/* Warmer paper tone for editorial in light mode */
+[data-theme="light"][data-direction="editorial"] {
+  --bg: #FBF9F5;
+  --bg-elev: #FFFFFF;
+  --bg-subtle: #F4F0E8;
+  --bg-inset: #EDE7DB;
+  --surface-line: #E7DFCF;
+}
