@@ -20,7 +20,7 @@ export default async function Home() {
   const user = await getSession();
   const loginHref = user ? PRODUCT_ENTRY : signInTo(PRODUCT_ENTRY);
   const loginLabel = user ? "Produkt öffnen" : "Anmelden";
-  const productHref = user ? PRODUCT_ENTRY : signInTo(PRODUCT_ENTRY);
+  const productHref = PRODUCT_ENTRY;
 
   return (
     <div className="landing-root">
@@ -271,7 +271,7 @@ export default async function Home() {
               </p>
               <Link
                 className="linkline"
-                href={user ? "/app/screens/brief.html" : signInTo("/app/screens/brief.html")}
+                href="/app/screens/brief.html"
               >
                 Heutige Ausgabe öffnen →
               </Link>
@@ -330,7 +330,7 @@ export default async function Home() {
               </p>
               <Link
                 className="linkline"
-                href={user ? "/app/screens/market-detail.html" : signInTo("/app/screens/market-detail.html")}
+                href="/app/screens/market-detail.html"
               >
                 NVDA lesen →
               </Link>
@@ -367,7 +367,7 @@ export default async function Home() {
               </p>
               <Link
                 className="linkline"
-                href={user ? "/app/screens/desk.html" : signInTo("/app/screens/desk.html")}
+                href="/app/screens/desk.html"
               >
                 Desk beobachten →
               </Link>
@@ -408,7 +408,7 @@ export default async function Home() {
 
             <Link
               className="btn-l btn-l--oxblood"
-              href={user ? "/app/screens/market-detail.html" : signInTo("/app/screens/market-detail.html")}
+              href="/app/screens/market-detail.html"
             >
               Vollständiges Dossier öffnen →
             </Link>
@@ -580,7 +580,7 @@ export default async function Home() {
             </ul>
             <Link
               className="btn-l btn-l--ghost"
-              href={user ? "/app/screens/analysts.html" : signInTo("/app/screens/analysts.html")}
+              href="/app/screens/analysts.html"
             >
               Das Team kennenlernen →
             </Link>
@@ -838,7 +838,7 @@ export default async function Home() {
             </p>
             <Link
               className="btn-l btn-l--oxblood"
-              href={user ? "/app/screens/analyst.html" : signInTo("/app/screens/analyst.html")}
+              href="/app/screens/analyst.html"
             >
               Eine Chronik öffnen →
             </Link>
