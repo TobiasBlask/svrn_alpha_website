@@ -322,10 +322,10 @@ export default async function Home() {
               </svg>
               <div className="step__num">03</div>
               <div className="step__time">Intraday · wenn es zählt</div>
-              <h3>Eine Prämisse, ausgepackt</h3>
+              <h3>Ein Call. Eine Seite.</h3>
               <p>
                 Sie sehen auf einen Blick: wo ein Analyst einsteigen würde, wo
-                sein Kursziel liegt, wann er aufhört recht zu haben. Eine Seite
+                sein Kursziel liegt, wann er aufhört recht zu haben. Eine Seite.
                 Keine zehnseitige PDF.
               </p>
               <Link
