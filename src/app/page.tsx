@@ -9,7 +9,7 @@ const Link = (
 export const metadata = {
   title: "Premise. Morgens das Briefing. Abends die Bilanz.",
   description:
-    "Das Research von Münchmeyer Petersen & Co. — offen für Privatanleger. 28 Analysten, jeder Call mit Einstieg, Kursziel und Stopp. Briefing täglich um 07:30.",
+    "Research von Münchmeyer Petersen Capital Markets, offen für Privatanleger. 28 Analysten, jeder Call mit Einstieg, Kursziel und Stopp. Briefing täglich um 07:30.",
 };
 
 const PRODUCT_ENTRY = "/app/screens/today.html";
@@ -96,8 +96,8 @@ export default async function Home() {
             <p className="lede">
               Täglich kommen Empfehlungen ohne Plan. Kein Einstieg. Kein Stopp.
               Kein Beleg, dass der Analyst selbst drin ist. Premise macht das
-              Research von Münchmeyer Petersen & Co. offen: 28 Analysten, jeder
-              Call mit Name, Datum und Ergebnis im Hauptbuch.
+              Research von Münchmeyer Petersen Capital Markets offen: 28
+              Analysten, jeder Call mit Name, Datum und Ergebnis im Hauptbuch.
             </p>
 
             <div className="hero-ctas">
@@ -207,7 +207,7 @@ export default async function Home() {
       {/* PROOF STRIP */}
       <section className="proof">
         <div className="wrap proof-row">
-          <div className="label">Münchmeyer Petersen & Co.<br/>Gegründet 1846 · Hamburg</div>
+          <div className="label">Münchmeyer Petersen<br/>Capital Markets · Hamburg</div>
           <div className="stat">
             <b>28</b>
             <span>Analysten im Haus</span>
@@ -557,7 +557,7 @@ export default async function Home() {
           <div>
             <div className="eyeb">Der Research Floor</div>
             <h2>
-              Achtundzwanzig Analysten. <em>Gerankt, nicht kuratiert.</em>
+              28 Analysten. <em>Gerankt, nicht kuratiert.</em>
             </h2>
             <ul className="ticks">
               <li>
@@ -1199,6 +1199,7 @@ export default async function Home() {
         <div className="wrap">
           <div className="foot-bottom">
             <span>© 2026 Premise SAS · Paris</span>
+            <span>Research: Münchmeyer Petersen Capital Markets · KI-Plattform: SVRN Alpha</span>
             <span>Research · keine Anlageberatung</span>
           </div>
         </div>
