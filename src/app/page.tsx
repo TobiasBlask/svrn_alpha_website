@@ -883,6 +883,25 @@ export default async function Home() {
               </Link>
             </article>
 
+            <article className="price">
+              <div className="price__name">Elite</div>
+              <div className="price__tag">Add-on · vier Analysten</div>
+              <div className="price__amount">
+                <b>€99</b>
+                <span>/ Monat</span>
+              </div>
+              <div className="price__sub">setzt beliebiges Paket voraus</div>
+              <ul>
+                <li>Vier Top-Analysten</li>
+                <li>Private Prämissen (nicht im öffentlichen Floor)</li>
+                <li>Pre-Publish-Zugang (30 Min.)</li>
+                <li>Quartalsweise Live-Q&amp;A</li>
+              </ul>
+              <Link className="btn-l" href="/sign-in?plan=elite">
+                Elite dazubuchen →
+              </Link>
+            </article>
+
             <article className="price price--featured">
               <div className="price__name">Das Haus</div>
               <div className="price__tag">Alles · alle Desks</div>
@@ -903,25 +922,6 @@ export default async function Home() {
               </ul>
               <Link className="btn-l" href="/sign-in?plan=house">
                 Das Haus nehmen →
-              </Link>
-            </article>
-
-            <article className="price">
-              <div className="price__name">Elite</div>
-              <div className="price__tag">Add-on · vier Analysten</div>
-              <div className="price__amount">
-                <b>€99</b>
-                <span>/ Monat</span>
-              </div>
-              <div className="price__sub">setzt beliebiges Paket voraus</div>
-              <ul>
-                <li>Vier Top-Analysten</li>
-                <li>Private Prämissen (nicht im öffentlichen Floor)</li>
-                <li>Pre-Publish-Zugang (30 Min.)</li>
-                <li>Quartalsweise Live-Q&amp;A</li>
-              </ul>
-              <Link className="btn-l" href="/sign-in?plan=elite">
-                Elite dazubuchen →
               </Link>
             </article>
 
