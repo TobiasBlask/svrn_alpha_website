@@ -7,9 +7,9 @@ const Link = (
 ) => <a {...props} />;
 
 export const metadata = {
-  title: "Premise. Research, dem Sie nachzählen können.",
+  title: "Premise. Morgens das Briefing. Abends die Bilanz.",
   description:
-    "28 Analysten, jeder Call mit Einstieg, Kursziel und Stopp. Briefing täglich um 07:30. Trefferquote offen seit 2019.",
+    "28 Analysten, jeder Call mit Einstieg, Kursziel und Stopp. Das Briefing kommt täglich um 07:30 ins Postfach. Alle Ergebnisse öffentlich seit 2019.",
 };
 
 const PRODUCT_ENTRY = "/app/screens/today.html";
