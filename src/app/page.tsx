@@ -9,7 +9,7 @@ const Link = (
 export const metadata = {
   title: "Premise. Morgens das Briefing. Abends die Bilanz.",
   description:
-    "28 Analysten, jeder Call mit Einstieg, Kursziel und Stopp. Das Briefing kommt täglich um 07:30 ins Postfach. Alle Ergebnisse öffentlich seit 2019.",
+    "Das Research von Münchmeyer Petersen & Co. — offen für Privatanleger. 28 Analysten, jeder Call mit Einstieg, Kursziel und Stopp. Briefing täglich um 07:30.",
 };
 
 const PRODUCT_ENTRY = "/app/screens/today.html";
@@ -95,9 +95,9 @@ export default async function Home() {
 
             <p className="lede">
               Täglich kommen Empfehlungen ohne Plan. Kein Einstieg. Kein Stopp.
-              Kein Beleg, dass der Analyst selbst drin ist. Premise gibt Ihnen
-              genau das: 28 Analysten, jeder Call mit Name, Datum und Ergebnis
-              im Hauptbuch seit 2019.
+              Kein Beleg, dass der Analyst selbst drin ist. Premise macht das
+              Research von Münchmeyer Petersen & Co. offen: 28 Analysten, jeder
+              Call mit Name, Datum und Ergebnis im Hauptbuch.
             </p>
 
             <div className="hero-ctas">
@@ -207,18 +207,18 @@ export default async function Home() {
       {/* PROOF STRIP */}
       <section className="proof">
         <div className="wrap proof-row">
-          <div className="label">Das Haus in Zahlen</div>
+          <div className="label">Münchmeyer Petersen & Co.<br/>Gegründet 1846 · Hamburg</div>
           <div className="stat">
             <b>28</b>
             <span>Analysten im Haus</span>
           </div>
           <div className="stat">
             <b>411</b>
-            <span>Geschlossene Calls · seit 2019</span>
+            <span>Geschlossene Calls · aktenkundig</span>
           </div>
           <div className="stat">
             <b>64,8 %</b>
-            <span>Trefferquote · seit Beginn</span>
+            <span>Trefferquote · nachzählbar</span>
           </div>
           <div className="stat">
             <b>+31,4 %</b>
@@ -818,7 +818,7 @@ export default async function Home() {
                   fontWeight: 400,
                 }}
               >
-                Seit 2019.
+                Offen.
               </em>
             </h2>
             <p
