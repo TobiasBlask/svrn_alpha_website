@@ -9,7 +9,7 @@ const Link = (
 export const metadata = {
   title: "Premise. Morgens das Briefing. Abends die Bilanz.",
   description:
-    "Research von Münchmeyer Petersen Capital Markets, offen für Privatanleger. 28 Analysten, jeder Call mit Einstieg, Kursziel und Stopp. Briefing täglich um 07:30.",
+    "Research von Münchmeyer Petersen Capital Markets, offen für Privatanleger. 15 Analysten, jeder Call mit Einstieg, Kursziel und Stopp. Briefing täglich um 07:30.",
 };
 
 const PRODUCT_ENTRY = "/app/screens/today.html";
@@ -96,7 +96,7 @@ export default async function Home() {
             <p className="lede">
               Täglich kommen Empfehlungen ohne Plan. Kein Einstieg. Kein Stopp.
               Kein Beleg, dass der Analyst selbst drin ist. Premise macht das
-              Research von Münchmeyer Petersen Capital Markets offen: 28
+              Research von Münchmeyer Petersen Capital Markets offen: 15
               Analysten, jeder Call mit Name, Datum und Ergebnis im Hauptbuch.
             </p>
 
@@ -209,7 +209,7 @@ export default async function Home() {
         <div className="wrap proof-row">
           <div className="label">Münchmeyer Petersen<br/>Capital Markets · Hamburg</div>
           <div className="stat">
-            <b>28</b>
+            <b>15</b>
             <span>Analysten im Haus</span>
           </div>
           <div className="stat">
@@ -557,7 +557,7 @@ export default async function Home() {
           <div>
             <div className="eyeb">Der Research Floor</div>
             <h2>
-              28 Analysten. <em>Gerankt, nicht kuratiert.</em>
+              15 Analysten. <em>Gerankt, nicht kuratiert.</em>
             </h2>
             <ul className="ticks">
               <li>
@@ -617,7 +617,7 @@ export default async function Home() {
               </div>
             </div>
             <div className="podium-floor-note">
-              24 ÖFFENTLICH · 4 ELITE · 50 IM FOUNDER&apos;S CIRCLE
+              11 ÖFFENTLICH · 4 ELITE · 50 IM FOUNDER&apos;S CIRCLE
             </div>
           </div>
         </div>
@@ -654,7 +654,7 @@ export default async function Home() {
                 <tr>
                   <th scope="row">Namentliche Analysten mit öffentlicher Bilanz</th>
                   <td className="compare-table__us">
-                    <span className="yes">Ja · 28</span>
+                    <span className="yes">Ja · 15</span>
                   </td>
                   <td>Beitragsautoren</td>
                   <td>Haus-Team</td>
@@ -1043,7 +1043,7 @@ export default async function Home() {
             <div className="faq-q">
               <h4>Wer sind die Analysten?</h4>
               <p>
-                28 Spezialisten über vier Desks. Jeder mit eigenem Profil,
+                15 Spezialisten über vier Desks. Jeder mit eigenem Profil,
                 öffentlicher Chronik und wöchentlichem Rang. Vier davon (die
                 Elite) schreiben hinter einer separaten Paywall.
               </p>
